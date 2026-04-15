@@ -1,0 +1,11 @@
+.RData
+.DS_Store
+**/.DS_Store
+/DataGeneration/__pycache__
+/Experiments/*/*/*.out
+/Experiments/*/*/*.Rout
+/Pysindy/exp/*/*.out
+/Pysindy/exp/*/*.Rout
+
+.codegpt
+.Renviron

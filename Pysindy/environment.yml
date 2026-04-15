@@ -1,0 +1,13 @@
+name: pysindy-dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - ipykernel
+  - numpy=1.26.4
+  # - pandas
+  # - scipy
+  # - python
+  # - matplotlib
+  - pysindy
