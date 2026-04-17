@@ -1,6 +1,7 @@
 # Bayesian-ARGOS
 
 This repository contains the R version of `Bayesian-ARGOS` together with the experiment, benchmarking, and performance evaluation code used for the manuscript [Fast and principled equation discovery from chaos to climate](https://arxiv.org/abs/2604.11929).
+For the Python version of `Bayesian-ARGOS` and its integration with SINDy-SHRED for equation discovery from spatiotemporal sensor data, and diagnostic analyses, please refer to the companion repository [pyargos_with_sindy_shred](https://github.com/yuzhengv/pyargos_with_sindy_shred).
 
 The code base includes the core `Bayesian-ARGOS` R implementation, data-generation utilities, experiment pipelines, and analysis scripts used to evaluate equation discovery performance across dynamical systems and to compare `Bayesian-ARGOS` with alternative methods.
 
