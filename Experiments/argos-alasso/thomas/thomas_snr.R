@@ -13,7 +13,7 @@ library(doParallel)
 library(reticulate)
 ################################################################################
 ############################## Load Functions ##################################
-setwd("/nobackup/qtzk83/Projects/bayesian_argos")
+setwd("/nobackup/qtzk83/Projects/Bayesian-ARGOS")
 source("./R/argos_files.R")
 source_python("./DataGeneration/ode_auto.py")
 

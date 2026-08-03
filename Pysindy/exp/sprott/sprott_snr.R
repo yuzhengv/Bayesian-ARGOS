@@ -23,7 +23,7 @@ ps <- import("pysindy")
 # ! -------------------- Import functions --------------------
 # %%
 # setwd(getwd())
-setwd("/nobackup/qtzk83/Projects/bayesian_argos")
+setwd("/nobackup/qtzk83/Projects/Bayesian-ARGOS")
 source("./R/argos_files.R")
 source("./R/bayesian_alasso_ro.R")
 source("./Pysindy/src/pysindy_exp_fun.R")
