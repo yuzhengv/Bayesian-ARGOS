@@ -208,7 +208,11 @@ extract_info_df <- function(concatenated_lists, function_id, method) {
                 "bayesian-alasso-hs",
                 "bayesian-alasso-hs-95",
                 "bayesian-alasso-enhanced",
-                "bayesian-alasso-enhanced-seed"
+                "bayesian-alasso-enhanced-seed",
+                "bayesian-alasso-oo",
+                "bayesian-alasso-rr",
+                "bayesian-alasso-single-ols",
+                "bayesian-alasso-single-ridge"
             )
     ) {
         results_summary_df <- do.call(

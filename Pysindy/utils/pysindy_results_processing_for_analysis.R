@@ -541,6 +541,16 @@ rename_model_names <- function(data_table) {
         data_table$Model == "bayesian-alasso-ro" ~ "Bayesian-ARGOS",
         data_table$Model == "bayesian-argos" ~ "Bayesian-ARGOS-BIC",
         data_table$Model == "pysindy" ~ "SINDy",
+        data_table$Model == "bayesian-alasso-or" ~
+            "Bayesian-ARGOS (OLS-Ridge)",
+        data_table$Model == "bayesian-alasso-oo" ~
+            "Bayesian-ARGOS (OLS-OLS)",
+        data_table$Model == "bayesian-alasso-rr" ~
+            "Bayesian-ARGOS (Ridge-Ridge)",
+        data_table$Model == "bayesian-alasso-single-ols" ~
+            "Bayesian-ARGOS (Single OLS)",
+        data_table$Model == "bayesian-alasso-single-ridge" ~
+            "Bayesian-ARGOS (Single Ridge)",
         TRUE ~ data_table$Model # Keep original name if no match
     )
     return(data_table)
@@ -552,6 +562,16 @@ rename_method_names <- function(data_table) {
         data_table$method == "bayesian-alasso-ro" ~ "Bayesian-ARGOS",
         data_table$method == "bayesian-argos" ~ "Bayesian-ARGOS-BIC",
         data_table$method == "pysindy" ~ "SINDy",
+        data_table$method == "bayesian-alasso-or" ~
+            "Bayesian-ARGOS (OLS-Ridge)",
+        data_table$method == "bayesian-alasso-oo" ~
+            "Bayesian-ARGOS (OLS-OLS)",
+        data_table$method == "bayesian-alasso-rr" ~
+            "Bayesian-ARGOS (Ridge-Ridge)",
+        data_table$method == "bayesian-alasso-single-ols" ~
+            "Bayesian-ARGOS (Single OLS)",
+        data_table$method == "bayesian-alasso-single-ridge" ~
+            "Bayesian-ARGOS (Single Ridge)",
         TRUE ~ data_table$method # Keep original name if no match
     )
     return(data_table)
