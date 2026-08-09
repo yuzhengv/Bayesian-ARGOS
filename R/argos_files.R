@@ -396,7 +396,8 @@ build_design_matrix <- function(
   dt = 1,
   sg_poly_order = 4,
   library_degree = 5,
-  library_type = c("poly", "four", "poly_four")
+  library_type = c("poly", "four", "poly_four"),
+  forcing_freq = NULL
 ) {
   monomial_degree <- library_degree
   dt <- dt
@@ -406,27 +407,25 @@ build_design_matrix <- function(
   xdot_filtered <- list()
   # Filter x_t
   for (i in 1:num_columns) {
-    if (x_t[1, i]) {
-      sg_combinations <- sg_optimal_combination(
-        x_t[, i],
-        dt,
-        polyorder = sg_poly_order
-      )[[2]]
-      x_filtered[[i]] <- sgolayfilt(
-        x_t[, i],
-        p = sg_combinations[1, 1],
-        n = sg_combinations[1, 2],
-        m = 0,
-        ts = dt
-      )
-      xdot_filtered[[i]] <- sgolayfilt(
-        x_t[, i],
-        p = sg_combinations[1, 1],
-        n = sg_combinations[1, 2],
-        m = 1,
-        ts = dt
-      )
-    }
+    sg_combinations <- sg_optimal_combination(
+      x_t[, i],
+      dt,
+      polyorder = sg_poly_order
+    )[[2]]
+    x_filtered[[i]] <- sgolayfilt(
+      x_t[, i],
+      p = sg_combinations[1, 1],
+      n = sg_combinations[1, 2],
+      m = 0,
+      ts = dt
+    )
+    xdot_filtered[[i]] <- sgolayfilt(
+      x_t[, i],
+      p = sg_combinations[1, 1],
+      n = sg_combinations[1, 2],
+      m = 1,
+      ts = dt
+    )
   }
   # Combine filtered data and derivatives
   x_t <- do.call(cbind, x_filtered)
@@ -548,6 +547,18 @@ build_design_matrix <- function(
           ordered_results
         )]
     }
+  }
+  # Prepend the external forcing column cos(forcing_freq * t) so that the
+  # degree-prefix truncation in argos()/double_regression() cannot drop it
+  if (!is.null(forcing_freq)) {
+    t_vec <- seq(0, by = dt, length.out = nrow(x_t))
+    forcing_col <- cos(forcing_freq * t_vec)
+    forcing_name <- paste0("cos_", forcing_freq, "t")
+    sorted_theta <- cbind(
+      setNames(data.frame(forcing_col), forcing_name),
+      sorted_theta
+    )
+    monomial_orders <- c(1, monomial_orders)
   }
   return(list(
     sorted_theta = cbind(sorted_theta),

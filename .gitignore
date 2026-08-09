@@ -9,3 +9,7 @@
 
 .codegpt
 .Renviron
+
+# Local reference material, not tracked
+/Reference-Experiments/
+/Notes/
