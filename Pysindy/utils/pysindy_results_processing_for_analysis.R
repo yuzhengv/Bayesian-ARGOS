@@ -250,9 +250,16 @@ results_loader_and_combinator_py <- function(
         experiments_results_all_list
     )
 
+    # concatenated_all_lists always has 3 elements (concatenated_list,
+    # observations_sample_names, metadata) regardless of the system dimension,
+    # so the number of equations is inferred from the results themselves.
+    function_number <- length(
+        concatenated_all_lists$concatenated_list[[1]][[1]]$id_result$exp_reults
+    )
+
     comprehensive_results_summary_df <- do.call(
         rbind,
-        lapply(seq(concatenated_all_lists), function(i) {
+        lapply(seq(function_number), function(i) {
             extract_info_df_py(concatenated_all_lists, i, method)
         })
     )
@@ -394,9 +401,13 @@ check_model_correctness_py <- function(identified_model_list, true_terms) {
         if (is.null(identified_model_list[[i]])) {
             return(NULL)
         }
-        as.matrix(
-            identified_model_list[[i]][identified_model_list[[i]][, 2] != 0, ]
-        )
+        # drop = FALSE keeps the n x 2 shape when a single term survives;
+        # otherwise the row collapses to a vector and the term match below
+        # always fails.
+        identified_model_list[[i]][
+            identified_model_list[[i]][, 2] != 0, ,
+            drop = FALSE
+        ]
     })
 
     # Check if identified terms match true terms
@@ -452,7 +463,7 @@ check_dynamical_system_py <- function(
     )
 
     extracted_info_all_list <- list()
-    for (i in seq(concatenated_all_lists)) {
+    for (i in seq(function_number)) {
         extracted_info_all_list[[i]] <- extract_info_py(
             concatenated_all_lists,
             function_id = i
