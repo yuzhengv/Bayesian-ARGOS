@@ -1,0 +1,36 @@
+#!/bin/bash
+snr=49 # 49
+num_init=100 # 100 
+shell_start=2 # 2 Control the number of observations
+shell_end=5 # 5
+shell_by=1
+shell_seq_end=$((shell_end-shell_by))
+shell_loop_seq=$(seq $shell_start $shell_by $shell_seq_end)
+by_time=0.1 # 0.1
+dt=0.01 # 0.01
+seed=100 # 100
+
+sg_poly_order=4 # 4 
+library_degree=5 # 5
+library_type='poly' # 'poly','four','poly_four'
+
+state_var_start=1
+state_var_end=2
+state_var_seq=$(seq $state_var_start 1 $state_var_end)
+alpha_level=0.05 # 0.05
+num_samples=2000 # 2000
+sr_method='alasso' # 'lasso', 'alasso'
+weights_method='ridge' # null, 'ols', 'ridge'
+ols_ps=true # true
+parallel='multicore' # 'multicore'
+mc_ncpus=80 # 25
+ncpus=20 # 25
+memory=160
+
+# Run the system identification experiments for the three governing equations of
+# the vdp system respectively with differnt number of observations.
+for state_var in $state_var_seq; do
+    for loop_var in $shell_loop_seq; do
+        sbatch --mem=${memory}G --export=ALL,SNR=${snr},NUM_INIT=${num_init},START=${loop_var},END=$(echo "$loop_var+$shell_by" | bc),BY_TIME=${by_time},DT=${dt},SEED=${seed},POLY_ORDER=${sg_poly_order},LIBRARY_DEGREE=${library_degree},LIBRARY_TYPE=${library_type},STATE_VAR=${state_var},ALPHA_LEVEL=${alpha_level},NUM_SAMPLE=${num_samples},SR=${sr_method},SR_RW=${weights_method},OLS=${ols_ps},PAR_CON=${parallel},CPU_NUM=${ncpus},MC_CPU_NUM=${mc_ncpus} vdp_n.sh
+    done
+done
