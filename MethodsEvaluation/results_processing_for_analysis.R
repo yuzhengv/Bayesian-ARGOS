@@ -550,7 +550,10 @@ view_original_running_result_for_specific_function <- function(
 
 model_correctness_checker <- function(identified_model_list, true_terms) {
     # Trim the identified model
-    trimmed_model_list <- sapply(seq_along(identified_model_list), function(i) {
+    # lapply, NOT sapply: sapply simplifies to a plain vector/matrix when every
+    # model has the same number of nonzero terms, dropping the rownames the
+    # matching below relies on (all results then score FALSE).
+    trimmed_model_list <- lapply(seq_along(identified_model_list), function(i) {
         if (is.null(identified_model_list[[i]])) {
             return(NULL)
         }
