@@ -125,7 +125,14 @@ pk3 <- ggplot(gs, aes(sampling, m, fill = design)) +
   labs(x = NULL, tag = "c", title = expression(italic("n") == 5000)) + ggplot_theme1 +
   theme(axis.text.x = element_text(size = 19, lineheight = 0.9), legend.position = "top", legend.direction = "horizontal",
         legend.text = element_text(size = 22))
-ggsave(file.path(FIG, "fig_collinearity_source.pdf"), pk1 + pk2 + pk3 + plot_layout(widths = c(1, 1, 1.35)),
+# Reply / SI version: panels a and b only (library designs on the single trajectory).
+# Panel c (one trajectory vs 50 transients vs uniform box samples) is WITHHELD from the
+# rebuttal by decision of 2026-09-11 (see notes/rebuttal-memos/reviewer1/
+# transient-experiment-withheld.md in the manuscript repo); it is kept for internal use
+# in the *_internal.pdf file only.
+ggsave(file.path(FIG, "fig_collinearity_source.pdf"), pk1 + pk2,
+       width = 19, height = 7.5, dpi = 300, units = "in")
+ggsave(file.path(FIG, "fig_collinearity_source_internal.pdf"), pk1 + pk2 + pk3 + plot_layout(widths = c(1, 1, 1.35)),
        width = 28, height = 7.5, dpi = 300, units = "in")
 
 # ====================================================== residual structure
