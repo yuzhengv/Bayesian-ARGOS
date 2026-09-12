@@ -12,7 +12,9 @@ Rscript exp2_heteroscedasticity.R 20
 Rscript aizawa_screening_vs_hmc.R
 Rscript aizawa_success_vs_snr_all_methods.R
 Rscript exp6_lambda_rule.R 20
+Rscript dadras_psis_loo.R                   # Referee 1 Point 7 (20 trials x 5 n)
 Rscript make_figures.R                      # figures in the manuscript house style
+Rscript make_figures_dadras_loo.R
 PYARGOS_FIG="${PYARGOS_FIG:-../../../pyargos_with_sindy_shred/pyargos/results-diagnostics/rebuttal-diagnostics/make_figures.py}"
 PY="${PY:-python}"
 if [ -f "$PYARGOS_FIG" ]; then "$PY" "$PYARGOS_FIG" --res results --tables-only; fi   # tables/summary_tables.md

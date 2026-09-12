@@ -77,6 +77,24 @@ SYSTEMS <- list(
       `2` = list(intercept = FALSE, terms = c("x1", "x2")),
       `3` = list(intercept = TRUE,  terms = c("x3", "x1x3"))
     )
+  ),
+  dadras = list(
+    # from Experiments/bayesian-alasso-ro/dadras/dadras_n.R
+    coeff = list(list(1, -3, 2.7), list(1.7, -1, 1), list(2, -9)),
+    names = list(list("x2", "x1", "x2x3"), list("x2", "x1x3", "x3"), list("x1x2", "x3")),
+    rhs = function(t, x, p) {
+      x1 <- x[1]; x2 <- x[2]; x3 <- x[3]
+      list(c(x2 - 3 * x1 + 2.7 * x2 * x3, 1.7 * x2 - x1 * x3 + x3, 2 * x1 * x2 - 9 * x3))
+    },
+    # dadras_n.R draws all three coordinates in one runif(3, -4, 4) call per
+    # trial (see dadras_ic_pool in dadras_psis_loo.R), unlike the per-coordinate
+    # loop of initial_conditions() below.
+    ic_ranges = list(c(-4, 4), c(-4, 4), c(-4, 4)),
+    truth = list(
+      `1` = list(intercept = FALSE, terms = c("x1", "x2", "x2x3"), beta = c(-3, 1, 2.7), beta0 = 0),
+      `2` = list(intercept = FALSE, terms = c("x2", "x3", "x1x3"), beta = c(1.7, 1, -1), beta0 = 0),
+      `3` = list(intercept = FALSE, terms = c("x3", "x1x2"), beta = c(-9, 2), beta0 = 0)
+    )
   )
 )
 
@@ -280,7 +298,7 @@ bayes_stage <- function(y, X, intercept, ci_level = 0.9, cores = 1) {
   kept <- names(cf)[keep]
   f <- as.numeric(fitted(glm_stan))            # posterior mean of the linear predictor
   list(kept_intercept = "(Intercept)" %in% kept, kept_terms = setdiff(kept, "(Intercept)"),
-       fitted = f, residuals = y - f, coef = cf, ci = ci, sigma = sd(y - f))
+       fitted = f, residuals = y - f, coef = cf, ci = ci, sigma = sd(y - f), fit = glm_stan)
 }
 
 # Residual statistics from given residuals / fitted values (no refit)
