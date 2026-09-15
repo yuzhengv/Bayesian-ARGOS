@@ -1,0 +1,9 @@
+"states","m_mult","p","stride_frac","ci_level"
+"raw",1,4,0.5,0.9
+"smoothed",1,4,0.5,0.9
+"raw",2,4,0.5,0.9
+"smoothed",2,4,0.5,0.9
+"raw",1,8,0.5,0.9
+"smoothed",1,8,0.5,0.9
+"raw",2,8,0.5,0.9
+"smoothed",2,8,0.5,0.9
