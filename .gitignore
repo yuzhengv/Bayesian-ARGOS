@@ -6,6 +6,8 @@
 /Experiments/*/*/*.Rout
 /Pysindy/exp/*/*.out
 /Pysindy/exp/*/*.Rout
+/Pysindy/weak/exp/*/*.out
+/Pysindy/weak/exp/*/*.Rout
 
 .codegpt
 .Renviron

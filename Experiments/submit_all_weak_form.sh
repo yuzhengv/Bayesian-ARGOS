@@ -11,9 +11,25 @@
 #   ARMS="sindy" bash submit_all_weak_form.sh       # ARMS: "bayesian", "sindy" or "bayesian sindy"
 #   SWEEPS="snr" bash submit_all_weak_form.sh       # SWEEPS: "n", "snr" or "n snr"
 #   DRY_RUN=1 bash submit_all_weak_form.sh          # print, do not submit
+#   WEAK_CONDA_ENV=<name> bash submit_all_weak_form.sh  # override pysindy-weak
 set -euo pipefail
 base_dir="$(cd "$(dirname "$0")" && pwd)"
 root_dir="$(cd "${base_dir}/.." && pwd)"
+
+# Hamilton environment verified by HAMILTON_ENV_CHECK.md. The child submit
+# scripts use --export=ALL, so these settings also reach the batch jobs.
+export WEAK_CONDA_ENV="${WEAK_CONDA_ENV:-pysindy-weak}"
+# Site module / Conda initialization scripts may reference unset variables.
+set +u
+module load r/4.3.1
+source activate "${WEAK_CONDA_ENV}"
+set -u
+export PYTHONNOUSERSITE=1 R_ENVIRON_USER=/dev/null
+export RETICULATE_PYTHON="${CONDA_PREFIX}/bin/python"
+export ARGOS_PYTHON="${RETICULATE_PYTHON}"
+export R_LIBS="${CONDA_PREFIX}/r-library${R_LIBS:+:${R_LIBS}}"
+export ARGOS_ROOT="${root_dir}" OMP_NUM_THREADS=1
+
 systems=("$@"); [ "${#systems[@]}" -eq 0 ] && systems=(aizawa dadras rossler)
 ARMS="${ARMS:-bayesian sindy}"; SWEEPS="${SWEEPS:-n snr}"
 for arm in $ARMS; do
