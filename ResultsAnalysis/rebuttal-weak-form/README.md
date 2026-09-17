@@ -161,3 +161,15 @@ rows are correlated, ρ₁ from −0.4 to +0.1 depending on p, against +0.68–0
 for the SG residual). No tuning of (m, p) beyond the 2 × 2 grid was done. The
 result is a demonstration that the regression stage accepts an integral design
 unchanged, not a benchmark of weak-form identification.
+
+## Full 2 × 2 comparison (Hamilton run, 2026-09-16)
+
+`success_2x2.R` evaluates the four arms (Bayesian-ARGOS / SINDy × SG /
+Integration) on the benchmark grids from the stored SG results and the
+Integration arms in `Experiments/bayesian-alasso-ro-weak/` and `Pysindy/weak/`
+(`results/success_2x2_{n,snr}.csv`; `make_figures_2x2.R` →
+`figures/fig_sg_vs_weak.pdf`, the Bayesian-ARGOS pair used in the SI, and
+`figures/fig_success_2x2_internal.pdf`, all four arms, internal reference only). `diag_overlap.R` and `diag_conditioning.R`
+diagnose the two configuration effects found in the first evaluation (window
+overlap; library conditioning). Findings and status are in
+`Experiments/bayesian-alasso-ro-weak/README.md`.

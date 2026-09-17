@@ -1,11 +1,21 @@
 # Weak-form (Integration) arms of the 2 × 2 derivative-vs-integral comparison
 
-> **Status:** READY TO SUBMIT on Hamilton (2026-09-15). Drivers and SLURM
-> scripts written and smoke-tested locally (Dadras SNR sweep, Rössler n sweep,
-> two trials each, both arms; evaluation loader verified). No Hamilton run yet.
-> Requires `pysindy >= 1.7.3` in the `pysindy-prod` conda environment on
-> Hamilton (tested with 2.1.0 locally); check with
-> `python -c "import pysindy; print(pysindy.__version__)"` before submitting.
+> **Status:** RUN on Hamilton 2026-09-16 (commit 418874e, environment
+> `pysindy-weak`, pysindy 2.1.0; all 62 result files present). Evaluated with
+> `ResultsAnalysis/rebuttal-weak-form/success_2x2.R` (tables
+> `results/success_2x2_{n,snr}.csv`, figure `figures/fig_success_2x2.pdf`).
+> Decisions 2026-09-16 (Yuzheng): no re-run. **The evidence for the reply and the
+> SI is the Bayesian-ARGOS pair only** (SG step vs weak-form design, everything
+> else unchanged): `ResultsAnalysis/rebuttal-weak-form/figures/fig_sg_vs_weak.pdf`.
+> The two SINDy arms are kept as run for internal reference
+> (`fig_success_2x2_internal.pdf`, tables in `success_2x2_{n,snr}.csv`) and are
+> not cited: within that pair the response changes but the fixed threshold
+> was set for the SG response, so it is not a clean test of integration, and
+> Weak SINDy as published (own threshold selection, generalised least squares)
+> is a different method that was not benchmarked. Framing: integration does
+> not improve *this pipeline*; making it work would need per-problem settings,
+> which the pipeline is designed to avoid. Nothing cited in the reply drafts
+> yet; proposed wording in `notes/rebuttal-memos/reviewer1/points6-7-weak-form-check.md`.
 
 ## The comparison
 
@@ -103,3 +113,56 @@ counterpart and relabelled; no evaluation code is modified.
 | `<system>/<system>_{n,snr}.sh`, `_submit.sh` | SLURM job and submission scripts |
 | `../submit_all_weak_form.sh` | submits both arms for the chosen systems |
 | `../../Pysindy/weak/weak_{n,snr}.R`, `exp/<system>/*.sh` | SINDy (Integration) drivers and jobs |
+
+## Results (2026-09-16)
+
+Success rate = all three equations exactly recovered, 100 trials.
+
+| | Aizawa n=10⁴ | Aizawa 61 dB | Aizawa ∞ | Dadras n=10⁴ | Dadras n=10⁵ | Dadras 49 dB | Dadras ∞ | Rössler n=10³ | Rössler 49 dB | Rössler ∞ |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Bayesian-ARGOS (SG) | 0.64 | 0.71 | 0.00 | 0.98 | 0.70 | 0.99 | 0.98 | 0.90 | 1.00 | 0.26 |
+| Bayesian-ARGOS (Integration) | 0.30 | 0.38 | 0.25 | 0.68 | 0.88 | 0.77 | 1.00 | 0.84 | 0.98 | 1.00 |
+| SINDy (SG) | 0.25 | 0.21 | 0.13 | 0.99 | 1.00 | 1.00 | 1.00 | 0.29 | 0.97 | 0.86 |
+| SINDy (Integration) | 0.00 | 0.00 | 0.00 | 1.00 | 1.00 | 0.69 | 0.60 | 0.00 | 0.54 | 0.55 |
+
+Rows 1–2 are the evidence used (`fig_sg_vs_weak.pdf`); rows 3–4 are internal.
+The Integration arm of Bayesian-ARGOS wins exactly where the SG derivative
+fails (Dadras at n = 10⁵, Rössler and Aizawa at SNR = ∞) and loses at finite
+SNR and moderate n. Two effects, both properties of the weak form rather than
+of a particular setting, contribute to the losses and were diagnosed with `ResultsAnalysis/rebuttal-weak-form/diag_overlap.R` and
+`diag_conditioning.R`:
+
+1. **Window overlap inflates the effective sample size (Bayesian arm).** With
+   K = n/4 subdomains of 50 samples every sample sits in ≈ 12 windows; the
+   Bayesian stage treats the rows as independent, so intervals are too narrow
+   and a spurious intercept survives at finite SNR (Dadras x₃-dot: 16–30 % of
+   trials at 30–61 dB, 0 % at ∞). With K = n/25 (50 % overlap) or n/50 (no
+   overlap) the Dadras x₃-dot recovery is 20/20. For Aizawa x₃-dot the fewer
+   rows starve the screening instead (0.40 → 0.20 → 0.10 for K = n/4, n/25,
+   n/50): at n = 5000 the record holds only ≈ 100 independent windows for a
+   55-column library.
+2. **The weak transform worsens the conditioning of the polynomial library
+   (both arms).** Aizawa, 49 dB, degree-≤4 library: Belsley κ 38 (SG) vs
+   104–109 (weak); median VIF of the true x₃-dot terms 87 (SG) vs 93–242
+   (weak). Integrating monomials against a wide test function is a low-pass
+   filter that makes the chain terms (x₁²x₃, x₁²x₃², …) more alike, so the
+   chain-substitution failure of Point 6 becomes more frequent.
+3. **SINDy (Integration) keeps the baseline's STLSQ settings, so within the
+   SINDy pair the weak form is the only difference.** With the baseline's
+   threshold 0.005 (and PySINDy's default ridge penalty) the weak features give
+   dense models on Aizawa (50+ terms, 0 % exact at every SNR) and sparse ones on
+   Dadras and Rössler. A coarser fixed threshold does not change the Aizawa
+   verdict: on 10 trials at 30, 49 and 61 dB, thresholds 0.01, 0.05 and 0.1 give
+   0/10 exact (the smallest true coefficient, 0.1 on x₁³x₃, is not separable
+   from the weak form's spurious coefficients of 0.01–0.05), whereas Dadras
+   reaches 10/10 from 0.01 upwards. PySINDy's optional column normalisation
+   (off in the baseline, as in the original SINDy) leaves the models dense
+   (53–56 terms with or without it on five Aizawa trials). Weak SINDy's own
+   threshold selection (a scan over a λ grid minimising a residual-plus-sparsity
+   loss, Messenger & Bortz 2021) is not adopted: it is not implemented in
+   PySINDy, it still requires a user-specified λ grid, and it carries no
+   statistical justification comparable to the credible-interval rule.
+
+The Dadras and Rössler n-sweep gaps at small n (10² – 10³) have the same
+origin as item 1: with a 50-sample window a record of 100–1000 samples holds
+2–20 independent windows.
