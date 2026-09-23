@@ -1,0 +1,1675 @@
+"system","sweep","arm","x","success"
+"lorenz","n","Ridge-OLS (baseline)",2,0
+"lorenz","n","Ridge-OLS (baseline)",2.1,0
+"lorenz","n","Ridge-OLS (baseline)",2.2,0
+"lorenz","n","Ridge-OLS (baseline)",2.3,0
+"lorenz","n","Ridge-OLS (baseline)",2.4,0
+"lorenz","n","Ridge-OLS (baseline)",2.5,0.06
+"lorenz","n","Ridge-OLS (baseline)",2.6,0.12
+"lorenz","n","Ridge-OLS (baseline)",2.7,0.28
+"lorenz","n","Ridge-OLS (baseline)",2.8,0.5
+"lorenz","n","Ridge-OLS (baseline)",2.9,0.66
+"lorenz","n","Ridge-OLS (baseline)",3,0.87
+"lorenz","n","Ridge-OLS (baseline)",3.1,0.88
+"lorenz","n","Ridge-OLS (baseline)",3.2,0.92
+"lorenz","n","Ridge-OLS (baseline)",3.3,0.9
+"lorenz","n","Ridge-OLS (baseline)",3.4,0.95
+"lorenz","n","Ridge-OLS (baseline)",3.5,0.95
+"lorenz","n","Ridge-OLS (baseline)",3.6,0.94
+"lorenz","n","Ridge-OLS (baseline)",3.7,0.97
+"lorenz","n","Ridge-OLS (baseline)",3.8,0.99
+"lorenz","n","Ridge-OLS (baseline)",3.9,0.97
+"lorenz","n","Ridge-OLS (baseline)",4,1
+"lorenz","n","Ridge-OLS (baseline)",4.1,0.98
+"lorenz","n","Ridge-OLS (baseline)",4.2,1
+"lorenz","n","Ridge-OLS (baseline)",4.3,0.99
+"lorenz","n","Ridge-OLS (baseline)",4.4,0.98
+"lorenz","n","Ridge-OLS (baseline)",4.5,0.96
+"lorenz","n","Ridge-OLS (baseline)",4.6,1
+"lorenz","n","Ridge-OLS (baseline)",4.7,0.99
+"lorenz","n","Ridge-OLS (baseline)",4.8,1
+"lorenz","n","Ridge-OLS (baseline)",4.9,1
+"lorenz","n","Ridge-OLS (baseline)",5,1
+"lorenz","n","OLS-Ridge",2,0
+"lorenz","n","OLS-Ridge",2.1,0
+"lorenz","n","OLS-Ridge",2.2,0
+"lorenz","n","OLS-Ridge",2.3,0
+"lorenz","n","OLS-Ridge",2.4,0
+"lorenz","n","OLS-Ridge",2.5,0
+"lorenz","n","OLS-Ridge",2.6,0.03
+"lorenz","n","OLS-Ridge",2.7,0.09
+"lorenz","n","OLS-Ridge",2.8,0.25
+"lorenz","n","OLS-Ridge",2.9,0.36
+"lorenz","n","OLS-Ridge",3,0.53
+"lorenz","n","OLS-Ridge",3.1,0.62
+"lorenz","n","OLS-Ridge",3.2,0.65
+"lorenz","n","OLS-Ridge",3.3,0.74
+"lorenz","n","OLS-Ridge",3.4,0.79
+"lorenz","n","OLS-Ridge",3.5,0.82
+"lorenz","n","OLS-Ridge",3.6,0.85
+"lorenz","n","OLS-Ridge",3.7,0.85
+"lorenz","n","OLS-Ridge",3.8,0.93
+"lorenz","n","OLS-Ridge",3.9,0.91
+"lorenz","n","OLS-Ridge",4,0.96
+"lorenz","n","OLS-Ridge",4.1,0.97
+"lorenz","n","OLS-Ridge",4.2,0.99
+"lorenz","n","OLS-Ridge",4.3,1
+"lorenz","n","OLS-Ridge",4.4,0.99
+"lorenz","n","OLS-Ridge",4.5,1
+"lorenz","n","OLS-Ridge",4.6,1
+"lorenz","n","OLS-Ridge",4.7,1
+"lorenz","n","OLS-Ridge",4.8,1
+"lorenz","n","OLS-Ridge",4.9,1
+"lorenz","n","OLS-Ridge",5,1
+"lorenz","n","OLS-OLS",2,0
+"lorenz","n","OLS-OLS",2.1,0
+"lorenz","n","OLS-OLS",2.2,0
+"lorenz","n","OLS-OLS",2.3,0
+"lorenz","n","OLS-OLS",2.4,0
+"lorenz","n","OLS-OLS",2.5,0.04
+"lorenz","n","OLS-OLS",2.6,0.17
+"lorenz","n","OLS-OLS",2.7,0.24
+"lorenz","n","OLS-OLS",2.8,0.44
+"lorenz","n","OLS-OLS",2.9,0.72
+"lorenz","n","OLS-OLS",3,0.88
+"lorenz","n","OLS-OLS",3.1,0.87
+"lorenz","n","OLS-OLS",3.2,0.94
+"lorenz","n","OLS-OLS",3.3,0.98
+"lorenz","n","OLS-OLS",3.4,0.97
+"lorenz","n","OLS-OLS",3.5,0.94
+"lorenz","n","OLS-OLS",3.6,0.95
+"lorenz","n","OLS-OLS",3.7,0.95
+"lorenz","n","OLS-OLS",3.8,0.98
+"lorenz","n","OLS-OLS",3.9,0.98
+"lorenz","n","OLS-OLS",4,1
+"lorenz","n","OLS-OLS",4.1,1
+"lorenz","n","OLS-OLS",4.2,1
+"lorenz","n","OLS-OLS",4.3,1
+"lorenz","n","OLS-OLS",4.4,1
+"lorenz","n","OLS-OLS",4.5,1
+"lorenz","n","OLS-OLS",4.6,1
+"lorenz","n","OLS-OLS",4.7,1
+"lorenz","n","OLS-OLS",4.8,1
+"lorenz","n","OLS-OLS",4.9,1
+"lorenz","n","OLS-OLS",5,1
+"lorenz","n","Ridge-Ridge",2,0
+"lorenz","n","Ridge-Ridge",2.1,0
+"lorenz","n","Ridge-Ridge",2.2,0
+"lorenz","n","Ridge-Ridge",2.3,0
+"lorenz","n","Ridge-Ridge",2.4,0
+"lorenz","n","Ridge-Ridge",2.5,0.03
+"lorenz","n","Ridge-Ridge",2.6,0.05
+"lorenz","n","Ridge-Ridge",2.7,0.12
+"lorenz","n","Ridge-Ridge",2.8,0.24
+"lorenz","n","Ridge-Ridge",2.9,0.29
+"lorenz","n","Ridge-Ridge",3,0.5
+"lorenz","n","Ridge-Ridge",3.1,0.61
+"lorenz","n","Ridge-Ridge",3.2,0.69
+"lorenz","n","Ridge-Ridge",3.3,0.72
+"lorenz","n","Ridge-Ridge",3.4,0.77
+"lorenz","n","Ridge-Ridge",3.5,0.79
+"lorenz","n","Ridge-Ridge",3.6,0.79
+"lorenz","n","Ridge-Ridge",3.7,0.86
+"lorenz","n","Ridge-Ridge",3.8,0.9
+"lorenz","n","Ridge-Ridge",3.9,0.87
+"lorenz","n","Ridge-Ridge",4,0.95
+"lorenz","n","Ridge-Ridge",4.1,0.97
+"lorenz","n","Ridge-Ridge",4.2,0.98
+"lorenz","n","Ridge-Ridge",4.3,1
+"lorenz","n","Ridge-Ridge",4.4,0.97
+"lorenz","n","Ridge-Ridge",4.5,0.98
+"lorenz","n","Ridge-Ridge",4.6,1
+"lorenz","n","Ridge-Ridge",4.7,1
+"lorenz","n","Ridge-Ridge",4.8,0.99
+"lorenz","n","Ridge-Ridge",4.9,1
+"lorenz","n","Ridge-Ridge",5,1
+"lorenz","n","Single OLS",2,0
+"lorenz","n","Single OLS",2.1,0
+"lorenz","n","Single OLS",2.2,0
+"lorenz","n","Single OLS",2.3,0.01
+"lorenz","n","Single OLS",2.4,0
+"lorenz","n","Single OLS",2.5,0.05
+"lorenz","n","Single OLS",2.6,0.16
+"lorenz","n","Single OLS",2.7,0.25
+"lorenz","n","Single OLS",2.8,0.39
+"lorenz","n","Single OLS",2.9,0.56
+"lorenz","n","Single OLS",3,0.65
+"lorenz","n","Single OLS",3.1,0.78
+"lorenz","n","Single OLS",3.2,0.78
+"lorenz","n","Single OLS",3.3,0.77
+"lorenz","n","Single OLS",3.4,0.75
+"lorenz","n","Single OLS",3.5,0.82
+"lorenz","n","Single OLS",3.6,0.89
+"lorenz","n","Single OLS",3.7,0.91
+"lorenz","n","Single OLS",3.8,0.85
+"lorenz","n","Single OLS",3.9,0.96
+"lorenz","n","Single OLS",4,0.92
+"lorenz","n","Single OLS",4.1,0.94
+"lorenz","n","Single OLS",4.2,0.96
+"lorenz","n","Single OLS",4.3,0.95
+"lorenz","n","Single OLS",4.4,0.98
+"lorenz","n","Single OLS",4.5,0.97
+"lorenz","n","Single OLS",4.6,0.94
+"lorenz","n","Single OLS",4.7,0.96
+"lorenz","n","Single OLS",4.8,0.92
+"lorenz","n","Single OLS",4.9,0.98
+"lorenz","n","Single OLS",5,0.93
+"lorenz","n","Single Ridge",2,0
+"lorenz","n","Single Ridge",2.1,0
+"lorenz","n","Single Ridge",2.2,0
+"lorenz","n","Single Ridge",2.3,0
+"lorenz","n","Single Ridge",2.4,0
+"lorenz","n","Single Ridge",2.5,0
+"lorenz","n","Single Ridge",2.6,0.02
+"lorenz","n","Single Ridge",2.7,0.03
+"lorenz","n","Single Ridge",2.8,0.13
+"lorenz","n","Single Ridge",2.9,0.17
+"lorenz","n","Single Ridge",3,0.26
+"lorenz","n","Single Ridge",3.1,0.41
+"lorenz","n","Single Ridge",3.2,0.49
+"lorenz","n","Single Ridge",3.3,0.48
+"lorenz","n","Single Ridge",3.4,0.63
+"lorenz","n","Single Ridge",3.5,0.66
+"lorenz","n","Single Ridge",3.6,0.67
+"lorenz","n","Single Ridge",3.7,0.75
+"lorenz","n","Single Ridge",3.8,0.81
+"lorenz","n","Single Ridge",3.9,0.86
+"lorenz","n","Single Ridge",4,0.88
+"lorenz","n","Single Ridge",4.1,0.92
+"lorenz","n","Single Ridge",4.2,0.97
+"lorenz","n","Single Ridge",4.3,0.98
+"lorenz","n","Single Ridge",4.4,1
+"lorenz","n","Single Ridge",4.5,0.99
+"lorenz","n","Single Ridge",4.6,1
+"lorenz","n","Single Ridge",4.7,1
+"lorenz","n","Single Ridge",4.8,1
+"lorenz","n","Single Ridge",4.9,1
+"lorenz","n","Single Ridge",5,1
+"lorenz","snr","Ridge-OLS (baseline)",1,0
+"lorenz","snr","Ridge-OLS (baseline)",2,0
+"lorenz","snr","Ridge-OLS (baseline)",3,0
+"lorenz","snr","Ridge-OLS (baseline)",4,0
+"lorenz","snr","Ridge-OLS (baseline)",5,0
+"lorenz","snr","Ridge-OLS (baseline)",6,0
+"lorenz","snr","Ridge-OLS (baseline)",7,0
+"lorenz","snr","Ridge-OLS (baseline)",8,0
+"lorenz","snr","Ridge-OLS (baseline)",9,0
+"lorenz","snr","Ridge-OLS (baseline)",10,0
+"lorenz","snr","Ridge-OLS (baseline)",11,0.01
+"lorenz","snr","Ridge-OLS (baseline)",12,0.01
+"lorenz","snr","Ridge-OLS (baseline)",13,0.03
+"lorenz","snr","Ridge-OLS (baseline)",14,0.03
+"lorenz","snr","Ridge-OLS (baseline)",15,0.02
+"lorenz","snr","Ridge-OLS (baseline)",16,0.02
+"lorenz","snr","Ridge-OLS (baseline)",17,0.04
+"lorenz","snr","Ridge-OLS (baseline)",18,0.06
+"lorenz","snr","Ridge-OLS (baseline)",19,0.08
+"lorenz","snr","Ridge-OLS (baseline)",20,0.11
+"lorenz","snr","Ridge-OLS (baseline)",21,0.15
+"lorenz","snr","Ridge-OLS (baseline)",22,0.26
+"lorenz","snr","Ridge-OLS (baseline)",23,0.4
+"lorenz","snr","Ridge-OLS (baseline)",24,0.49
+"lorenz","snr","Ridge-OLS (baseline)",25,0.62
+"lorenz","snr","Ridge-OLS (baseline)",26,0.75
+"lorenz","snr","Ridge-OLS (baseline)",27,0.8
+"lorenz","snr","Ridge-OLS (baseline)",28,0.81
+"lorenz","snr","Ridge-OLS (baseline)",29,0.82
+"lorenz","snr","Ridge-OLS (baseline)",30,0.83
+"lorenz","snr","Ridge-OLS (baseline)",31,0.87
+"lorenz","snr","Ridge-OLS (baseline)",32,0.88
+"lorenz","snr","Ridge-OLS (baseline)",33,0.9
+"lorenz","snr","Ridge-OLS (baseline)",34,0.91
+"lorenz","snr","Ridge-OLS (baseline)",35,0.9
+"lorenz","snr","Ridge-OLS (baseline)",36,0.9
+"lorenz","snr","Ridge-OLS (baseline)",37,0.92
+"lorenz","snr","Ridge-OLS (baseline)",38,0.94
+"lorenz","snr","Ridge-OLS (baseline)",39,0.93
+"lorenz","snr","Ridge-OLS (baseline)",40,0.95
+"lorenz","snr","Ridge-OLS (baseline)",41,0.95
+"lorenz","snr","Ridge-OLS (baseline)",42,0.96
+"lorenz","snr","Ridge-OLS (baseline)",43,0.96
+"lorenz","snr","Ridge-OLS (baseline)",44,0.95
+"lorenz","snr","Ridge-OLS (baseline)",45,0.97
+"lorenz","snr","Ridge-OLS (baseline)",46,0.97
+"lorenz","snr","Ridge-OLS (baseline)",47,0.98
+"lorenz","snr","Ridge-OLS (baseline)",48,0.97
+"lorenz","snr","Ridge-OLS (baseline)",49,0.97
+"lorenz","snr","Ridge-OLS (baseline)",50,0.96
+"lorenz","snr","Ridge-OLS (baseline)",51,0.98
+"lorenz","snr","Ridge-OLS (baseline)",52,0.96
+"lorenz","snr","Ridge-OLS (baseline)",53,0.99
+"lorenz","snr","Ridge-OLS (baseline)",54,1
+"lorenz","snr","Ridge-OLS (baseline)",55,1
+"lorenz","snr","Ridge-OLS (baseline)",56,1
+"lorenz","snr","Ridge-OLS (baseline)",57,1
+"lorenz","snr","Ridge-OLS (baseline)",58,1
+"lorenz","snr","Ridge-OLS (baseline)",59,1
+"lorenz","snr","Ridge-OLS (baseline)",60,0.99
+"lorenz","snr","Ridge-OLS (baseline)",61,0.99
+"lorenz","snr","Ridge-OLS (baseline)",Inf,0.96
+"lorenz","snr","OLS-Ridge",1,0
+"lorenz","snr","OLS-Ridge",2,0
+"lorenz","snr","OLS-Ridge",3,0
+"lorenz","snr","OLS-Ridge",4,0
+"lorenz","snr","OLS-Ridge",5,0
+"lorenz","snr","OLS-Ridge",6,0
+"lorenz","snr","OLS-Ridge",7,0
+"lorenz","snr","OLS-Ridge",8,0.01
+"lorenz","snr","OLS-Ridge",9,0.01
+"lorenz","snr","OLS-Ridge",10,0.02
+"lorenz","snr","OLS-Ridge",11,0.04
+"lorenz","snr","OLS-Ridge",12,0.04
+"lorenz","snr","OLS-Ridge",13,0.03
+"lorenz","snr","OLS-Ridge",14,0.05
+"lorenz","snr","OLS-Ridge",15,0.03
+"lorenz","snr","OLS-Ridge",16,0.05
+"lorenz","snr","OLS-Ridge",17,0.07
+"lorenz","snr","OLS-Ridge",18,0.08
+"lorenz","snr","OLS-Ridge",19,0.11
+"lorenz","snr","OLS-Ridge",20,0.12
+"lorenz","snr","OLS-Ridge",21,0.13
+"lorenz","snr","OLS-Ridge",22,0.21
+"lorenz","snr","OLS-Ridge",23,0.36
+"lorenz","snr","OLS-Ridge",24,0.49
+"lorenz","snr","OLS-Ridge",25,0.64
+"lorenz","snr","OLS-Ridge",26,0.72
+"lorenz","snr","OLS-Ridge",27,0.78
+"lorenz","snr","OLS-Ridge",28,0.78
+"lorenz","snr","OLS-Ridge",29,0.79
+"lorenz","snr","OLS-Ridge",30,0.8
+"lorenz","snr","OLS-Ridge",31,0.79
+"lorenz","snr","OLS-Ridge",32,0.81
+"lorenz","snr","OLS-Ridge",33,0.8
+"lorenz","snr","OLS-Ridge",34,0.82
+"lorenz","snr","OLS-Ridge",35,0.84
+"lorenz","snr","OLS-Ridge",36,0.84
+"lorenz","snr","OLS-Ridge",37,0.84
+"lorenz","snr","OLS-Ridge",38,0.83
+"lorenz","snr","OLS-Ridge",39,0.84
+"lorenz","snr","OLS-Ridge",40,0.85
+"lorenz","snr","OLS-Ridge",41,0.86
+"lorenz","snr","OLS-Ridge",42,0.86
+"lorenz","snr","OLS-Ridge",43,0.86
+"lorenz","snr","OLS-Ridge",44,0.86
+"lorenz","snr","OLS-Ridge",45,0.86
+"lorenz","snr","OLS-Ridge",46,0.87
+"lorenz","snr","OLS-Ridge",47,0.87
+"lorenz","snr","OLS-Ridge",48,0.87
+"lorenz","snr","OLS-Ridge",49,0.87
+"lorenz","snr","OLS-Ridge",50,0.88
+"lorenz","snr","OLS-Ridge",51,0.89
+"lorenz","snr","OLS-Ridge",52,0.88
+"lorenz","snr","OLS-Ridge",53,0.88
+"lorenz","snr","OLS-Ridge",54,0.88
+"lorenz","snr","OLS-Ridge",55,0.88
+"lorenz","snr","OLS-Ridge",56,0.88
+"lorenz","snr","OLS-Ridge",57,0.87
+"lorenz","snr","OLS-Ridge",58,0.88
+"lorenz","snr","OLS-Ridge",59,0.86
+"lorenz","snr","OLS-Ridge",60,0.87
+"lorenz","snr","OLS-Ridge",61,0.88
+"lorenz","snr","OLS-Ridge",Inf,0.74
+"lorenz","snr","OLS-OLS",1,0
+"lorenz","snr","OLS-OLS",2,0
+"lorenz","snr","OLS-OLS",3,0
+"lorenz","snr","OLS-OLS",4,0
+"lorenz","snr","OLS-OLS",5,0
+"lorenz","snr","OLS-OLS",6,0
+"lorenz","snr","OLS-OLS",7,0
+"lorenz","snr","OLS-OLS",8,0.01
+"lorenz","snr","OLS-OLS",9,0.01
+"lorenz","snr","OLS-OLS",10,0.01
+"lorenz","snr","OLS-OLS",11,0.01
+"lorenz","snr","OLS-OLS",12,0
+"lorenz","snr","OLS-OLS",13,0
+"lorenz","snr","OLS-OLS",14,0
+"lorenz","snr","OLS-OLS",15,0
+"lorenz","snr","OLS-OLS",16,0.01
+"lorenz","snr","OLS-OLS",17,0.06
+"lorenz","snr","OLS-OLS",18,0.07
+"lorenz","snr","OLS-OLS",19,0.09
+"lorenz","snr","OLS-OLS",20,0.11
+"lorenz","snr","OLS-OLS",21,0.16
+"lorenz","snr","OLS-OLS",22,0.24
+"lorenz","snr","OLS-OLS",23,0.4
+"lorenz","snr","OLS-OLS",24,0.48
+"lorenz","snr","OLS-OLS",25,0.67
+"lorenz","snr","OLS-OLS",26,0.72
+"lorenz","snr","OLS-OLS",27,0.78
+"lorenz","snr","OLS-OLS",28,0.85
+"lorenz","snr","OLS-OLS",29,0.86
+"lorenz","snr","OLS-OLS",30,0.88
+"lorenz","snr","OLS-OLS",31,0.91
+"lorenz","snr","OLS-OLS",32,0.91
+"lorenz","snr","OLS-OLS",33,0.93
+"lorenz","snr","OLS-OLS",34,0.94
+"lorenz","snr","OLS-OLS",35,0.92
+"lorenz","snr","OLS-OLS",36,0.93
+"lorenz","snr","OLS-OLS",37,0.94
+"lorenz","snr","OLS-OLS",38,0.95
+"lorenz","snr","OLS-OLS",39,0.95
+"lorenz","snr","OLS-OLS",40,0.97
+"lorenz","snr","OLS-OLS",41,0.98
+"lorenz","snr","OLS-OLS",42,0.96
+"lorenz","snr","OLS-OLS",43,0.97
+"lorenz","snr","OLS-OLS",44,0.97
+"lorenz","snr","OLS-OLS",45,0.96
+"lorenz","snr","OLS-OLS",46,0.96
+"lorenz","snr","OLS-OLS",47,0.95
+"lorenz","snr","OLS-OLS",48,0.97
+"lorenz","snr","OLS-OLS",49,0.97
+"lorenz","snr","OLS-OLS",50,0.98
+"lorenz","snr","OLS-OLS",51,0.98
+"lorenz","snr","OLS-OLS",52,0.99
+"lorenz","snr","OLS-OLS",53,0.98
+"lorenz","snr","OLS-OLS",54,0.98
+"lorenz","snr","OLS-OLS",55,0.99
+"lorenz","snr","OLS-OLS",56,0.99
+"lorenz","snr","OLS-OLS",57,0.99
+"lorenz","snr","OLS-OLS",58,0.98
+"lorenz","snr","OLS-OLS",59,0.99
+"lorenz","snr","OLS-OLS",60,0.98
+"lorenz","snr","OLS-OLS",61,0.99
+"lorenz","snr","OLS-OLS",Inf,0.97
+"lorenz","snr","Ridge-Ridge",1,0
+"lorenz","snr","Ridge-Ridge",2,0
+"lorenz","snr","Ridge-Ridge",3,0
+"lorenz","snr","Ridge-Ridge",4,0
+"lorenz","snr","Ridge-Ridge",5,0
+"lorenz","snr","Ridge-Ridge",6,0
+"lorenz","snr","Ridge-Ridge",7,0
+"lorenz","snr","Ridge-Ridge",8,0
+"lorenz","snr","Ridge-Ridge",9,0.01
+"lorenz","snr","Ridge-Ridge",10,0.01
+"lorenz","snr","Ridge-Ridge",11,0.01
+"lorenz","snr","Ridge-Ridge",12,0.01
+"lorenz","snr","Ridge-Ridge",13,0.02
+"lorenz","snr","Ridge-Ridge",14,0.02
+"lorenz","snr","Ridge-Ridge",15,0.02
+"lorenz","snr","Ridge-Ridge",16,0.01
+"lorenz","snr","Ridge-Ridge",17,0.05
+"lorenz","snr","Ridge-Ridge",18,0.08
+"lorenz","snr","Ridge-Ridge",19,0.12
+"lorenz","snr","Ridge-Ridge",20,0.17
+"lorenz","snr","Ridge-Ridge",21,0.18
+"lorenz","snr","Ridge-Ridge",22,0.25
+"lorenz","snr","Ridge-Ridge",23,0.35
+"lorenz","snr","Ridge-Ridge",24,0.53
+"lorenz","snr","Ridge-Ridge",25,0.68
+"lorenz","snr","Ridge-Ridge",26,0.78
+"lorenz","snr","Ridge-Ridge",27,0.78
+"lorenz","snr","Ridge-Ridge",28,0.74
+"lorenz","snr","Ridge-Ridge",29,0.81
+"lorenz","snr","Ridge-Ridge",30,0.82
+"lorenz","snr","Ridge-Ridge",31,0.83
+"lorenz","snr","Ridge-Ridge",32,0.81
+"lorenz","snr","Ridge-Ridge",33,0.83
+"lorenz","snr","Ridge-Ridge",34,0.83
+"lorenz","snr","Ridge-Ridge",35,0.86
+"lorenz","snr","Ridge-Ridge",36,0.86
+"lorenz","snr","Ridge-Ridge",37,0.86
+"lorenz","snr","Ridge-Ridge",38,0.87
+"lorenz","snr","Ridge-Ridge",39,0.87
+"lorenz","snr","Ridge-Ridge",40,0.85
+"lorenz","snr","Ridge-Ridge",41,0.87
+"lorenz","snr","Ridge-Ridge",42,0.87
+"lorenz","snr","Ridge-Ridge",43,0.88
+"lorenz","snr","Ridge-Ridge",44,0.88
+"lorenz","snr","Ridge-Ridge",45,0.86
+"lorenz","snr","Ridge-Ridge",46,0.88
+"lorenz","snr","Ridge-Ridge",47,0.88
+"lorenz","snr","Ridge-Ridge",48,0.88
+"lorenz","snr","Ridge-Ridge",49,0.88
+"lorenz","snr","Ridge-Ridge",50,0.88
+"lorenz","snr","Ridge-Ridge",51,0.88
+"lorenz","snr","Ridge-Ridge",52,0.89
+"lorenz","snr","Ridge-Ridge",53,0.89
+"lorenz","snr","Ridge-Ridge",54,0.89
+"lorenz","snr","Ridge-Ridge",55,0.88
+"lorenz","snr","Ridge-Ridge",56,0.89
+"lorenz","snr","Ridge-Ridge",57,0.88
+"lorenz","snr","Ridge-Ridge",58,0.88
+"lorenz","snr","Ridge-Ridge",59,0.89
+"lorenz","snr","Ridge-Ridge",60,0.88
+"lorenz","snr","Ridge-Ridge",61,0.89
+"lorenz","snr","Ridge-Ridge",Inf,0.76
+"lorenz","snr","Single OLS",1,0
+"lorenz","snr","Single OLS",2,0
+"lorenz","snr","Single OLS",3,0
+"lorenz","snr","Single OLS",4,0
+"lorenz","snr","Single OLS",5,0
+"lorenz","snr","Single OLS",6,0
+"lorenz","snr","Single OLS",7,0
+"lorenz","snr","Single OLS",8,0
+"lorenz","snr","Single OLS",9,0
+"lorenz","snr","Single OLS",10,0.01
+"lorenz","snr","Single OLS",11,0
+"lorenz","snr","Single OLS",12,0.01
+"lorenz","snr","Single OLS",13,0.01
+"lorenz","snr","Single OLS",14,0.03
+"lorenz","snr","Single OLS",15,0.02
+"lorenz","snr","Single OLS",16,0.02
+"lorenz","snr","Single OLS",17,0.03
+"lorenz","snr","Single OLS",18,0.03
+"lorenz","snr","Single OLS",19,0.01
+"lorenz","snr","Single OLS",20,0.02
+"lorenz","snr","Single OLS",21,0.07
+"lorenz","snr","Single OLS",22,0.1
+"lorenz","snr","Single OLS",23,0.21
+"lorenz","snr","Single OLS",24,0.29
+"lorenz","snr","Single OLS",25,0.32
+"lorenz","snr","Single OLS",26,0.42
+"lorenz","snr","Single OLS",27,0.47
+"lorenz","snr","Single OLS",28,0.49
+"lorenz","snr","Single OLS",29,0.51
+"lorenz","snr","Single OLS",30,0.49
+"lorenz","snr","Single OLS",31,0.57
+"lorenz","snr","Single OLS",32,0.59
+"lorenz","snr","Single OLS",33,0.6
+"lorenz","snr","Single OLS",34,0.62
+"lorenz","snr","Single OLS",35,0.72
+"lorenz","snr","Single OLS",36,0.75
+"lorenz","snr","Single OLS",37,0.73
+"lorenz","snr","Single OLS",38,0.83
+"lorenz","snr","Single OLS",39,0.82
+"lorenz","snr","Single OLS",40,0.82
+"lorenz","snr","Single OLS",41,0.86
+"lorenz","snr","Single OLS",42,0.83
+"lorenz","snr","Single OLS",43,0.84
+"lorenz","snr","Single OLS",44,0.83
+"lorenz","snr","Single OLS",45,0.86
+"lorenz","snr","Single OLS",46,0.88
+"lorenz","snr","Single OLS",47,0.88
+"lorenz","snr","Single OLS",48,0.9
+"lorenz","snr","Single OLS",49,0.88
+"lorenz","snr","Single OLS",50,0.86
+"lorenz","snr","Single OLS",51,0.91
+"lorenz","snr","Single OLS",52,0.92
+"lorenz","snr","Single OLS",53,0.91
+"lorenz","snr","Single OLS",54,0.9
+"lorenz","snr","Single OLS",55,0.85
+"lorenz","snr","Single OLS",56,0.89
+"lorenz","snr","Single OLS",57,0.92
+"lorenz","snr","Single OLS",58,0.87
+"lorenz","snr","Single OLS",59,0.9
+"lorenz","snr","Single OLS",60,0.89
+"lorenz","snr","Single OLS",61,0.86
+"lorenz","snr","Single OLS",Inf,0.87
+"lorenz","snr","Single Ridge",1,0
+"lorenz","snr","Single Ridge",2,0
+"lorenz","snr","Single Ridge",3,0
+"lorenz","snr","Single Ridge",4,0
+"lorenz","snr","Single Ridge",5,0
+"lorenz","snr","Single Ridge",6,0
+"lorenz","snr","Single Ridge",7,0
+"lorenz","snr","Single Ridge",8,0
+"lorenz","snr","Single Ridge",9,0
+"lorenz","snr","Single Ridge",10,0
+"lorenz","snr","Single Ridge",11,0
+"lorenz","snr","Single Ridge",12,0
+"lorenz","snr","Single Ridge",13,0
+"lorenz","snr","Single Ridge",14,0.02
+"lorenz","snr","Single Ridge",15,0.03
+"lorenz","snr","Single Ridge",16,0.02
+"lorenz","snr","Single Ridge",17,0.01
+"lorenz","snr","Single Ridge",18,0.02
+"lorenz","snr","Single Ridge",19,0.04
+"lorenz","snr","Single Ridge",20,0.11
+"lorenz","snr","Single Ridge",21,0.16
+"lorenz","snr","Single Ridge",22,0.21
+"lorenz","snr","Single Ridge",23,0.31
+"lorenz","snr","Single Ridge",24,0.45
+"lorenz","snr","Single Ridge",25,0.6
+"lorenz","snr","Single Ridge",26,0.64
+"lorenz","snr","Single Ridge",27,0.62
+"lorenz","snr","Single Ridge",28,0.62
+"lorenz","snr","Single Ridge",29,0.68
+"lorenz","snr","Single Ridge",30,0.74
+"lorenz","snr","Single Ridge",31,0.69
+"lorenz","snr","Single Ridge",32,0.75
+"lorenz","snr","Single Ridge",33,0.74
+"lorenz","snr","Single Ridge",34,0.73
+"lorenz","snr","Single Ridge",35,0.75
+"lorenz","snr","Single Ridge",36,0.75
+"lorenz","snr","Single Ridge",37,0.75
+"lorenz","snr","Single Ridge",38,0.76
+"lorenz","snr","Single Ridge",39,0.75
+"lorenz","snr","Single Ridge",40,0.75
+"lorenz","snr","Single Ridge",41,0.76
+"lorenz","snr","Single Ridge",42,0.75
+"lorenz","snr","Single Ridge",43,0.76
+"lorenz","snr","Single Ridge",44,0.78
+"lorenz","snr","Single Ridge",45,0.78
+"lorenz","snr","Single Ridge",46,0.77
+"lorenz","snr","Single Ridge",47,0.78
+"lorenz","snr","Single Ridge",48,0.76
+"lorenz","snr","Single Ridge",49,0.77
+"lorenz","snr","Single Ridge",50,0.78
+"lorenz","snr","Single Ridge",51,0.77
+"lorenz","snr","Single Ridge",52,0.77
+"lorenz","snr","Single Ridge",53,0.77
+"lorenz","snr","Single Ridge",54,0.76
+"lorenz","snr","Single Ridge",55,0.77
+"lorenz","snr","Single Ridge",56,0.77
+"lorenz","snr","Single Ridge",57,0.77
+"lorenz","snr","Single Ridge",58,0.77
+"lorenz","snr","Single Ridge",59,0.77
+"lorenz","snr","Single Ridge",60,0.77
+"lorenz","snr","Single Ridge",61,0.76
+"lorenz","snr","Single Ridge",Inf,0.63
+"rossler","n","Ridge-OLS (baseline)",2,0.02
+"rossler","n","Ridge-OLS (baseline)",2.1,0.03
+"rossler","n","Ridge-OLS (baseline)",2.2,0.08
+"rossler","n","Ridge-OLS (baseline)",2.3,0.18
+"rossler","n","Ridge-OLS (baseline)",2.4,0.38
+"rossler","n","Ridge-OLS (baseline)",2.5,0.54
+"rossler","n","Ridge-OLS (baseline)",2.6,0.7
+"rossler","n","Ridge-OLS (baseline)",2.7,0.81
+"rossler","n","Ridge-OLS (baseline)",2.8,0.77
+"rossler","n","Ridge-OLS (baseline)",2.9,0.88
+"rossler","n","Ridge-OLS (baseline)",3,0.9
+"rossler","n","Ridge-OLS (baseline)",3.1,0.92
+"rossler","n","Ridge-OLS (baseline)",3.2,0.97
+"rossler","n","Ridge-OLS (baseline)",3.3,0.99
+"rossler","n","Ridge-OLS (baseline)",3.4,0.99
+"rossler","n","Ridge-OLS (baseline)",3.5,1
+"rossler","n","Ridge-OLS (baseline)",3.6,1
+"rossler","n","Ridge-OLS (baseline)",3.7,1
+"rossler","n","Ridge-OLS (baseline)",3.8,1
+"rossler","n","Ridge-OLS (baseline)",3.9,1
+"rossler","n","Ridge-OLS (baseline)",4,1
+"rossler","n","Ridge-OLS (baseline)",4.1,1
+"rossler","n","Ridge-OLS (baseline)",4.2,1
+"rossler","n","Ridge-OLS (baseline)",4.3,1
+"rossler","n","Ridge-OLS (baseline)",4.4,1
+"rossler","n","Ridge-OLS (baseline)",4.5,1
+"rossler","n","Ridge-OLS (baseline)",4.6,1
+"rossler","n","Ridge-OLS (baseline)",4.7,1
+"rossler","n","Ridge-OLS (baseline)",4.8,1
+"rossler","n","Ridge-OLS (baseline)",4.9,1
+"rossler","n","Ridge-OLS (baseline)",5,1
+"rossler","n","OLS-Ridge",2,0.01
+"rossler","n","OLS-Ridge",2.1,0.06
+"rossler","n","OLS-Ridge",2.2,0.05
+"rossler","n","OLS-Ridge",2.3,0.19
+"rossler","n","OLS-Ridge",2.4,0.29
+"rossler","n","OLS-Ridge",2.5,0.41
+"rossler","n","OLS-Ridge",2.6,0.59
+"rossler","n","OLS-Ridge",2.7,0.78
+"rossler","n","OLS-Ridge",2.8,0.78
+"rossler","n","OLS-Ridge",2.9,0.73
+"rossler","n","OLS-Ridge",3,0.83
+"rossler","n","OLS-Ridge",3.1,0.81
+"rossler","n","OLS-Ridge",3.2,0.97
+"rossler","n","OLS-Ridge",3.3,0.92
+"rossler","n","OLS-Ridge",3.4,0.99
+"rossler","n","OLS-Ridge",3.5,0.98
+"rossler","n","OLS-Ridge",3.6,1
+"rossler","n","OLS-Ridge",3.7,1
+"rossler","n","OLS-Ridge",3.8,1
+"rossler","n","OLS-Ridge",3.9,1
+"rossler","n","OLS-Ridge",4,1
+"rossler","n","OLS-Ridge",4.1,1
+"rossler","n","OLS-Ridge",4.2,1
+"rossler","n","OLS-Ridge",4.3,1
+"rossler","n","OLS-Ridge",4.4,1
+"rossler","n","OLS-Ridge",4.5,1
+"rossler","n","OLS-Ridge",4.6,1
+"rossler","n","OLS-Ridge",4.7,1
+"rossler","n","OLS-Ridge",4.8,1
+"rossler","n","OLS-Ridge",4.9,1
+"rossler","n","OLS-Ridge",5,1
+"rossler","n","OLS-OLS",2,0
+"rossler","n","OLS-OLS",2.1,0.02
+"rossler","n","OLS-OLS",2.2,0.02
+"rossler","n","OLS-OLS",2.3,0.13
+"rossler","n","OLS-OLS",2.4,0.25
+"rossler","n","OLS-OLS",2.5,0.34
+"rossler","n","OLS-OLS",2.6,0.55
+"rossler","n","OLS-OLS",2.7,0.71
+"rossler","n","OLS-OLS",2.8,0.75
+"rossler","n","OLS-OLS",2.9,0.78
+"rossler","n","OLS-OLS",3,0.78
+"rossler","n","OLS-OLS",3.1,0.78
+"rossler","n","OLS-OLS",3.2,0.9
+"rossler","n","OLS-OLS",3.3,0.97
+"rossler","n","OLS-OLS",3.4,0.99
+"rossler","n","OLS-OLS",3.5,0.99
+"rossler","n","OLS-OLS",3.6,1
+"rossler","n","OLS-OLS",3.7,1
+"rossler","n","OLS-OLS",3.8,1
+"rossler","n","OLS-OLS",3.9,1
+"rossler","n","OLS-OLS",4,1
+"rossler","n","OLS-OLS",4.1,1
+"rossler","n","OLS-OLS",4.2,1
+"rossler","n","OLS-OLS",4.3,1
+"rossler","n","OLS-OLS",4.4,1
+"rossler","n","OLS-OLS",4.5,1
+"rossler","n","OLS-OLS",4.6,1
+"rossler","n","OLS-OLS",4.7,1
+"rossler","n","OLS-OLS",4.8,1
+"rossler","n","OLS-OLS",4.9,1
+"rossler","n","OLS-OLS",5,1
+"rossler","n","Ridge-Ridge",2,0.02
+"rossler","n","Ridge-Ridge",2.1,0.08
+"rossler","n","Ridge-Ridge",2.2,0.08
+"rossler","n","Ridge-Ridge",2.3,0.26
+"rossler","n","Ridge-Ridge",2.4,0.27
+"rossler","n","Ridge-Ridge",2.5,0.5
+"rossler","n","Ridge-Ridge",2.6,0.65
+"rossler","n","Ridge-Ridge",2.7,0.69
+"rossler","n","Ridge-Ridge",2.8,0.81
+"rossler","n","Ridge-Ridge",2.9,0.82
+"rossler","n","Ridge-Ridge",3,0.86
+"rossler","n","Ridge-Ridge",3.1,0.89
+"rossler","n","Ridge-Ridge",3.2,0.97
+"rossler","n","Ridge-Ridge",3.3,0.98
+"rossler","n","Ridge-Ridge",3.4,0.98
+"rossler","n","Ridge-Ridge",3.5,0.97
+"rossler","n","Ridge-Ridge",3.6,1
+"rossler","n","Ridge-Ridge",3.7,1
+"rossler","n","Ridge-Ridge",3.8,1
+"rossler","n","Ridge-Ridge",3.9,1
+"rossler","n","Ridge-Ridge",4,0.99
+"rossler","n","Ridge-Ridge",4.1,1
+"rossler","n","Ridge-Ridge",4.2,1
+"rossler","n","Ridge-Ridge",4.3,1
+"rossler","n","Ridge-Ridge",4.4,1
+"rossler","n","Ridge-Ridge",4.5,1
+"rossler","n","Ridge-Ridge",4.6,1
+"rossler","n","Ridge-Ridge",4.7,1
+"rossler","n","Ridge-Ridge",4.8,1
+"rossler","n","Ridge-Ridge",4.9,1
+"rossler","n","Ridge-Ridge",5,1
+"rossler","n","Single OLS",2,0.01
+"rossler","n","Single OLS",2.1,0
+"rossler","n","Single OLS",2.2,0.04
+"rossler","n","Single OLS",2.3,0.04
+"rossler","n","Single OLS",2.4,0.1
+"rossler","n","Single OLS",2.5,0.12
+"rossler","n","Single OLS",2.6,0.29
+"rossler","n","Single OLS",2.7,0.38
+"rossler","n","Single OLS",2.8,0.49
+"rossler","n","Single OLS",2.9,0.54
+"rossler","n","Single OLS",3,0.56
+"rossler","n","Single OLS",3.1,0.61
+"rossler","n","Single OLS",3.2,0.73
+"rossler","n","Single OLS",3.3,0.74
+"rossler","n","Single OLS",3.4,0.93
+"rossler","n","Single OLS",3.5,0.93
+"rossler","n","Single OLS",3.6,0.97
+"rossler","n","Single OLS",3.7,1
+"rossler","n","Single OLS",3.8,1
+"rossler","n","Single OLS",3.9,1
+"rossler","n","Single OLS",4,0.99
+"rossler","n","Single OLS",4.1,1
+"rossler","n","Single OLS",4.2,1
+"rossler","n","Single OLS",4.3,1
+"rossler","n","Single OLS",4.4,1
+"rossler","n","Single OLS",4.5,1
+"rossler","n","Single OLS",4.6,1
+"rossler","n","Single OLS",4.7,1
+"rossler","n","Single OLS",4.8,1
+"rossler","n","Single OLS",4.9,1
+"rossler","n","Single OLS",5,1
+"rossler","n","Single Ridge",2,0.03
+"rossler","n","Single Ridge",2.1,0.05
+"rossler","n","Single Ridge",2.2,0.11
+"rossler","n","Single Ridge",2.3,0.24
+"rossler","n","Single Ridge",2.4,0.25
+"rossler","n","Single Ridge",2.5,0.34
+"rossler","n","Single Ridge",2.6,0.55
+"rossler","n","Single Ridge",2.7,0.58
+"rossler","n","Single Ridge",2.8,0.67
+"rossler","n","Single Ridge",2.9,0.71
+"rossler","n","Single Ridge",3,0.74
+"rossler","n","Single Ridge",3.1,0.76
+"rossler","n","Single Ridge",3.2,0.87
+"rossler","n","Single Ridge",3.3,0.84
+"rossler","n","Single Ridge",3.4,0.91
+"rossler","n","Single Ridge",3.5,0.97
+"rossler","n","Single Ridge",3.6,0.93
+"rossler","n","Single Ridge",3.7,0.94
+"rossler","n","Single Ridge",3.8,0.96
+"rossler","n","Single Ridge",3.9,0.96
+"rossler","n","Single Ridge",4,0.98
+"rossler","n","Single Ridge",4.1,0.92
+"rossler","n","Single Ridge",4.2,0.99
+"rossler","n","Single Ridge",4.3,0.99
+"rossler","n","Single Ridge",4.4,0.98
+"rossler","n","Single Ridge",4.5,0.97
+"rossler","n","Single Ridge",4.6,0.99
+"rossler","n","Single Ridge",4.7,1
+"rossler","n","Single Ridge",4.8,0.97
+"rossler","n","Single Ridge",4.9,0.98
+"rossler","n","Single Ridge",5,0.95
+"rossler","snr","Ridge-OLS (baseline)",1,0
+"rossler","snr","Ridge-OLS (baseline)",2,0
+"rossler","snr","Ridge-OLS (baseline)",3,0
+"rossler","snr","Ridge-OLS (baseline)",4,0
+"rossler","snr","Ridge-OLS (baseline)",5,0
+"rossler","snr","Ridge-OLS (baseline)",6,0
+"rossler","snr","Ridge-OLS (baseline)",7,0
+"rossler","snr","Ridge-OLS (baseline)",8,0
+"rossler","snr","Ridge-OLS (baseline)",9,0
+"rossler","snr","Ridge-OLS (baseline)",10,0
+"rossler","snr","Ridge-OLS (baseline)",11,0
+"rossler","snr","Ridge-OLS (baseline)",12,0
+"rossler","snr","Ridge-OLS (baseline)",13,0
+"rossler","snr","Ridge-OLS (baseline)",14,0
+"rossler","snr","Ridge-OLS (baseline)",15,0
+"rossler","snr","Ridge-OLS (baseline)",16,0
+"rossler","snr","Ridge-OLS (baseline)",17,0.03
+"rossler","snr","Ridge-OLS (baseline)",18,0.08
+"rossler","snr","Ridge-OLS (baseline)",19,0.16
+"rossler","snr","Ridge-OLS (baseline)",20,0.29
+"rossler","snr","Ridge-OLS (baseline)",21,0.45
+"rossler","snr","Ridge-OLS (baseline)",22,0.53
+"rossler","snr","Ridge-OLS (baseline)",23,0.6
+"rossler","snr","Ridge-OLS (baseline)",24,0.65
+"rossler","snr","Ridge-OLS (baseline)",25,0.74
+"rossler","snr","Ridge-OLS (baseline)",26,0.77
+"rossler","snr","Ridge-OLS (baseline)",27,0.82
+"rossler","snr","Ridge-OLS (baseline)",28,0.88
+"rossler","snr","Ridge-OLS (baseline)",29,0.93
+"rossler","snr","Ridge-OLS (baseline)",30,0.95
+"rossler","snr","Ridge-OLS (baseline)",31,0.98
+"rossler","snr","Ridge-OLS (baseline)",32,0.99
+"rossler","snr","Ridge-OLS (baseline)",33,1
+"rossler","snr","Ridge-OLS (baseline)",34,0.99
+"rossler","snr","Ridge-OLS (baseline)",35,0.99
+"rossler","snr","Ridge-OLS (baseline)",36,0.99
+"rossler","snr","Ridge-OLS (baseline)",37,1
+"rossler","snr","Ridge-OLS (baseline)",38,0.99
+"rossler","snr","Ridge-OLS (baseline)",39,0.99
+"rossler","snr","Ridge-OLS (baseline)",40,0.99
+"rossler","snr","Ridge-OLS (baseline)",41,0.99
+"rossler","snr","Ridge-OLS (baseline)",42,0.99
+"rossler","snr","Ridge-OLS (baseline)",43,0.99
+"rossler","snr","Ridge-OLS (baseline)",44,0.99
+"rossler","snr","Ridge-OLS (baseline)",45,0.99
+"rossler","snr","Ridge-OLS (baseline)",46,0.99
+"rossler","snr","Ridge-OLS (baseline)",47,1
+"rossler","snr","Ridge-OLS (baseline)",48,1
+"rossler","snr","Ridge-OLS (baseline)",49,1
+"rossler","snr","Ridge-OLS (baseline)",50,1
+"rossler","snr","Ridge-OLS (baseline)",51,1
+"rossler","snr","Ridge-OLS (baseline)",52,1
+"rossler","snr","Ridge-OLS (baseline)",53,1
+"rossler","snr","Ridge-OLS (baseline)",54,1
+"rossler","snr","Ridge-OLS (baseline)",55,1
+"rossler","snr","Ridge-OLS (baseline)",56,1
+"rossler","snr","Ridge-OLS (baseline)",57,1
+"rossler","snr","Ridge-OLS (baseline)",58,1
+"rossler","snr","Ridge-OLS (baseline)",59,1
+"rossler","snr","Ridge-OLS (baseline)",60,1
+"rossler","snr","Ridge-OLS (baseline)",61,1
+"rossler","snr","Ridge-OLS (baseline)",Inf,0.26
+"rossler","snr","OLS-Ridge",1,0
+"rossler","snr","OLS-Ridge",2,0
+"rossler","snr","OLS-Ridge",3,0
+"rossler","snr","OLS-Ridge",4,0
+"rossler","snr","OLS-Ridge",5,0
+"rossler","snr","OLS-Ridge",6,0
+"rossler","snr","OLS-Ridge",7,0
+"rossler","snr","OLS-Ridge",8,0
+"rossler","snr","OLS-Ridge",9,0
+"rossler","snr","OLS-Ridge",10,0
+"rossler","snr","OLS-Ridge",11,0
+"rossler","snr","OLS-Ridge",12,0
+"rossler","snr","OLS-Ridge",13,0
+"rossler","snr","OLS-Ridge",14,0.01
+"rossler","snr","OLS-Ridge",15,0.01
+"rossler","snr","OLS-Ridge",16,0.01
+"rossler","snr","OLS-Ridge",17,0.04
+"rossler","snr","OLS-Ridge",18,0.09
+"rossler","snr","OLS-Ridge",19,0.17
+"rossler","snr","OLS-Ridge",20,0.24
+"rossler","snr","OLS-Ridge",21,0.35
+"rossler","snr","OLS-Ridge",22,0.39
+"rossler","snr","OLS-Ridge",23,0.45
+"rossler","snr","OLS-Ridge",24,0.59
+"rossler","snr","OLS-Ridge",25,0.58
+"rossler","snr","OLS-Ridge",26,0.72
+"rossler","snr","OLS-Ridge",27,0.78
+"rossler","snr","OLS-Ridge",28,0.85
+"rossler","snr","OLS-Ridge",29,0.86
+"rossler","snr","OLS-Ridge",30,0.93
+"rossler","snr","OLS-Ridge",31,0.95
+"rossler","snr","OLS-Ridge",32,0.97
+"rossler","snr","OLS-Ridge",33,0.95
+"rossler","snr","OLS-Ridge",34,0.95
+"rossler","snr","OLS-Ridge",35,0.98
+"rossler","snr","OLS-Ridge",36,0.98
+"rossler","snr","OLS-Ridge",37,0.98
+"rossler","snr","OLS-Ridge",38,0.97
+"rossler","snr","OLS-Ridge",39,0.99
+"rossler","snr","OLS-Ridge",40,1
+"rossler","snr","OLS-Ridge",41,1
+"rossler","snr","OLS-Ridge",42,1
+"rossler","snr","OLS-Ridge",43,1
+"rossler","snr","OLS-Ridge",44,1
+"rossler","snr","OLS-Ridge",45,1
+"rossler","snr","OLS-Ridge",46,1
+"rossler","snr","OLS-Ridge",47,1
+"rossler","snr","OLS-Ridge",48,1
+"rossler","snr","OLS-Ridge",49,1
+"rossler","snr","OLS-Ridge",50,1
+"rossler","snr","OLS-Ridge",51,1
+"rossler","snr","OLS-Ridge",52,1
+"rossler","snr","OLS-Ridge",53,1
+"rossler","snr","OLS-Ridge",54,1
+"rossler","snr","OLS-Ridge",55,1
+"rossler","snr","OLS-Ridge",56,1
+"rossler","snr","OLS-Ridge",57,1
+"rossler","snr","OLS-Ridge",58,1
+"rossler","snr","OLS-Ridge",59,1
+"rossler","snr","OLS-Ridge",60,1
+"rossler","snr","OLS-Ridge",61,1
+"rossler","snr","OLS-Ridge",Inf,0.26
+"rossler","snr","OLS-OLS",1,0
+"rossler","snr","OLS-OLS",2,0
+"rossler","snr","OLS-OLS",3,0
+"rossler","snr","OLS-OLS",4,0
+"rossler","snr","OLS-OLS",5,0
+"rossler","snr","OLS-OLS",6,0
+"rossler","snr","OLS-OLS",7,0
+"rossler","snr","OLS-OLS",8,0
+"rossler","snr","OLS-OLS",9,0
+"rossler","snr","OLS-OLS",10,0
+"rossler","snr","OLS-OLS",11,0
+"rossler","snr","OLS-OLS",12,0
+"rossler","snr","OLS-OLS",13,0
+"rossler","snr","OLS-OLS",14,0
+"rossler","snr","OLS-OLS",15,0
+"rossler","snr","OLS-OLS",16,0
+"rossler","snr","OLS-OLS",17,0.02
+"rossler","snr","OLS-OLS",18,0.05
+"rossler","snr","OLS-OLS",19,0.08
+"rossler","snr","OLS-OLS",20,0.17
+"rossler","snr","OLS-OLS",21,0.22
+"rossler","snr","OLS-OLS",22,0.36
+"rossler","snr","OLS-OLS",23,0.51
+"rossler","snr","OLS-OLS",24,0.56
+"rossler","snr","OLS-OLS",25,0.65
+"rossler","snr","OLS-OLS",26,0.75
+"rossler","snr","OLS-OLS",27,0.8
+"rossler","snr","OLS-OLS",28,0.88
+"rossler","snr","OLS-OLS",29,0.91
+"rossler","snr","OLS-OLS",30,0.92
+"rossler","snr","OLS-OLS",31,0.97
+"rossler","snr","OLS-OLS",32,0.96
+"rossler","snr","OLS-OLS",33,0.96
+"rossler","snr","OLS-OLS",34,0.97
+"rossler","snr","OLS-OLS",35,0.97
+"rossler","snr","OLS-OLS",36,1
+"rossler","snr","OLS-OLS",37,0.99
+"rossler","snr","OLS-OLS",38,1
+"rossler","snr","OLS-OLS",39,1
+"rossler","snr","OLS-OLS",40,1
+"rossler","snr","OLS-OLS",41,1
+"rossler","snr","OLS-OLS",42,1
+"rossler","snr","OLS-OLS",43,1
+"rossler","snr","OLS-OLS",44,1
+"rossler","snr","OLS-OLS",45,0.99
+"rossler","snr","OLS-OLS",46,1
+"rossler","snr","OLS-OLS",47,1
+"rossler","snr","OLS-OLS",48,1
+"rossler","snr","OLS-OLS",49,1
+"rossler","snr","OLS-OLS",50,1
+"rossler","snr","OLS-OLS",51,1
+"rossler","snr","OLS-OLS",52,1
+"rossler","snr","OLS-OLS",53,1
+"rossler","snr","OLS-OLS",54,1
+"rossler","snr","OLS-OLS",55,1
+"rossler","snr","OLS-OLS",56,1
+"rossler","snr","OLS-OLS",57,1
+"rossler","snr","OLS-OLS",58,1
+"rossler","snr","OLS-OLS",59,0.99
+"rossler","snr","OLS-OLS",60,1
+"rossler","snr","OLS-OLS",61,1
+"rossler","snr","OLS-OLS",Inf,0.26
+"rossler","snr","Ridge-Ridge",1,0
+"rossler","snr","Ridge-Ridge",2,0
+"rossler","snr","Ridge-Ridge",3,0
+"rossler","snr","Ridge-Ridge",4,0
+"rossler","snr","Ridge-Ridge",5,0
+"rossler","snr","Ridge-Ridge",6,0
+"rossler","snr","Ridge-Ridge",7,0
+"rossler","snr","Ridge-Ridge",8,0
+"rossler","snr","Ridge-Ridge",9,0
+"rossler","snr","Ridge-Ridge",10,0
+"rossler","snr","Ridge-Ridge",11,0
+"rossler","snr","Ridge-Ridge",12,0
+"rossler","snr","Ridge-Ridge",13,0
+"rossler","snr","Ridge-Ridge",14,0
+"rossler","snr","Ridge-Ridge",15,0.01
+"rossler","snr","Ridge-Ridge",16,0.01
+"rossler","snr","Ridge-Ridge",17,0.01
+"rossler","snr","Ridge-Ridge",18,0.02
+"rossler","snr","Ridge-Ridge",19,0.11
+"rossler","snr","Ridge-Ridge",20,0.19
+"rossler","snr","Ridge-Ridge",21,0.27
+"rossler","snr","Ridge-Ridge",22,0.33
+"rossler","snr","Ridge-Ridge",23,0.47
+"rossler","snr","Ridge-Ridge",24,0.54
+"rossler","snr","Ridge-Ridge",25,0.66
+"rossler","snr","Ridge-Ridge",26,0.7
+"rossler","snr","Ridge-Ridge",27,0.69
+"rossler","snr","Ridge-Ridge",28,0.75
+"rossler","snr","Ridge-Ridge",29,0.8
+"rossler","snr","Ridge-Ridge",30,0.88
+"rossler","snr","Ridge-Ridge",31,0.91
+"rossler","snr","Ridge-Ridge",32,0.93
+"rossler","snr","Ridge-Ridge",33,0.93
+"rossler","snr","Ridge-Ridge",34,0.95
+"rossler","snr","Ridge-Ridge",35,0.95
+"rossler","snr","Ridge-Ridge",36,0.95
+"rossler","snr","Ridge-Ridge",37,0.96
+"rossler","snr","Ridge-Ridge",38,0.98
+"rossler","snr","Ridge-Ridge",39,0.98
+"rossler","snr","Ridge-Ridge",40,0.98
+"rossler","snr","Ridge-Ridge",41,0.98
+"rossler","snr","Ridge-Ridge",42,0.98
+"rossler","snr","Ridge-Ridge",43,0.98
+"rossler","snr","Ridge-Ridge",44,0.98
+"rossler","snr","Ridge-Ridge",45,0.98
+"rossler","snr","Ridge-Ridge",46,0.98
+"rossler","snr","Ridge-Ridge",47,0.99
+"rossler","snr","Ridge-Ridge",48,0.99
+"rossler","snr","Ridge-Ridge",49,0.99
+"rossler","snr","Ridge-Ridge",50,0.99
+"rossler","snr","Ridge-Ridge",51,0.99
+"rossler","snr","Ridge-Ridge",52,1
+"rossler","snr","Ridge-Ridge",53,1
+"rossler","snr","Ridge-Ridge",54,1
+"rossler","snr","Ridge-Ridge",55,1
+"rossler","snr","Ridge-Ridge",56,1
+"rossler","snr","Ridge-Ridge",57,1
+"rossler","snr","Ridge-Ridge",58,1
+"rossler","snr","Ridge-Ridge",59,1
+"rossler","snr","Ridge-Ridge",60,1
+"rossler","snr","Ridge-Ridge",61,1
+"rossler","snr","Ridge-Ridge",Inf,0.27
+"rossler","snr","Single OLS",1,0
+"rossler","snr","Single OLS",2,0
+"rossler","snr","Single OLS",3,0
+"rossler","snr","Single OLS",4,0
+"rossler","snr","Single OLS",5,0
+"rossler","snr","Single OLS",6,0
+"rossler","snr","Single OLS",7,0
+"rossler","snr","Single OLS",8,0
+"rossler","snr","Single OLS",9,0
+"rossler","snr","Single OLS",10,0
+"rossler","snr","Single OLS",11,0
+"rossler","snr","Single OLS",12,0
+"rossler","snr","Single OLS",13,0
+"rossler","snr","Single OLS",14,0
+"rossler","snr","Single OLS",15,0
+"rossler","snr","Single OLS",16,0
+"rossler","snr","Single OLS",17,0.01
+"rossler","snr","Single OLS",18,0.01
+"rossler","snr","Single OLS",19,0.02
+"rossler","snr","Single OLS",20,0.05
+"rossler","snr","Single OLS",21,0.11
+"rossler","snr","Single OLS",22,0.17
+"rossler","snr","Single OLS",23,0.25
+"rossler","snr","Single OLS",24,0.26
+"rossler","snr","Single OLS",25,0.37
+"rossler","snr","Single OLS",26,0.43
+"rossler","snr","Single OLS",27,0.46
+"rossler","snr","Single OLS",28,0.56
+"rossler","snr","Single OLS",29,0.67
+"rossler","snr","Single OLS",30,0.67
+"rossler","snr","Single OLS",31,0.74
+"rossler","snr","Single OLS",32,0.78
+"rossler","snr","Single OLS",33,0.82
+"rossler","snr","Single OLS",34,0.84
+"rossler","snr","Single OLS",35,0.89
+"rossler","snr","Single OLS",36,0.88
+"rossler","snr","Single OLS",37,0.88
+"rossler","snr","Single OLS",38,0.87
+"rossler","snr","Single OLS",39,0.88
+"rossler","snr","Single OLS",40,0.9
+"rossler","snr","Single OLS",41,0.89
+"rossler","snr","Single OLS",42,0.89
+"rossler","snr","Single OLS",43,0.91
+"rossler","snr","Single OLS",44,0.94
+"rossler","snr","Single OLS",45,0.94
+"rossler","snr","Single OLS",46,0.92
+"rossler","snr","Single OLS",47,0.96
+"rossler","snr","Single OLS",48,0.96
+"rossler","snr","Single OLS",49,0.98
+"rossler","snr","Single OLS",50,0.98
+"rossler","snr","Single OLS",51,0.98
+"rossler","snr","Single OLS",52,0.97
+"rossler","snr","Single OLS",53,0.99
+"rossler","snr","Single OLS",54,0.99
+"rossler","snr","Single OLS",55,0.99
+"rossler","snr","Single OLS",56,0.99
+"rossler","snr","Single OLS",57,0.98
+"rossler","snr","Single OLS",58,0.98
+"rossler","snr","Single OLS",59,0.99
+"rossler","snr","Single OLS",60,0.98
+"rossler","snr","Single OLS",61,0.99
+"rossler","snr","Single OLS",Inf,0.15
+"rossler","snr","Single Ridge",1,0
+"rossler","snr","Single Ridge",2,0
+"rossler","snr","Single Ridge",3,0
+"rossler","snr","Single Ridge",4,0
+"rossler","snr","Single Ridge",5,0
+"rossler","snr","Single Ridge",6,0
+"rossler","snr","Single Ridge",7,0
+"rossler","snr","Single Ridge",8,0
+"rossler","snr","Single Ridge",9,0
+"rossler","snr","Single Ridge",10,0
+"rossler","snr","Single Ridge",11,0
+"rossler","snr","Single Ridge",12,0
+"rossler","snr","Single Ridge",13,0
+"rossler","snr","Single Ridge",14,0
+"rossler","snr","Single Ridge",15,0
+"rossler","snr","Single Ridge",16,0.01
+"rossler","snr","Single Ridge",17,0.03
+"rossler","snr","Single Ridge",18,0.1
+"rossler","snr","Single Ridge",19,0.15
+"rossler","snr","Single Ridge",20,0.28
+"rossler","snr","Single Ridge",21,0.33
+"rossler","snr","Single Ridge",22,0.37
+"rossler","snr","Single Ridge",23,0.46
+"rossler","snr","Single Ridge",24,0.53
+"rossler","snr","Single Ridge",25,0.52
+"rossler","snr","Single Ridge",26,0.57
+"rossler","snr","Single Ridge",27,0.66
+"rossler","snr","Single Ridge",28,0.69
+"rossler","snr","Single Ridge",29,0.75
+"rossler","snr","Single Ridge",30,0.78
+"rossler","snr","Single Ridge",31,0.84
+"rossler","snr","Single Ridge",32,0.9
+"rossler","snr","Single Ridge",33,0.92
+"rossler","snr","Single Ridge",34,0.92
+"rossler","snr","Single Ridge",35,0.92
+"rossler","snr","Single Ridge",36,0.92
+"rossler","snr","Single Ridge",37,0.9
+"rossler","snr","Single Ridge",38,0.92
+"rossler","snr","Single Ridge",39,0.92
+"rossler","snr","Single Ridge",40,0.93
+"rossler","snr","Single Ridge",41,0.94
+"rossler","snr","Single Ridge",42,0.93
+"rossler","snr","Single Ridge",43,0.94
+"rossler","snr","Single Ridge",44,0.94
+"rossler","snr","Single Ridge",45,0.95
+"rossler","snr","Single Ridge",46,0.95
+"rossler","snr","Single Ridge",47,0.95
+"rossler","snr","Single Ridge",48,0.95
+"rossler","snr","Single Ridge",49,0.96
+"rossler","snr","Single Ridge",50,0.96
+"rossler","snr","Single Ridge",51,0.96
+"rossler","snr","Single Ridge",52,0.96
+"rossler","snr","Single Ridge",53,0.96
+"rossler","snr","Single Ridge",54,0.96
+"rossler","snr","Single Ridge",55,0.96
+"rossler","snr","Single Ridge",56,0.96
+"rossler","snr","Single Ridge",57,0.96
+"rossler","snr","Single Ridge",58,0.96
+"rossler","snr","Single Ridge",59,0.95
+"rossler","snr","Single Ridge",60,0.95
+"rossler","snr","Single Ridge",61,0.95
+"rossler","snr","Single Ridge",Inf,0.19
+"thomas","n","Ridge-OLS (baseline)",2,0
+"thomas","n","Ridge-OLS (baseline)",2.1,0
+"thomas","n","Ridge-OLS (baseline)",2.2,0
+"thomas","n","Ridge-OLS (baseline)",2.3,0
+"thomas","n","Ridge-OLS (baseline)",2.4,0
+"thomas","n","Ridge-OLS (baseline)",2.5,0.01
+"thomas","n","Ridge-OLS (baseline)",2.6,0.05
+"thomas","n","Ridge-OLS (baseline)",2.7,0.04
+"thomas","n","Ridge-OLS (baseline)",2.8,0.12
+"thomas","n","Ridge-OLS (baseline)",2.9,0.17
+"thomas","n","Ridge-OLS (baseline)",3,0.5
+"thomas","n","Ridge-OLS (baseline)",3.1,0.72
+"thomas","n","Ridge-OLS (baseline)",3.2,0.81
+"thomas","n","Ridge-OLS (baseline)",3.3,0.9
+"thomas","n","Ridge-OLS (baseline)",3.4,0.98
+"thomas","n","Ridge-OLS (baseline)",3.5,0.97
+"thomas","n","Ridge-OLS (baseline)",3.6,1
+"thomas","n","Ridge-OLS (baseline)",3.7,1
+"thomas","n","Ridge-OLS (baseline)",3.8,1
+"thomas","n","Ridge-OLS (baseline)",3.9,1
+"thomas","n","Ridge-OLS (baseline)",4,1
+"thomas","n","Ridge-OLS (baseline)",4.1,1
+"thomas","n","Ridge-OLS (baseline)",4.2,1
+"thomas","n","Ridge-OLS (baseline)",4.3,1
+"thomas","n","Ridge-OLS (baseline)",4.4,1
+"thomas","n","Ridge-OLS (baseline)",4.5,1
+"thomas","n","Ridge-OLS (baseline)",4.6,1
+"thomas","n","Ridge-OLS (baseline)",4.7,1
+"thomas","n","Ridge-OLS (baseline)",4.8,1
+"thomas","n","Ridge-OLS (baseline)",4.9,1
+"thomas","n","Ridge-OLS (baseline)",5,1
+"thomas","n","OLS-Ridge",2,0
+"thomas","n","OLS-Ridge",2.1,0
+"thomas","n","OLS-Ridge",2.2,0
+"thomas","n","OLS-Ridge",2.3,0
+"thomas","n","OLS-Ridge",2.4,0
+"thomas","n","OLS-Ridge",2.5,0
+"thomas","n","OLS-Ridge",2.6,0
+"thomas","n","OLS-Ridge",2.7,0
+"thomas","n","OLS-Ridge",2.8,0
+"thomas","n","OLS-Ridge",2.9,0.02
+"thomas","n","OLS-Ridge",3,0.24
+"thomas","n","OLS-Ridge",3.1,0.27
+"thomas","n","OLS-Ridge",3.2,0.49
+"thomas","n","OLS-Ridge",3.3,0.7
+"thomas","n","OLS-Ridge",3.4,0.93
+"thomas","n","OLS-Ridge",3.5,0.98
+"thomas","n","OLS-Ridge",3.6,0.99
+"thomas","n","OLS-Ridge",3.7,1
+"thomas","n","OLS-Ridge",3.8,1
+"thomas","n","OLS-Ridge",3.9,1
+"thomas","n","OLS-Ridge",4,1
+"thomas","n","OLS-Ridge",4.1,1
+"thomas","n","OLS-Ridge",4.2,1
+"thomas","n","OLS-Ridge",4.3,1
+"thomas","n","OLS-Ridge",4.4,1
+"thomas","n","OLS-Ridge",4.5,1
+"thomas","n","OLS-Ridge",4.6,1
+"thomas","n","OLS-Ridge",4.7,1
+"thomas","n","OLS-Ridge",4.8,1
+"thomas","n","OLS-Ridge",4.9,1
+"thomas","n","OLS-Ridge",5,1
+"thomas","n","OLS-OLS",2,0
+"thomas","n","OLS-OLS",2.1,0
+"thomas","n","OLS-OLS",2.2,0
+"thomas","n","OLS-OLS",2.3,0
+"thomas","n","OLS-OLS",2.4,0
+"thomas","n","OLS-OLS",2.5,0
+"thomas","n","OLS-OLS",2.6,0.05
+"thomas","n","OLS-OLS",2.7,0.05
+"thomas","n","OLS-OLS",2.8,0.06
+"thomas","n","OLS-OLS",2.9,0.14
+"thomas","n","OLS-OLS",3,0.22
+"thomas","n","OLS-OLS",3.1,0.37
+"thomas","n","OLS-OLS",3.2,0.51
+"thomas","n","OLS-OLS",3.3,0.7
+"thomas","n","OLS-OLS",3.4,0.85
+"thomas","n","OLS-OLS",3.5,0.96
+"thomas","n","OLS-OLS",3.6,0.98
+"thomas","n","OLS-OLS",3.7,0.98
+"thomas","n","OLS-OLS",3.8,0.99
+"thomas","n","OLS-OLS",3.9,0.99
+"thomas","n","OLS-OLS",4,1
+"thomas","n","OLS-OLS",4.1,0.99
+"thomas","n","OLS-OLS",4.2,0.99
+"thomas","n","OLS-OLS",4.3,1
+"thomas","n","OLS-OLS",4.4,1
+"thomas","n","OLS-OLS",4.5,1
+"thomas","n","OLS-OLS",4.6,1
+"thomas","n","OLS-OLS",4.7,1
+"thomas","n","OLS-OLS",4.8,1
+"thomas","n","OLS-OLS",4.9,1
+"thomas","n","OLS-OLS",5,1
+"thomas","n","Ridge-Ridge",2,0
+"thomas","n","Ridge-Ridge",2.1,0
+"thomas","n","Ridge-Ridge",2.2,0
+"thomas","n","Ridge-Ridge",2.3,0
+"thomas","n","Ridge-Ridge",2.4,0
+"thomas","n","Ridge-Ridge",2.5,0
+"thomas","n","Ridge-Ridge",2.6,0.01
+"thomas","n","Ridge-Ridge",2.7,0.01
+"thomas","n","Ridge-Ridge",2.8,0.02
+"thomas","n","Ridge-Ridge",2.9,0.21
+"thomas","n","Ridge-Ridge",3,0.25
+"thomas","n","Ridge-Ridge",3.1,0.44
+"thomas","n","Ridge-Ridge",3.2,0.53
+"thomas","n","Ridge-Ridge",3.3,0.8
+"thomas","n","Ridge-Ridge",3.4,0.99
+"thomas","n","Ridge-Ridge",3.5,0.99
+"thomas","n","Ridge-Ridge",3.6,1
+"thomas","n","Ridge-Ridge",3.7,1
+"thomas","n","Ridge-Ridge",3.8,1
+"thomas","n","Ridge-Ridge",3.9,1
+"thomas","n","Ridge-Ridge",4,1
+"thomas","n","Ridge-Ridge",4.1,1
+"thomas","n","Ridge-Ridge",4.2,1
+"thomas","n","Ridge-Ridge",4.3,1
+"thomas","n","Ridge-Ridge",4.4,1
+"thomas","n","Ridge-Ridge",4.5,1
+"thomas","n","Ridge-Ridge",4.6,1
+"thomas","n","Ridge-Ridge",4.7,1
+"thomas","n","Ridge-Ridge",4.8,1
+"thomas","n","Ridge-Ridge",4.9,1
+"thomas","n","Ridge-Ridge",5,1
+"thomas","n","Single OLS",2,0
+"thomas","n","Single OLS",2.1,0
+"thomas","n","Single OLS",2.2,0
+"thomas","n","Single OLS",2.3,0
+"thomas","n","Single OLS",2.4,0
+"thomas","n","Single OLS",2.5,0
+"thomas","n","Single OLS",2.6,0
+"thomas","n","Single OLS",2.7,0
+"thomas","n","Single OLS",2.8,0
+"thomas","n","Single OLS",2.9,0
+"thomas","n","Single OLS",3,0.02
+"thomas","n","Single OLS",3.1,0.03
+"thomas","n","Single OLS",3.2,0.12
+"thomas","n","Single OLS",3.3,0.16
+"thomas","n","Single OLS",3.4,0.37
+"thomas","n","Single OLS",3.5,0.57
+"thomas","n","Single OLS",3.6,0.69
+"thomas","n","Single OLS",3.7,0.75
+"thomas","n","Single OLS",3.8,0.85
+"thomas","n","Single OLS",3.9,0.91
+"thomas","n","Single OLS",4,0.95
+"thomas","n","Single OLS",4.1,0.93
+"thomas","n","Single OLS",4.2,0.91
+"thomas","n","Single OLS",4.3,0.96
+"thomas","n","Single OLS",4.4,0.9
+"thomas","n","Single OLS",4.5,0.96
+"thomas","n","Single OLS",4.6,0.98
+"thomas","n","Single OLS",4.7,0.98
+"thomas","n","Single OLS",4.8,0.95
+"thomas","n","Single OLS",4.9,0.97
+"thomas","n","Single OLS",5,0.97
+"thomas","n","Single Ridge",2,0
+"thomas","n","Single Ridge",2.1,0
+"thomas","n","Single Ridge",2.2,0
+"thomas","n","Single Ridge",2.3,0
+"thomas","n","Single Ridge",2.4,0
+"thomas","n","Single Ridge",2.5,0
+"thomas","n","Single Ridge",2.6,0
+"thomas","n","Single Ridge",2.7,0
+"thomas","n","Single Ridge",2.8,0
+"thomas","n","Single Ridge",2.9,0.01
+"thomas","n","Single Ridge",3,0.06
+"thomas","n","Single Ridge",3.1,0.18
+"thomas","n","Single Ridge",3.2,0.35
+"thomas","n","Single Ridge",3.3,0.45
+"thomas","n","Single Ridge",3.4,0.77
+"thomas","n","Single Ridge",3.5,0.95
+"thomas","n","Single Ridge",3.6,0.99
+"thomas","n","Single Ridge",3.7,1
+"thomas","n","Single Ridge",3.8,1
+"thomas","n","Single Ridge",3.9,1
+"thomas","n","Single Ridge",4,1
+"thomas","n","Single Ridge",4.1,1
+"thomas","n","Single Ridge",4.2,1
+"thomas","n","Single Ridge",4.3,1
+"thomas","n","Single Ridge",4.4,1
+"thomas","n","Single Ridge",4.5,1
+"thomas","n","Single Ridge",4.6,1
+"thomas","n","Single Ridge",4.7,1
+"thomas","n","Single Ridge",4.8,1
+"thomas","n","Single Ridge",4.9,1
+"thomas","n","Single Ridge",5,1
+"thomas","snr","Ridge-OLS (baseline)",1,0
+"thomas","snr","Ridge-OLS (baseline)",2,0
+"thomas","snr","Ridge-OLS (baseline)",3,0
+"thomas","snr","Ridge-OLS (baseline)",4,0
+"thomas","snr","Ridge-OLS (baseline)",5,0
+"thomas","snr","Ridge-OLS (baseline)",6,0
+"thomas","snr","Ridge-OLS (baseline)",7,0
+"thomas","snr","Ridge-OLS (baseline)",8,0
+"thomas","snr","Ridge-OLS (baseline)",9,0
+"thomas","snr","Ridge-OLS (baseline)",10,0.03
+"thomas","snr","Ridge-OLS (baseline)",11,0.08
+"thomas","snr","Ridge-OLS (baseline)",12,0.24
+"thomas","snr","Ridge-OLS (baseline)",13,0.4
+"thomas","snr","Ridge-OLS (baseline)",14,0.58
+"thomas","snr","Ridge-OLS (baseline)",15,0.77
+"thomas","snr","Ridge-OLS (baseline)",16,0.82
+"thomas","snr","Ridge-OLS (baseline)",17,0.89
+"thomas","snr","Ridge-OLS (baseline)",18,0.9
+"thomas","snr","Ridge-OLS (baseline)",19,0.9
+"thomas","snr","Ridge-OLS (baseline)",20,0.86
+"thomas","snr","Ridge-OLS (baseline)",21,0.87
+"thomas","snr","Ridge-OLS (baseline)",22,0.87
+"thomas","snr","Ridge-OLS (baseline)",23,0.88
+"thomas","snr","Ridge-OLS (baseline)",24,0.88
+"thomas","snr","Ridge-OLS (baseline)",25,0.88
+"thomas","snr","Ridge-OLS (baseline)",26,0.9
+"thomas","snr","Ridge-OLS (baseline)",27,0.89
+"thomas","snr","Ridge-OLS (baseline)",28,0.89
+"thomas","snr","Ridge-OLS (baseline)",29,0.88
+"thomas","snr","Ridge-OLS (baseline)",30,0.91
+"thomas","snr","Ridge-OLS (baseline)",31,0.94
+"thomas","snr","Ridge-OLS (baseline)",32,0.96
+"thomas","snr","Ridge-OLS (baseline)",33,0.95
+"thomas","snr","Ridge-OLS (baseline)",34,0.95
+"thomas","snr","Ridge-OLS (baseline)",35,0.96
+"thomas","snr","Ridge-OLS (baseline)",36,0.97
+"thomas","snr","Ridge-OLS (baseline)",37,0.99
+"thomas","snr","Ridge-OLS (baseline)",38,1
+"thomas","snr","Ridge-OLS (baseline)",39,0.99
+"thomas","snr","Ridge-OLS (baseline)",40,0.99
+"thomas","snr","Ridge-OLS (baseline)",41,1
+"thomas","snr","Ridge-OLS (baseline)",42,1
+"thomas","snr","Ridge-OLS (baseline)",43,1
+"thomas","snr","Ridge-OLS (baseline)",44,1
+"thomas","snr","Ridge-OLS (baseline)",45,1
+"thomas","snr","Ridge-OLS (baseline)",46,1
+"thomas","snr","Ridge-OLS (baseline)",47,1
+"thomas","snr","Ridge-OLS (baseline)",48,1
+"thomas","snr","Ridge-OLS (baseline)",49,1
+"thomas","snr","Ridge-OLS (baseline)",50,1
+"thomas","snr","Ridge-OLS (baseline)",51,1
+"thomas","snr","Ridge-OLS (baseline)",52,1
+"thomas","snr","Ridge-OLS (baseline)",53,1
+"thomas","snr","Ridge-OLS (baseline)",54,1
+"thomas","snr","Ridge-OLS (baseline)",55,1
+"thomas","snr","Ridge-OLS (baseline)",56,1
+"thomas","snr","Ridge-OLS (baseline)",57,1
+"thomas","snr","Ridge-OLS (baseline)",58,1
+"thomas","snr","Ridge-OLS (baseline)",59,1
+"thomas","snr","Ridge-OLS (baseline)",60,1
+"thomas","snr","Ridge-OLS (baseline)",61,1
+"thomas","snr","Ridge-OLS (baseline)",Inf,1
+"thomas","snr","OLS-Ridge",1,0
+"thomas","snr","OLS-Ridge",2,0
+"thomas","snr","OLS-Ridge",3,0
+"thomas","snr","OLS-Ridge",4,0
+"thomas","snr","OLS-Ridge",5,0
+"thomas","snr","OLS-Ridge",6,0
+"thomas","snr","OLS-Ridge",7,0
+"thomas","snr","OLS-Ridge",8,0
+"thomas","snr","OLS-Ridge",9,0
+"thomas","snr","OLS-Ridge",10,0
+"thomas","snr","OLS-Ridge",11,0.01
+"thomas","snr","OLS-Ridge",12,0.01
+"thomas","snr","OLS-Ridge",13,0.07
+"thomas","snr","OLS-Ridge",14,0.15
+"thomas","snr","OLS-Ridge",15,0.23
+"thomas","snr","OLS-Ridge",16,0.4
+"thomas","snr","OLS-Ridge",17,0.5
+"thomas","snr","OLS-Ridge",18,0.59
+"thomas","snr","OLS-Ridge",19,0.67
+"thomas","snr","OLS-Ridge",20,0.79
+"thomas","snr","OLS-Ridge",21,0.85
+"thomas","snr","OLS-Ridge",22,0.85
+"thomas","snr","OLS-Ridge",23,0.91
+"thomas","snr","OLS-Ridge",24,0.92
+"thomas","snr","OLS-Ridge",25,0.95
+"thomas","snr","OLS-Ridge",26,0.94
+"thomas","snr","OLS-Ridge",27,0.97
+"thomas","snr","OLS-Ridge",28,0.96
+"thomas","snr","OLS-Ridge",29,0.96
+"thomas","snr","OLS-Ridge",30,0.98
+"thomas","snr","OLS-Ridge",31,0.99
+"thomas","snr","OLS-Ridge",32,1
+"thomas","snr","OLS-Ridge",33,1
+"thomas","snr","OLS-Ridge",34,1
+"thomas","snr","OLS-Ridge",35,1
+"thomas","snr","OLS-Ridge",36,1
+"thomas","snr","OLS-Ridge",37,1
+"thomas","snr","OLS-Ridge",38,1
+"thomas","snr","OLS-Ridge",39,1
+"thomas","snr","OLS-Ridge",40,1
+"thomas","snr","OLS-Ridge",41,1
+"thomas","snr","OLS-Ridge",42,1
+"thomas","snr","OLS-Ridge",43,1
+"thomas","snr","OLS-Ridge",44,1
+"thomas","snr","OLS-Ridge",45,1
+"thomas","snr","OLS-Ridge",46,1
+"thomas","snr","OLS-Ridge",47,1
+"thomas","snr","OLS-Ridge",48,1
+"thomas","snr","OLS-Ridge",49,1
+"thomas","snr","OLS-Ridge",50,1
+"thomas","snr","OLS-Ridge",51,1
+"thomas","snr","OLS-Ridge",52,1
+"thomas","snr","OLS-Ridge",53,1
+"thomas","snr","OLS-Ridge",54,1
+"thomas","snr","OLS-Ridge",55,1
+"thomas","snr","OLS-Ridge",56,1
+"thomas","snr","OLS-Ridge",57,1
+"thomas","snr","OLS-Ridge",58,1
+"thomas","snr","OLS-Ridge",59,1
+"thomas","snr","OLS-Ridge",60,1
+"thomas","snr","OLS-Ridge",61,1
+"thomas","snr","OLS-Ridge",Inf,1
+"thomas","snr","OLS-OLS",1,0
+"thomas","snr","OLS-OLS",2,0
+"thomas","snr","OLS-OLS",3,0
+"thomas","snr","OLS-OLS",4,0
+"thomas","snr","OLS-OLS",5,0
+"thomas","snr","OLS-OLS",6,0
+"thomas","snr","OLS-OLS",7,0
+"thomas","snr","OLS-OLS",8,0
+"thomas","snr","OLS-OLS",9,0
+"thomas","snr","OLS-OLS",10,0.02
+"thomas","snr","OLS-OLS",11,0.09
+"thomas","snr","OLS-OLS",12,0.17
+"thomas","snr","OLS-OLS",13,0.28
+"thomas","snr","OLS-OLS",14,0.4
+"thomas","snr","OLS-OLS",15,0.49
+"thomas","snr","OLS-OLS",16,0.61
+"thomas","snr","OLS-OLS",17,0.69
+"thomas","snr","OLS-OLS",18,0.71
+"thomas","snr","OLS-OLS",19,0.78
+"thomas","snr","OLS-OLS",20,0.78
+"thomas","snr","OLS-OLS",21,0.74
+"thomas","snr","OLS-OLS",22,0.79
+"thomas","snr","OLS-OLS",23,0.8
+"thomas","snr","OLS-OLS",24,0.8
+"thomas","snr","OLS-OLS",25,0.81
+"thomas","snr","OLS-OLS",26,0.8
+"thomas","snr","OLS-OLS",27,0.81
+"thomas","snr","OLS-OLS",28,0.79
+"thomas","snr","OLS-OLS",29,0.8
+"thomas","snr","OLS-OLS",30,0.83
+"thomas","snr","OLS-OLS",31,0.85
+"thomas","snr","OLS-OLS",32,0.88
+"thomas","snr","OLS-OLS",33,0.9
+"thomas","snr","OLS-OLS",34,0.92
+"thomas","snr","OLS-OLS",35,0.92
+"thomas","snr","OLS-OLS",36,0.96
+"thomas","snr","OLS-OLS",37,0.94
+"thomas","snr","OLS-OLS",38,0.97
+"thomas","snr","OLS-OLS",39,0.93
+"thomas","snr","OLS-OLS",40,0.93
+"thomas","snr","OLS-OLS",41,0.97
+"thomas","snr","OLS-OLS",42,0.98
+"thomas","snr","OLS-OLS",43,0.96
+"thomas","snr","OLS-OLS",44,0.98
+"thomas","snr","OLS-OLS",45,0.99
+"thomas","snr","OLS-OLS",46,1
+"thomas","snr","OLS-OLS",47,0.99
+"thomas","snr","OLS-OLS",48,0.99
+"thomas","snr","OLS-OLS",49,0.96
+"thomas","snr","OLS-OLS",50,0.99
+"thomas","snr","OLS-OLS",51,0.96
+"thomas","snr","OLS-OLS",52,0.97
+"thomas","snr","OLS-OLS",53,0.99
+"thomas","snr","OLS-OLS",54,1
+"thomas","snr","OLS-OLS",55,1
+"thomas","snr","OLS-OLS",56,0.99
+"thomas","snr","OLS-OLS",57,1
+"thomas","snr","OLS-OLS",58,0.99
+"thomas","snr","OLS-OLS",59,0.98
+"thomas","snr","OLS-OLS",60,0.98
+"thomas","snr","OLS-OLS",61,0.97
+"thomas","snr","OLS-OLS",Inf,1
+"thomas","snr","Ridge-Ridge",1,0
+"thomas","snr","Ridge-Ridge",2,0
+"thomas","snr","Ridge-Ridge",3,0
+"thomas","snr","Ridge-Ridge",4,0
+"thomas","snr","Ridge-Ridge",5,0
+"thomas","snr","Ridge-Ridge",6,0
+"thomas","snr","Ridge-Ridge",7,0
+"thomas","snr","Ridge-Ridge",8,0
+"thomas","snr","Ridge-Ridge",9,0
+"thomas","snr","Ridge-Ridge",10,0
+"thomas","snr","Ridge-Ridge",11,0
+"thomas","snr","Ridge-Ridge",12,0.05
+"thomas","snr","Ridge-Ridge",13,0.1
+"thomas","snr","Ridge-Ridge",14,0.19
+"thomas","snr","Ridge-Ridge",15,0.33
+"thomas","snr","Ridge-Ridge",16,0.51
+"thomas","snr","Ridge-Ridge",17,0.65
+"thomas","snr","Ridge-Ridge",18,0.72
+"thomas","snr","Ridge-Ridge",19,0.78
+"thomas","snr","Ridge-Ridge",20,0.79
+"thomas","snr","Ridge-Ridge",21,0.86
+"thomas","snr","Ridge-Ridge",22,0.88
+"thomas","snr","Ridge-Ridge",23,0.91
+"thomas","snr","Ridge-Ridge",24,0.94
+"thomas","snr","Ridge-Ridge",25,0.96
+"thomas","snr","Ridge-Ridge",26,0.98
+"thomas","snr","Ridge-Ridge",27,0.99
+"thomas","snr","Ridge-Ridge",28,0.99
+"thomas","snr","Ridge-Ridge",29,1
+"thomas","snr","Ridge-Ridge",30,1
+"thomas","snr","Ridge-Ridge",31,1
+"thomas","snr","Ridge-Ridge",32,1
+"thomas","snr","Ridge-Ridge",33,1
+"thomas","snr","Ridge-Ridge",34,1
+"thomas","snr","Ridge-Ridge",35,1
+"thomas","snr","Ridge-Ridge",36,1
+"thomas","snr","Ridge-Ridge",37,1
+"thomas","snr","Ridge-Ridge",38,1
+"thomas","snr","Ridge-Ridge",39,1
+"thomas","snr","Ridge-Ridge",40,1
+"thomas","snr","Ridge-Ridge",41,1
+"thomas","snr","Ridge-Ridge",42,1
+"thomas","snr","Ridge-Ridge",43,1
+"thomas","snr","Ridge-Ridge",44,1
+"thomas","snr","Ridge-Ridge",45,1
+"thomas","snr","Ridge-Ridge",46,1
+"thomas","snr","Ridge-Ridge",47,1
+"thomas","snr","Ridge-Ridge",48,1
+"thomas","snr","Ridge-Ridge",49,1
+"thomas","snr","Ridge-Ridge",50,1
+"thomas","snr","Ridge-Ridge",51,1
+"thomas","snr","Ridge-Ridge",52,1
+"thomas","snr","Ridge-Ridge",53,1
+"thomas","snr","Ridge-Ridge",54,1
+"thomas","snr","Ridge-Ridge",55,1
+"thomas","snr","Ridge-Ridge",56,1
+"thomas","snr","Ridge-Ridge",57,1
+"thomas","snr","Ridge-Ridge",58,1
+"thomas","snr","Ridge-Ridge",59,1
+"thomas","snr","Ridge-Ridge",60,1
+"thomas","snr","Ridge-Ridge",61,1
+"thomas","snr","Ridge-Ridge",Inf,1
+"thomas","snr","Single OLS",1,0
+"thomas","snr","Single OLS",2,0
+"thomas","snr","Single OLS",3,0
+"thomas","snr","Single OLS",4,0
+"thomas","snr","Single OLS",5,0
+"thomas","snr","Single OLS",6,0
+"thomas","snr","Single OLS",7,0
+"thomas","snr","Single OLS",8,0
+"thomas","snr","Single OLS",9,0
+"thomas","snr","Single OLS",10,0
+"thomas","snr","Single OLS",11,0
+"thomas","snr","Single OLS",12,0
+"thomas","snr","Single OLS",13,0.02
+"thomas","snr","Single OLS",14,0.01
+"thomas","snr","Single OLS",15,0.03
+"thomas","snr","Single OLS",16,0.07
+"thomas","snr","Single OLS",17,0.13
+"thomas","snr","Single OLS",18,0.21
+"thomas","snr","Single OLS",19,0.21
+"thomas","snr","Single OLS",20,0.23
+"thomas","snr","Single OLS",21,0.24
+"thomas","snr","Single OLS",22,0.35
+"thomas","snr","Single OLS",23,0.38
+"thomas","snr","Single OLS",24,0.42
+"thomas","snr","Single OLS",25,0.41
+"thomas","snr","Single OLS",26,0.4
+"thomas","snr","Single OLS",27,0.41
+"thomas","snr","Single OLS",28,0.44
+"thomas","snr","Single OLS",29,0.48
+"thomas","snr","Single OLS",30,0.45
+"thomas","snr","Single OLS",31,0.51
+"thomas","snr","Single OLS",32,0.47
+"thomas","snr","Single OLS",33,0.51
+"thomas","snr","Single OLS",34,0.5
+"thomas","snr","Single OLS",35,0.51
+"thomas","snr","Single OLS",36,0.54
+"thomas","snr","Single OLS",37,0.61
+"thomas","snr","Single OLS",38,0.64
+"thomas","snr","Single OLS",39,0.66
+"thomas","snr","Single OLS",40,0.67
+"thomas","snr","Single OLS",41,0.65
+"thomas","snr","Single OLS",42,0.69
+"thomas","snr","Single OLS",43,0.72
+"thomas","snr","Single OLS",44,0.75
+"thomas","snr","Single OLS",45,0.78
+"thomas","snr","Single OLS",46,0.79
+"thomas","snr","Single OLS",47,0.8
+"thomas","snr","Single OLS",48,0.84
+"thomas","snr","Single OLS",49,0.85
+"thomas","snr","Single OLS",50,0.85
+"thomas","snr","Single OLS",51,0.84
+"thomas","snr","Single OLS",52,0.84
+"thomas","snr","Single OLS",53,0.82
+"thomas","snr","Single OLS",54,0.87
+"thomas","snr","Single OLS",55,0.86
+"thomas","snr","Single OLS",56,0.9
+"thomas","snr","Single OLS",57,0.91
+"thomas","snr","Single OLS",58,0.86
+"thomas","snr","Single OLS",59,0.87
+"thomas","snr","Single OLS",60,0.86
+"thomas","snr","Single OLS",61,0.82
+"thomas","snr","Single OLS",Inf,1
+"thomas","snr","Single Ridge",1,0
+"thomas","snr","Single Ridge",2,0
+"thomas","snr","Single Ridge",3,0
+"thomas","snr","Single Ridge",4,0
+"thomas","snr","Single Ridge",5,0
+"thomas","snr","Single Ridge",6,0
+"thomas","snr","Single Ridge",7,0
+"thomas","snr","Single Ridge",8,0
+"thomas","snr","Single Ridge",9,0
+"thomas","snr","Single Ridge",10,0
+"thomas","snr","Single Ridge",11,0
+"thomas","snr","Single Ridge",12,0
+"thomas","snr","Single Ridge",13,0
+"thomas","snr","Single Ridge",14,0
+"thomas","snr","Single Ridge",15,0
+"thomas","snr","Single Ridge",16,0
+"thomas","snr","Single Ridge",17,0.02
+"thomas","snr","Single Ridge",18,0.05
+"thomas","snr","Single Ridge",19,0.06
+"thomas","snr","Single Ridge",20,0.15
+"thomas","snr","Single Ridge",21,0.24
+"thomas","snr","Single Ridge",22,0.37
+"thomas","snr","Single Ridge",23,0.61
+"thomas","snr","Single Ridge",24,0.69
+"thomas","snr","Single Ridge",25,0.81
+"thomas","snr","Single Ridge",26,0.83
+"thomas","snr","Single Ridge",27,0.91
+"thomas","snr","Single Ridge",28,0.95
+"thomas","snr","Single Ridge",29,0.97
+"thomas","snr","Single Ridge",30,0.98
+"thomas","snr","Single Ridge",31,0.99
+"thomas","snr","Single Ridge",32,0.99
+"thomas","snr","Single Ridge",33,0.99
+"thomas","snr","Single Ridge",34,1
+"thomas","snr","Single Ridge",35,1
+"thomas","snr","Single Ridge",36,1
+"thomas","snr","Single Ridge",37,1
+"thomas","snr","Single Ridge",38,1
+"thomas","snr","Single Ridge",39,1
+"thomas","snr","Single Ridge",40,1
+"thomas","snr","Single Ridge",41,1
+"thomas","snr","Single Ridge",42,1
+"thomas","snr","Single Ridge",43,1
+"thomas","snr","Single Ridge",44,1
+"thomas","snr","Single Ridge",45,1
+"thomas","snr","Single Ridge",46,1
+"thomas","snr","Single Ridge",47,1
+"thomas","snr","Single Ridge",48,1
+"thomas","snr","Single Ridge",49,1
+"thomas","snr","Single Ridge",50,1
+"thomas","snr","Single Ridge",51,1
+"thomas","snr","Single Ridge",52,1
+"thomas","snr","Single Ridge",53,1
+"thomas","snr","Single Ridge",54,1
+"thomas","snr","Single Ridge",55,1
+"thomas","snr","Single Ridge",56,1
+"thomas","snr","Single Ridge",57,1
+"thomas","snr","Single Ridge",58,1
+"thomas","snr","Single Ridge",59,1
+"thomas","snr","Single Ridge",60,1
+"thomas","snr","Single Ridge",61,1
+"thomas","snr","Single Ridge",Inf,1
