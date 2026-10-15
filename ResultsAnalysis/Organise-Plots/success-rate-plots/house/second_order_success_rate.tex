@@ -1,0 +1,39 @@
+\documentclass[border={1mm 1mm 1mm 1mm}]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[helvet]{sfmath}
+\usetikzlibrary{calc,positioning}
+\newcommand\TagFont{\fontsize{8}{9}\selectfont\bfseries}
+\newcommand\LabelFont{\fontsize{8}{9}\selectfont\bfseries}
+\newcommand\TextFont{\fontsize{7}{8}\selectfont}
+\tikzset{
+  img/.style={anchor=north west, inner sep=0pt, outer sep=0pt},
+  tag/.style={anchor=west, inner sep=0pt, font=\TagFont},
+  syslabel/.style={inner sep=0pt, font=\LabelFont},
+  eqnbox/.style={anchor=south, inner sep=2.5pt, fill=gray!5, draw=gray!55, rounded corners=1.2pt, font=\TextFont},
+  txt/.style={inner sep=0pt, font=\TextFont}
+}
+\begin{document}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \coordinate (hda) at (0, 0);
+  \node[tag, anchor=north west] (taga) at (hda) {a};
+  \node[syslabel, anchor=north west] at ($(taga.north east) + (2,0)$) {Duffing};
+  \node[tag, anchor=north west] at ($(hda) + (91.5,0)$) {b};
+  \node[img] (rowa) at ($(taga.south west) + (0,-0.5)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/duffing_success_rate_row.pdf}};
+  \coordinate (hdc) at ($(rowa.south -| 0,0) + (0,-2)$);
+  \node[tag, anchor=north west] (tagc) at (hdc) {c};
+  \node[syslabel, anchor=north west] at ($(tagc.north east) + (2,0)$) {Forced Duffing};
+  \node[tag, anchor=north west] at ($(hdc) + (91.5,0)$) {d};
+  \node[img] (rowc) at ($(tagc.south west) + (0,-0.5)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/forced-duffing_success_rate_row_notitle.pdf}};
+  \coordinate (hde) at ($(rowc.south -| 0,0) + (0,-2)$);
+  \node[tag, anchor=north west] (tage) at (hde) {e};
+  \node[syslabel, anchor=north west] at ($(tage.north east) + (2,0)$) {Van der Pol};
+  \node[tag, anchor=north west] at ($(hde) + (91.5,0)$) {f};
+  \node[img] (rowe) at ($(tage.south west) + (0,-0.5)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/vdp_success_rate_row_notitle.pdf}};
+  \node[img, anchor=north] at ($(rowe.south -| 91.5,0) + (0,-3)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/legend_methods.pdf}};
+\end{tikzpicture}
+\end{document}

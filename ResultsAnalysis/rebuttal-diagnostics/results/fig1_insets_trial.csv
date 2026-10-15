@@ -1,0 +1,2 @@
+"pool_row","noise_seed","n","snr","eq1_ok","eq2_ok","eq3_ok","eq3_final"
+1,20057,5000,57,TRUE,TRUE,TRUE,"(Intercept)|x3|x1^2|x2^2|x1^2x3|x2^2x3|x3^3|x1^3x3"

@@ -1,0 +1,466 @@
+"system","sweep","method","x","stored","source","success","diff"
+"lorenz","n","Bayesian-ARGOS",2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","n","Bayesian-ARGOS",2.1,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","n","Bayesian-ARGOS",2.2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","n","Bayesian-ARGOS",2.3,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","n","Bayesian-ARGOS",2.4,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","n","Bayesian-ARGOS",2.5,0.06,"rebuttal-ablation (Ridge-OLS baseline)",0.06,0
+"lorenz","n","Bayesian-ARGOS",2.6,0.12,"rebuttal-ablation (Ridge-OLS baseline)",0.12,0
+"lorenz","n","Bayesian-ARGOS",2.7,0.28,"rebuttal-ablation (Ridge-OLS baseline)",0.28,0
+"lorenz","n","Bayesian-ARGOS",2.8,0.5,"rebuttal-ablation (Ridge-OLS baseline)",0.5,0
+"lorenz","n","Bayesian-ARGOS",2.9,0.66,"rebuttal-ablation (Ridge-OLS baseline)",0.66,0
+"lorenz","n","Bayesian-ARGOS",3,0.87,"rebuttal-ablation (Ridge-OLS baseline)",0.87,0
+"lorenz","n","Bayesian-ARGOS",3.1,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"lorenz","n","Bayesian-ARGOS",3.2,0.92,"rebuttal-ablation (Ridge-OLS baseline)",0.92,0
+"lorenz","n","Bayesian-ARGOS",3.3,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"lorenz","n","Bayesian-ARGOS",3.4,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"lorenz","n","Bayesian-ARGOS",3.5,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"lorenz","n","Bayesian-ARGOS",3.6,0.94,"rebuttal-ablation (Ridge-OLS baseline)",0.94,0
+"lorenz","n","Bayesian-ARGOS",3.7,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"lorenz","n","Bayesian-ARGOS",3.8,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"lorenz","n","Bayesian-ARGOS",3.9,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"lorenz","n","Bayesian-ARGOS",4,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","n","Bayesian-ARGOS",4.1,0.98,"rebuttal-ablation (Ridge-OLS baseline)",0.98,0
+"lorenz","n","Bayesian-ARGOS",4.2,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","n","Bayesian-ARGOS",4.3,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"lorenz","n","Bayesian-ARGOS",4.4,0.98,"rebuttal-ablation (Ridge-OLS baseline)",0.98,0
+"lorenz","n","Bayesian-ARGOS",4.5,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"lorenz","n","Bayesian-ARGOS",4.6,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","n","Bayesian-ARGOS",4.7,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"lorenz","n","Bayesian-ARGOS",4.8,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","n","Bayesian-ARGOS",4.9,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","n","Bayesian-ARGOS",5,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",1,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",3,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",4,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",5,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",6,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",7,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",8,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",9,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",10,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"lorenz","snr","Bayesian-ARGOS",11,0.01,"rebuttal-ablation (Ridge-OLS baseline)",0.01,0
+"lorenz","snr","Bayesian-ARGOS",12,0.01,"rebuttal-ablation (Ridge-OLS baseline)",0.01,0
+"lorenz","snr","Bayesian-ARGOS",13,0.03,"rebuttal-ablation (Ridge-OLS baseline)",0.03,0
+"lorenz","snr","Bayesian-ARGOS",14,0.03,"rebuttal-ablation (Ridge-OLS baseline)",0.03,0
+"lorenz","snr","Bayesian-ARGOS",15,0.02,"rebuttal-ablation (Ridge-OLS baseline)",0.02,0
+"lorenz","snr","Bayesian-ARGOS",16,0.02,"rebuttal-ablation (Ridge-OLS baseline)",0.02,0
+"lorenz","snr","Bayesian-ARGOS",17,0.04,"rebuttal-ablation (Ridge-OLS baseline)",0.04,0
+"lorenz","snr","Bayesian-ARGOS",18,0.06,"rebuttal-ablation (Ridge-OLS baseline)",0.06,0
+"lorenz","snr","Bayesian-ARGOS",19,0.08,"rebuttal-ablation (Ridge-OLS baseline)",0.08,0
+"lorenz","snr","Bayesian-ARGOS",20,0.11,"rebuttal-ablation (Ridge-OLS baseline)",0.11,0
+"lorenz","snr","Bayesian-ARGOS",21,0.15,"rebuttal-ablation (Ridge-OLS baseline)",0.15,0
+"lorenz","snr","Bayesian-ARGOS",22,0.26,"rebuttal-ablation (Ridge-OLS baseline)",0.26,0
+"lorenz","snr","Bayesian-ARGOS",23,0.4,"rebuttal-ablation (Ridge-OLS baseline)",0.4,0
+"lorenz","snr","Bayesian-ARGOS",24,0.49,"rebuttal-ablation (Ridge-OLS baseline)",0.49,0
+"lorenz","snr","Bayesian-ARGOS",25,0.62,"rebuttal-ablation (Ridge-OLS baseline)",0.62,0
+"lorenz","snr","Bayesian-ARGOS",26,0.75,"rebuttal-ablation (Ridge-OLS baseline)",0.75,0
+"lorenz","snr","Bayesian-ARGOS",27,0.8,"rebuttal-ablation (Ridge-OLS baseline)",0.8,0
+"lorenz","snr","Bayesian-ARGOS",28,0.81,"rebuttal-ablation (Ridge-OLS baseline)",0.81,0
+"lorenz","snr","Bayesian-ARGOS",29,0.82,"rebuttal-ablation (Ridge-OLS baseline)",0.82,0
+"lorenz","snr","Bayesian-ARGOS",30,0.83,"rebuttal-ablation (Ridge-OLS baseline)",0.83,0
+"lorenz","snr","Bayesian-ARGOS",31,0.87,"rebuttal-ablation (Ridge-OLS baseline)",0.87,0
+"lorenz","snr","Bayesian-ARGOS",32,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"lorenz","snr","Bayesian-ARGOS",33,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"lorenz","snr","Bayesian-ARGOS",34,0.91,"rebuttal-ablation (Ridge-OLS baseline)",0.91,0
+"lorenz","snr","Bayesian-ARGOS",35,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"lorenz","snr","Bayesian-ARGOS",36,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"lorenz","snr","Bayesian-ARGOS",37,0.92,"rebuttal-ablation (Ridge-OLS baseline)",0.92,0
+"lorenz","snr","Bayesian-ARGOS",38,0.94,"rebuttal-ablation (Ridge-OLS baseline)",0.94,0
+"lorenz","snr","Bayesian-ARGOS",39,0.93,"rebuttal-ablation (Ridge-OLS baseline)",0.93,0
+"lorenz","snr","Bayesian-ARGOS",40,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"lorenz","snr","Bayesian-ARGOS",41,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"lorenz","snr","Bayesian-ARGOS",42,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"lorenz","snr","Bayesian-ARGOS",43,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"lorenz","snr","Bayesian-ARGOS",44,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"lorenz","snr","Bayesian-ARGOS",45,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"lorenz","snr","Bayesian-ARGOS",46,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"lorenz","snr","Bayesian-ARGOS",47,0.98,"rebuttal-ablation (Ridge-OLS baseline)",0.98,0
+"lorenz","snr","Bayesian-ARGOS",48,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"lorenz","snr","Bayesian-ARGOS",49,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"lorenz","snr","Bayesian-ARGOS",50,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"lorenz","snr","Bayesian-ARGOS",51,0.98,"rebuttal-ablation (Ridge-OLS baseline)",0.98,0
+"lorenz","snr","Bayesian-ARGOS",52,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"lorenz","snr","Bayesian-ARGOS",53,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"lorenz","snr","Bayesian-ARGOS",54,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",55,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",56,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",57,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",58,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",59,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"lorenz","snr","Bayesian-ARGOS",60,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"lorenz","snr","Bayesian-ARGOS",61,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"lorenz","snr","Bayesian-ARGOS",Inf,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"rossler","n","Bayesian-ARGOS",2,0.02,"rebuttal-ablation (Ridge-OLS baseline)",0.02,0
+"rossler","n","Bayesian-ARGOS",2.1,0.03,"rebuttal-ablation (Ridge-OLS baseline)",0.03,0
+"rossler","n","Bayesian-ARGOS",2.2,0.08,"rebuttal-ablation (Ridge-OLS baseline)",0.08,0
+"rossler","n","Bayesian-ARGOS",2.3,0.18,"rebuttal-ablation (Ridge-OLS baseline)",0.18,0
+"rossler","n","Bayesian-ARGOS",2.4,0.38,"rebuttal-ablation (Ridge-OLS baseline)",0.38,0
+"rossler","n","Bayesian-ARGOS",2.5,0.54,"rebuttal-ablation (Ridge-OLS baseline)",0.54,0
+"rossler","n","Bayesian-ARGOS",2.6,0.7,"rebuttal-ablation (Ridge-OLS baseline)",0.7,0
+"rossler","n","Bayesian-ARGOS",2.7,0.81,"rebuttal-ablation (Ridge-OLS baseline)",0.81,0
+"rossler","n","Bayesian-ARGOS",2.8,0.77,"rebuttal-ablation (Ridge-OLS baseline)",0.77,0
+"rossler","n","Bayesian-ARGOS",2.9,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"rossler","n","Bayesian-ARGOS",3,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"rossler","n","Bayesian-ARGOS",3.1,0.92,"rebuttal-ablation (Ridge-OLS baseline)",0.92,0
+"rossler","n","Bayesian-ARGOS",3.2,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"rossler","n","Bayesian-ARGOS",3.3,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","n","Bayesian-ARGOS",3.4,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","n","Bayesian-ARGOS",3.5,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",3.6,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",3.7,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",3.8,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",3.9,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.1,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.2,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.3,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.4,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.5,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.6,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.7,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.8,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",4.9,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","n","Bayesian-ARGOS",5,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",1,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",3,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",4,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",5,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",6,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",7,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",8,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",9,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",10,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",11,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",12,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",13,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",14,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",15,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",16,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"rossler","snr","Bayesian-ARGOS",17,0.03,"rebuttal-ablation (Ridge-OLS baseline)",0.03,0
+"rossler","snr","Bayesian-ARGOS",18,0.08,"rebuttal-ablation (Ridge-OLS baseline)",0.08,0
+"rossler","snr","Bayesian-ARGOS",19,0.16,"rebuttal-ablation (Ridge-OLS baseline)",0.16,0
+"rossler","snr","Bayesian-ARGOS",20,0.29,"rebuttal-ablation (Ridge-OLS baseline)",0.29,0
+"rossler","snr","Bayesian-ARGOS",21,0.45,"rebuttal-ablation (Ridge-OLS baseline)",0.45,0
+"rossler","snr","Bayesian-ARGOS",22,0.53,"rebuttal-ablation (Ridge-OLS baseline)",0.53,0
+"rossler","snr","Bayesian-ARGOS",23,0.6,"rebuttal-ablation (Ridge-OLS baseline)",0.6,0
+"rossler","snr","Bayesian-ARGOS",24,0.65,"rebuttal-ablation (Ridge-OLS baseline)",0.65,0
+"rossler","snr","Bayesian-ARGOS",25,0.74,"rebuttal-ablation (Ridge-OLS baseline)",0.74,0
+"rossler","snr","Bayesian-ARGOS",26,0.77,"rebuttal-ablation (Ridge-OLS baseline)",0.77,0
+"rossler","snr","Bayesian-ARGOS",27,0.82,"rebuttal-ablation (Ridge-OLS baseline)",0.82,0
+"rossler","snr","Bayesian-ARGOS",28,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"rossler","snr","Bayesian-ARGOS",29,0.93,"rebuttal-ablation (Ridge-OLS baseline)",0.93,0
+"rossler","snr","Bayesian-ARGOS",30,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"rossler","snr","Bayesian-ARGOS",31,0.98,"rebuttal-ablation (Ridge-OLS baseline)",0.98,0
+"rossler","snr","Bayesian-ARGOS",32,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",33,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",34,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",35,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",36,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",37,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",38,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",39,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",40,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",41,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",42,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",43,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",44,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",45,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",46,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"rossler","snr","Bayesian-ARGOS",47,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",48,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",49,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",50,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",51,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",52,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",53,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",54,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",55,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",56,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",57,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",58,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",59,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",60,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",61,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"rossler","snr","Bayesian-ARGOS",Inf,0.26,"rebuttal-ablation (Ridge-OLS baseline)",0.26,0
+"thomas","n","Bayesian-ARGOS",2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","n","Bayesian-ARGOS",2.1,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","n","Bayesian-ARGOS",2.2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","n","Bayesian-ARGOS",2.3,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","n","Bayesian-ARGOS",2.4,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","n","Bayesian-ARGOS",2.5,0.01,"rebuttal-ablation (Ridge-OLS baseline)",0.01,0
+"thomas","n","Bayesian-ARGOS",2.6,0.05,"rebuttal-ablation (Ridge-OLS baseline)",0.05,0
+"thomas","n","Bayesian-ARGOS",2.7,0.04,"rebuttal-ablation (Ridge-OLS baseline)",0.04,0
+"thomas","n","Bayesian-ARGOS",2.8,0.12,"rebuttal-ablation (Ridge-OLS baseline)",0.12,0
+"thomas","n","Bayesian-ARGOS",2.9,0.17,"rebuttal-ablation (Ridge-OLS baseline)",0.17,0
+"thomas","n","Bayesian-ARGOS",3,0.5,"rebuttal-ablation (Ridge-OLS baseline)",0.5,0
+"thomas","n","Bayesian-ARGOS",3.1,0.72,"rebuttal-ablation (Ridge-OLS baseline)",0.72,0
+"thomas","n","Bayesian-ARGOS",3.2,0.81,"rebuttal-ablation (Ridge-OLS baseline)",0.81,0
+"thomas","n","Bayesian-ARGOS",3.3,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"thomas","n","Bayesian-ARGOS",3.4,0.98,"rebuttal-ablation (Ridge-OLS baseline)",0.98,0
+"thomas","n","Bayesian-ARGOS",3.5,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"thomas","n","Bayesian-ARGOS",3.6,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",3.7,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",3.8,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",3.9,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.1,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.2,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.3,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.4,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.5,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.6,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.7,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.8,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",4.9,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","n","Bayesian-ARGOS",5,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",1,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",2,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",3,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",4,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",5,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",6,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",7,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",8,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",9,0,"rebuttal-ablation (Ridge-OLS baseline)",0,0
+"thomas","snr","Bayesian-ARGOS",10,0.03,"rebuttal-ablation (Ridge-OLS baseline)",0.03,0
+"thomas","snr","Bayesian-ARGOS",11,0.08,"rebuttal-ablation (Ridge-OLS baseline)",0.08,0
+"thomas","snr","Bayesian-ARGOS",12,0.24,"rebuttal-ablation (Ridge-OLS baseline)",0.24,0
+"thomas","snr","Bayesian-ARGOS",13,0.4,"rebuttal-ablation (Ridge-OLS baseline)",0.4,0
+"thomas","snr","Bayesian-ARGOS",14,0.58,"rebuttal-ablation (Ridge-OLS baseline)",0.58,0
+"thomas","snr","Bayesian-ARGOS",15,0.77,"rebuttal-ablation (Ridge-OLS baseline)",0.77,0
+"thomas","snr","Bayesian-ARGOS",16,0.82,"rebuttal-ablation (Ridge-OLS baseline)",0.82,0
+"thomas","snr","Bayesian-ARGOS",17,0.89,"rebuttal-ablation (Ridge-OLS baseline)",0.89,0
+"thomas","snr","Bayesian-ARGOS",18,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"thomas","snr","Bayesian-ARGOS",19,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"thomas","snr","Bayesian-ARGOS",20,0.86,"rebuttal-ablation (Ridge-OLS baseline)",0.86,0
+"thomas","snr","Bayesian-ARGOS",21,0.87,"rebuttal-ablation (Ridge-OLS baseline)",0.87,0
+"thomas","snr","Bayesian-ARGOS",22,0.87,"rebuttal-ablation (Ridge-OLS baseline)",0.87,0
+"thomas","snr","Bayesian-ARGOS",23,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"thomas","snr","Bayesian-ARGOS",24,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"thomas","snr","Bayesian-ARGOS",25,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"thomas","snr","Bayesian-ARGOS",26,0.9,"rebuttal-ablation (Ridge-OLS baseline)",0.9,0
+"thomas","snr","Bayesian-ARGOS",27,0.89,"rebuttal-ablation (Ridge-OLS baseline)",0.89,0
+"thomas","snr","Bayesian-ARGOS",28,0.89,"rebuttal-ablation (Ridge-OLS baseline)",0.89,0
+"thomas","snr","Bayesian-ARGOS",29,0.88,"rebuttal-ablation (Ridge-OLS baseline)",0.88,0
+"thomas","snr","Bayesian-ARGOS",30,0.91,"rebuttal-ablation (Ridge-OLS baseline)",0.91,0
+"thomas","snr","Bayesian-ARGOS",31,0.94,"rebuttal-ablation (Ridge-OLS baseline)",0.94,0
+"thomas","snr","Bayesian-ARGOS",32,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"thomas","snr","Bayesian-ARGOS",33,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"thomas","snr","Bayesian-ARGOS",34,0.95,"rebuttal-ablation (Ridge-OLS baseline)",0.95,0
+"thomas","snr","Bayesian-ARGOS",35,0.96,"rebuttal-ablation (Ridge-OLS baseline)",0.96,0
+"thomas","snr","Bayesian-ARGOS",36,0.97,"rebuttal-ablation (Ridge-OLS baseline)",0.97,0
+"thomas","snr","Bayesian-ARGOS",37,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"thomas","snr","Bayesian-ARGOS",38,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",39,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"thomas","snr","Bayesian-ARGOS",40,0.99,"rebuttal-ablation (Ridge-OLS baseline)",0.99,0
+"thomas","snr","Bayesian-ARGOS",41,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",42,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",43,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",44,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",45,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",46,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",47,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",48,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",49,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",50,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",51,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",52,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",53,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",54,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",55,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",56,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",57,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",58,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",59,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",60,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",61,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"thomas","snr","Bayesian-ARGOS",Inf,1,"rebuttal-ablation (Ridge-OLS baseline)",1,0
+"aizawa","snr","ARGOS",1,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",1,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",1,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",2,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",2,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",2,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",3,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",3,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",3,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",4,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",4,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",4,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",5,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",5,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",5,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",6,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",6,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",6,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",7,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",7,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",7,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",8,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",8,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",8,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",9,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",9,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",9,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",10,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",10,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",10,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",11,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",11,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",11,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",12,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",12,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",12,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",13,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",13,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",13,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",14,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",14,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",14,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",15,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",15,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",15,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",16,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",16,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",16,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",17,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",17,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",17,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",18,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",18,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","SINDy",18,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",19,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",19,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","SINDy",19,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",20,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",20,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",20,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",21,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",21,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","SINDy",21,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",22,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",22,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","SINDy",22,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",23,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",23,0.02,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.02,0
+"aizawa","snr","SINDy",23,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",24,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",24,0.02,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.02,0
+"aizawa","snr","SINDy",24,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",25,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",25,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","SINDy",25,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",26,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",26,0.04,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.04,0
+"aizawa","snr","SINDy",26,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",27,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",27,0.1,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.1,0
+"aizawa","snr","SINDy",27,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","ARGOS",28,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",28,0.12,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.12,0
+"aizawa","snr","SINDy",28,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","ARGOS",29,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",29,0.14,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.14,0
+"aizawa","snr","SINDy",29,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","ARGOS",30,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",30,0.14,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.14,0
+"aizawa","snr","SINDy",30,0.03,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.03,0
+"aizawa","snr","ARGOS",31,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",31,0.16,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.16,0
+"aizawa","snr","SINDy",31,0.06,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.06,0
+"aizawa","snr","ARGOS",32,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",32,0.26,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.26,0
+"aizawa","snr","SINDy",32,0.05,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.05,0
+"aizawa","snr","ARGOS",33,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","Bayesian-ARGOS",33,0.3,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.3,0
+"aizawa","snr","SINDy",33,0.05,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.05,0
+"aizawa","snr","ARGOS",34,0.01,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.01,0
+"aizawa","snr","Bayesian-ARGOS",34,0.27,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.27,0
+"aizawa","snr","SINDy",34,0.1,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.1,0
+"aizawa","snr","ARGOS",35,0.02,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.02,0
+"aizawa","snr","Bayesian-ARGOS",35,0.3,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.3,0
+"aizawa","snr","SINDy",35,0.14,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.14,0
+"aizawa","snr","ARGOS",36,0.04,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.04,0
+"aizawa","snr","Bayesian-ARGOS",36,0.38,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.38,0
+"aizawa","snr","SINDy",36,0.16,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.16,0
+"aizawa","snr","ARGOS",37,0.07,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.07,0
+"aizawa","snr","Bayesian-ARGOS",37,0.39,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.39,0
+"aizawa","snr","SINDy",37,0.15,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.15,0
+"aizawa","snr","ARGOS",38,0.07,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.07,0
+"aizawa","snr","Bayesian-ARGOS",38,0.41,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.41,0
+"aizawa","snr","SINDy",38,0.17,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.17,0
+"aizawa","snr","ARGOS",39,0.14,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.14,0
+"aizawa","snr","Bayesian-ARGOS",39,0.38,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.38,0
+"aizawa","snr","SINDy",39,0.18,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.18,0
+"aizawa","snr","ARGOS",40,0.2,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.2,0
+"aizawa","snr","Bayesian-ARGOS",40,0.42,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.42,0
+"aizawa","snr","SINDy",40,0.19,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.19,0
+"aizawa","snr","ARGOS",41,0.27,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.27,0
+"aizawa","snr","Bayesian-ARGOS",41,0.47,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.47,0
+"aizawa","snr","SINDy",41,0.18,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.18,0
+"aizawa","snr","ARGOS",42,0.28,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.28,0
+"aizawa","snr","Bayesian-ARGOS",42,0.49,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.49,0
+"aizawa","snr","SINDy",42,0.2,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.2,0
+"aizawa","snr","ARGOS",43,0.33,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.33,0
+"aizawa","snr","Bayesian-ARGOS",43,0.52,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.52,0
+"aizawa","snr","SINDy",43,0.21,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.21,0
+"aizawa","snr","ARGOS",44,0.38,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.38,0
+"aizawa","snr","Bayesian-ARGOS",44,0.5,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.5,0
+"aizawa","snr","SINDy",44,0.22,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.22,0
+"aizawa","snr","ARGOS",45,0.42,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.42,0
+"aizawa","snr","Bayesian-ARGOS",45,0.5,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.5,0
+"aizawa","snr","SINDy",45,0.22,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.22,0
+"aizawa","snr","ARGOS",46,0.49,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.49,0
+"aizawa","snr","Bayesian-ARGOS",46,0.55,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.55,0
+"aizawa","snr","SINDy",46,0.22,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.22,0
+"aizawa","snr","ARGOS",47,0.49,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.49,0
+"aizawa","snr","Bayesian-ARGOS",47,0.56,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.56,0
+"aizawa","snr","SINDy",47,0.23,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.23,0
+"aizawa","snr","ARGOS",48,0.5,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.5,0
+"aizawa","snr","Bayesian-ARGOS",48,0.61,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.61,0
+"aizawa","snr","SINDy",48,0.24,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.24,0
+"aizawa","snr","ARGOS",49,0.58,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.58,0
+"aizawa","snr","Bayesian-ARGOS",49,0.65,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.65,0
+"aizawa","snr","SINDy",49,0.25,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.25,0
+"aizawa","snr","ARGOS",50,0.58,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.58,0
+"aizawa","snr","Bayesian-ARGOS",50,0.63,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.63,0
+"aizawa","snr","SINDy",50,0.25,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.25,0
+"aizawa","snr","ARGOS",51,0.58,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.58,0
+"aizawa","snr","Bayesian-ARGOS",51,0.65,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.65,0
+"aizawa","snr","SINDy",51,0.24,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.24,0
+"aizawa","snr","ARGOS",52,0.59,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.59,0
+"aizawa","snr","Bayesian-ARGOS",52,0.66,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.66,0
+"aizawa","snr","SINDy",52,0.24,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.24,0
+"aizawa","snr","ARGOS",53,0.62,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.62,0
+"aizawa","snr","Bayesian-ARGOS",53,0.67,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.67,0
+"aizawa","snr","SINDy",53,0.24,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.24,0
+"aizawa","snr","ARGOS",54,0.64,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.64,0
+"aizawa","snr","Bayesian-ARGOS",54,0.71,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.71,0
+"aizawa","snr","SINDy",54,0.24,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.24,0
+"aizawa","snr","ARGOS",55,0.64,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.64,0
+"aizawa","snr","Bayesian-ARGOS",55,0.72,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.72,0
+"aizawa","snr","SINDy",55,0.23,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.23,0
+"aizawa","snr","ARGOS",56,0.62,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.62,0
+"aizawa","snr","Bayesian-ARGOS",56,0.73,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.73,0
+"aizawa","snr","SINDy",56,0.21,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.21,0
+"aizawa","snr","ARGOS",57,0.59,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.59,0
+"aizawa","snr","Bayesian-ARGOS",57,0.75,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.75,0
+"aizawa","snr","SINDy",57,0.2,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.2,0
+"aizawa","snr","ARGOS",58,0.57,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.57,0
+"aizawa","snr","Bayesian-ARGOS",58,0.74,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.74,0
+"aizawa","snr","SINDy",58,0.21,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.21,0
+"aizawa","snr","ARGOS",59,0.54,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.54,0
+"aizawa","snr","Bayesian-ARGOS",59,0.72,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.72,0
+"aizawa","snr","SINDy",59,0.21,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.21,0
+"aizawa","snr","ARGOS",60,0.57,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.57,0
+"aizawa","snr","Bayesian-ARGOS",60,0.69,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.69,0
+"aizawa","snr","SINDy",60,0.2,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.2,0
+"aizawa","snr","ARGOS",61,0.55,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.55,0
+"aizawa","snr","Bayesian-ARGOS",61,0.71,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.71,0
+"aizawa","snr","SINDy",61,0.21,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.21,0
+"aizawa","snr","ARGOS",Inf,0.18,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.18,0
+"aizawa","snr","Bayesian-ARGOS",Inf,0,"rebuttal-diagnostics (Aizawa SNR, all methods)",0,0
+"aizawa","snr","SINDy",Inf,0.13,"rebuttal-diagnostics (Aizawa SNR, all methods)",0.13,0

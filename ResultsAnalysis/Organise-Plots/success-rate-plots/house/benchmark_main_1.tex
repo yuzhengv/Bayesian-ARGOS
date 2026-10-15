@@ -1,0 +1,51 @@
+\documentclass[border={1mm 1mm 1mm 1mm}]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[helvet]{sfmath}
+\usetikzlibrary{calc,positioning}
+\newcommand\TagFont{\fontsize{8}{9}\selectfont\bfseries}
+\newcommand\LabelFont{\fontsize{8}{9}\selectfont\bfseries}
+\newcommand\TextFont{\fontsize{7}{8}\selectfont}
+\tikzset{
+  img/.style={anchor=north west, inner sep=0pt, outer sep=0pt},
+  tag/.style={anchor=west, inner sep=0pt, font=\TagFont},
+  syslabel/.style={inner sep=0pt, font=\LabelFont},
+  eqnbox/.style={anchor=south, inner sep=2.5pt, fill=gray!5, draw=gray!55, rounded corners=1.2pt, font=\TextFont},
+  txt/.style={inner sep=0pt, font=\TextFont}
+}
+\begin{document}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \coordinate (eqtopa) at (114.0, 0);
+  \node[eqnbox, anchor=north] (eqa) at (eqtopa) {$\dot{x}_1=10(x_2 - x_1),\; \dot{x}_2= x_1(28 - x_3) - x_2,\; \dot{x}_3= x_1 x_2 - \tfrac{8}{3} x_3$};
+  \node[img, anchor=north] (rowa) at ($(eqa.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/lorenz_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowa.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=60 16 2 74, clip]{simulation-plots/Lorenz_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqa.center) {a};
+  \node[syslabel] at (22.0,0 |- eqa.center) {Lorenz};
+  \coordinate (eqtopb) at ($(rowa.south -| 114.0,0) + (0,-2)$);
+  \node[eqnbox, anchor=north] (eqb) at (eqtopb) {$\dot{x}_1= \sin(x_2) - 0.208186 x_1,\; \dot{x}_2= \sin(x_3) - 0.208186 x_2,\; \dot{x}_3= \sin(x_1) - 0.208186 x_3$};
+  \node[img, anchor=north] (rowb) at ($(eqb.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/thomas_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowb.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=60 16 2 74, clip]{simulation-plots/Thomas_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqb.center) {b};
+  \node[syslabel] at (22.0,0 |- eqb.center) {Thomas};
+  \coordinate (eqtopc) at ($(rowb.south -| 114.0,0) + (0,-2)$);
+  \node[eqnbox, anchor=north] (eqc) at (eqtopc) {$\dot{x}_1=- x_2 - x_3,\; \dot{x}_2= x_1 + 0.2 x_2,\; \dot{x}_3=0.2 + x_3(x_1 - 5.7)$};
+  \node[img, anchor=north] (rowc) at ($(eqc.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/rossler_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowc.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=60 16 2 74, clip]{simulation-plots/Rossler_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqc.center) {c};
+  \node[syslabel] at (22.0,0 |- eqc.center) {R\"ossler};
+  \coordinate (eqtopd) at ($(rowc.south -| 114.0,0) + (0,-2)$);
+  \node[eqnbox, anchor=north] (eqd) at (eqtopd) {$\dot{x}_1= x_2 - 3 x_1 + 2.7 x_2 x_3,\; \dot{x}_2=1.7 x_2 - x_1 x_3 + x_3,\; \dot{x}_3=2 x_1 x_2 - 9 x_3$};
+  \node[img, anchor=north] (rowd) at ($(eqd.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/dadras_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowd.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=66 123 1 82, clip]{simulation-plots/Dadras_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqd.center) {d};
+  \node[syslabel] at (22.0,0 |- eqd.center) {Dadras};
+  \coordinate (foot) at ($(rowd.south -| 0,0) + (0,-3)$);
+  \node[txt, anchor=north west] (cbarlab) at (foot) {Time steps};
+  \node[img] (cbar) at ($(cbarlab.north east) + (1.5,0)$) {\includegraphics[width=57mm, trim=0 0 0 42pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \node[img, anchor=north] at ($(foot -| 114.0,0) + (14,0)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/legend_methods.pdf}};
+\end{tikzpicture}
+\end{document}

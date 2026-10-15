@@ -5,6 +5,9 @@
 > Numbers below are from `results/weak_form_summary.csv`. Not yet cited in the
 > reply drafts; proposed wording is in
 > `notes/rebuttal-memos/reviewer1/points6-7-weak-form-check.md` (manuscript repo).
+> 2026-10-14: the SI figure is regenerated in the house style by
+> `make_figures_sg_vs_weak_house.R` (`si-plots/sg_vs_integration.pdf`); the
+> Bayesian-ARGOS pair only, the SINDy arms stay internal.
 
 ## The question
 
@@ -82,6 +85,7 @@ show where the SG failure rate is heading.
 |---|---|---|
 | `weak_form_check.R [trials=20] [cases]` | all arms for all cases; writes `results/weak_form_trials.csv` (one row per case × trial × arm), `results/weak_form_summary.csv`, `results/weak_form_settings.csv` | see status line |
 | `make_figures_weak_form.R [primary arm]` | `figures/fig_weak_form_check.pdf` (house style) | seconds |
+| `make_figures_sg_vs_weak_house.R` | SI figure S-E of the plotting standard: Bayesian-ARGOS with the Savitzky-Golay derivative against the weak-form design, success rate against n (49 dB) and against SNR (n = 5000) for Aizawa, Dadras and Rossler, from `results/success_2x2_{n,snr}.csv`, drawn with `../plot-style/house_style.R` (n axis 10^k, broken infinity axis, 0.8 line and band, one legend row below); `figures/sg_vs_integration.pdf` -> `si-plots/sg_vs_integration.pdf` and `reply-to-reviewers/Figures/` (183 mm, aspect 0.65) | seconds |
 | `run_all.sh` | both, in order | |
 
 ```bash

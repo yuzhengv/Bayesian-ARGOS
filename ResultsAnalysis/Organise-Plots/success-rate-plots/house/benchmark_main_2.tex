@@ -1,0 +1,45 @@
+\documentclass[border={1mm 1mm 1mm 1mm}]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[helvet]{sfmath}
+\usetikzlibrary{calc,positioning}
+\newcommand\TagFont{\fontsize{8}{9}\selectfont\bfseries}
+\newcommand\LabelFont{\fontsize{8}{9}\selectfont\bfseries}
+\newcommand\TextFont{\fontsize{7}{8}\selectfont}
+\tikzset{
+  img/.style={anchor=north west, inner sep=0pt, outer sep=0pt},
+  tag/.style={anchor=west, inner sep=0pt, font=\TagFont},
+  syslabel/.style={inner sep=0pt, font=\LabelFont},
+  eqnbox/.style={anchor=south, inner sep=2.5pt, fill=gray!5, draw=gray!55, rounded corners=1.2pt, font=\TextFont},
+  txt/.style={inner sep=0pt, font=\TextFont}
+}
+\begin{document}
+\begin{tikzpicture}[x=1mm, y=1mm]
+  \coordinate (eqtopa) at (114.0, 0);
+  \node[eqnbox, anchor=north] (eqa) at (eqtopa) {$\begin{gathered}\dot{x}_1=-3.5 x_2 + x_1 (-0.7 + x_3),\; \dot{x}_2=3.5 x_1 + x_2 (-0.7 + x_3) \\ \dot{x}_3=0.95x_3 + 0.65 + 0.1x_1^{3}x_3 - \tfrac{1}{3}x_3^{3} - (x_1^{2}+x_2^{2})(0.25x_3+1)\end{gathered}$};
+  \node[img, anchor=north] (rowa) at ($(eqa.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/aizawa_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowa.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=66 123 1 82, clip]{simulation-plots/Aizawa_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqa.center) {a};
+  \node[syslabel] at (22.0,0 |- eqa.center) {Aizawa};
+  \coordinate (eqtopb) at ($(rowa.south -| 114.0,0) + (0,-2)$);
+  \node[eqnbox, anchor=north] (eqb) at (eqtopb) {$\dot{x}_1= x_2 + 2.07 x_1 x_2 + x_1 x_3,\; \dot{x}_2= 1 -1.79 x_1^{2} + x_2 x_3,\; \dot{x}_3= x_1 - x_1^{2} - x_2^{2}$};
+  \node[img, anchor=north] (rowb) at ($(eqb.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/sprott_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowb.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=60 16 2 74, clip]{simulation-plots/Sprott_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqb.center) {b};
+  \node[syslabel] at (22.0,0 |- eqb.center) {Sprott};
+  \coordinate (eqtopc) at ($(rowb.south -| 114.0,0) + (0,-2)$);
+  \node[eqnbox, anchor=north] (eqc) at (eqtopc) {$\dot{x}_1=-1.89 x_1 - 4 x_2 - 4 x_3 - x_2^{2},\; \dot{x}_2=-1.89 x_2 - 4 x_3 - 4 x_1 - x_3^{2},\; \dot{x}_3=-1.89 x_3 - 4 x_1 - 4 x_2 - x_1^{2}$};
+  \node[img, anchor=north] (rowc) at ($(eqc.south) + (0,-1)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/halvorsen_success_rate_row.pdf}};
+  \node[img, anchor=center] at ($(rowc.center -| 22.0,0)$) {\includegraphics[height=44mm, width=44mm, keepaspectratio, trim=66 123 1 82, clip]{simulation-plots/Halvorsen_trajectory.pdf}};
+  \node[tag] at (0,0 |- eqc.center) {c};
+  \node[syslabel] at (22.0,0 |- eqc.center) {Halvorsen};
+  \coordinate (foot) at ($(rowc.south -| 0,0) + (0,-3)$);
+  \node[txt, anchor=north west] (cbarlab) at (foot) {Time steps};
+  \node[img] (cbar) at ($(cbarlab.north east) + (1.5,0)$) {\includegraphics[width=57mm, trim=0 0 0 42pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \node[img, anchor=north] at ($(foot -| 114.0,0) + (14,0)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/legend_methods.pdf}};
+\end{tikzpicture}
+\end{document}
