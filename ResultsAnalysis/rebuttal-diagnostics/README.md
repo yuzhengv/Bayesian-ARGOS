@@ -1,6 +1,7 @@
 # Rebuttal diagnostics (R pipeline)
 
-> **Status:** DONE 2026-10-14 (figures for the revised manuscript). The
+> **Status:** DONE 2026-10-24 (exp1 re-run with 20 trials on both sweeps, the
+> $n$ sweep having had 10; figures for the revised manuscript). The
 > experiments (exp1, exp2, exp6, the Aizawa and Rossler stored-results reads
 > and the Dadras PSIS-LOO run) are complete; the figure scripts of the plotting
 > standard (`reply-to-reviewers/Notes/plotting-standard.md`, blocks M1, M4, M5
@@ -25,7 +26,7 @@ while the figures are drawn here by `make_figures.R`.
 | Script | What it does |
 |---|---|
 | `common.R` | systems in the `ode_auto.py` format; data generation through the benchmark code path (`DataGeneration/ode_auto.py`, scipy odeint via reticulate, NumPy seeded before the noisy call); `build_design_matrix`; the two `alasso` passes; the Bayesian stage of `bayesian_alasso_ro` (`rstanarm::stan_glm`, 90 % posterior-interval rule) as `bayes_stage()`; VIF, Belsley diagnostics, residual statistics |
-| `exp1_collinearity.R` | per-term VIF and condition number on the full / degree-trimmed / pass-2-selected / ground-truth designs over the Fig. 3b grids; same monomials on one trajectory, a uniform box, 50 short transients; clean trajectory vs n; Belsley near-dependency groups |
+| `exp1_collinearity.R` | per-term VIF and condition number on the full / degree-trimmed / pass-2-selected / ground-truth designs over the Fig. 3b grids, 20 trials on each sweep; same monomials on one trajectory, a uniform box, 50 short transients; clean trajectory vs n; Belsley near-dependency groups |
 | `exp2_heteroscedasticity.R` | Breusch–Pagan, White-type, decile variance ratio, lag-1 autocorrelation, Durbin–Watson vs SNR for the ground-truth support and for the support the screening selects, both fitted with the pipeline's Stan stage (residuals about the posterior mean); final model after the posterior-interval rule and per-trial success; residual decomposition into derivative-estimation (incl. SG truncation), smoothing and coefficient error |
 | `aizawa_screening_vs_hmc.R` | re-reads the stored 100-trial Aizawa results: pass-2 support size, survival of spurious candidates through the 90 % credible-interval rule, success rate; exports per-trial supports (`aizawa_eq3_supports.csv`) |
 | `exp6_lambda_rule.R` | tests whether tuning the adaptive lasso by `lambda.1se` instead of `lambda.min` (pass 2, or both passes) removes the large-n decline; the Bayesian stage is the pipeline's own (`stan_glm`, posterior-interval rule), so the reported success is the pipeline's |
@@ -48,8 +49,16 @@ reticulate, rstan, rstanarm and loo, plus a Python with numpy and scipy for
 interpreter). `ARGOS_NCORES` overrides the number of forked workers (default
 min(16, cores − 4)); Stan runs with one core per worker.
 
-Runtime on a 20-core machine: exp1 ≈ 5 min; exp2 and exp6 are dominated by
+Runtime on a 20-core machine: exp1 ≈ 10 min (20 trials on both sweeps); exp2 and exp6 are dominated by
 the `stan_glm` fits (roughly 30 min and 1–2 h); dadras_psis_loo ≈ 17 min.
+
+Reproducibility of exp1: the trajectories and noise are seeded, so the full and
+true-term designs reproduce exactly between runs. The two `alasso` passes call
+`cv.glmnet` without a fold seed (`R/argos_files.R`, package code, unchanged), so
+between the 2026-09-09 and 2026-10-24 runs the degree trim differed in about
+3 % of the conditions and the screened support in about 20 %. The medians drawn
+in the figures and every column of Supplementary Table S1 (n = 5000, 50 dB)
+were unchanged.
 
 Figure scripts for the revised manuscript (2026-10-14), in order:
 

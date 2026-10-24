@@ -13,12 +13,12 @@
 #   box samples, 50 short transients (clean and noisy+SG); clean trajectory
 #   over the n grid; Belsley near-dependency groups for one trial.
 #
-# Usage: Rscript exp1_collinearity.R [trials_snr=20] [trials_n=10]
+# Usage: Rscript exp1_collinearity.R [trials_snr=20] [trials_n=20]
 
 source(file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "common.R"))
 args <- commandArgs(trailingOnly = TRUE)
 TRIALS <- if (length(args) >= 1) as.integer(args[1]) else 20L
-TRIALS_N <- if (length(args) >= 2) as.integer(args[2]) else 10L
+TRIALS_N <- if (length(args) >= 2) as.integer(args[2]) else 20L
 OUT <- file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "results")
 dir.create(OUT, showWarnings = FALSE)
 
