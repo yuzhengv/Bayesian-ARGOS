@@ -1,11 +1,12 @@
 # Revised Fig. 5 of the manuscript (plotting standard block M5): mechanism II,
 # the deterministic error of the Savitzky-Golay derivative made significant by a
-# narrowing credible interval (Dadras x1-dot as n grows, Rossler x1-dot as the
-# noise vanishes).
-#   row 1 (symptom)    a  term-selection frequency of the final models for Dadras
-#                         x1-dot at n = 10^4 and 10^5 (49 dB; results/dadras_eq1_
-#                         term_frequencies.csv), b  the same for Rossler x1-dot at
-#                         61 dB and infinity (n = 5000; results/rossler_eq1_term_
+# narrowing credible interval (Rossler x1-dot as the noise vanishes, Dadras
+# x1-dot as n grows). The panels follow the order of the main text, the
+# Rossler (noise) route first and the Dadras (n) route second.
+#   row 1 (symptom)    a  term-selection frequency of the final models for Rossler
+#                         x1-dot at 61 dB and infinity (n = 5000; results/rossler_
+#                         eq1_term_frequencies.csv), b  the same for Dadras x1-dot
+#                         at n = 10^4 and 10^5 (49 dB; results/dadras_eq1_term_
 #                         frequencies.csv); terms with a frequency of at least
 #                         0.05 at any shown condition; true terms blue, the
 #                         spurious intercept red (named in the key and on the axis)
@@ -54,11 +55,11 @@ blue <- function(terms) setNames(rep(HOUSE_PRIMARY, length(terms)), terms)
 pa1 <- skyline_panel(fd, DAD_TRUTH, blue(DAD_TRUTH), label_terms = unique(fd$term), min_freq = 0.05,
                      cond_labels = c("italic(n) == 10^4", "italic(n) == 10^5"), order_by = 5,
                      intercept_col = HOUSE_HIGHLIGHT, intercept_first = FALSE, bar_width = 0.6, label_angle = 0) +
-  labs(title = eq_title("Dadras", 1, quote("SNR = 49 dB")), tag = "a")
+  labs(title = eq_title("Dadras", 1, quote("SNR = 49 dB")), tag = "b")
 pa2 <- skyline_panel(fr, ROS_TRUTH, blue(ROS_TRUTH), label_terms = unique(fr$term), min_freq = 0.05,
                      cond_labels = c('paste("SNR = 61 dB")', 'paste("SNR = ", infinity)'), order_by = Inf,
                      intercept_col = HOUSE_HIGHLIGHT, intercept_first = FALSE, bar_width = 0.6, label_angle = 0) +
-  labs(title = eq_title("Rössler", 1, quote(italic(n) == 5000)), tag = "b")
+  labs(title = eq_title("Rössler", 1, quote(italic(n) == 5000)), tag = "a")
 key_1 <- key_panel(data.frame(label = c("true term", "spurious intercept"), colour = c(HOUSE_PRIMARY, HOUSE_HIGHLIGHT), type = "fill"))
 
 # ------------------------------------------- row 2: Rossler residuals (exp2)
@@ -125,7 +126,7 @@ key_4 <- key_panel(data.frame(label = c("clean trajectory\n(trial 1)", 'paste("f
                               band = c(FALSE, FALSE, TRUE, FALSE), parse = c(FALSE, TRUE, FALSE, TRUE)), point_size = 3, slots = 7)
 
 # ------------------------------------------------------------------ assemble
-p <- key_1 + pa1 + pa2 + key_2 + pb1 + pb2 + key_3 + pc1 + pc2 + key_4 + pd1 + pd2 +
+p <- key_1 + pa2 + pa1 + key_2 + pb1 + pb2 + key_3 + pc1 + pc2 + key_4 + pd1 + pd2 +
   plot_layout(design = "ABC\nDEF\nGHI\nJKL", widths = c(0.48, 1, 1), heights = c(1.1, 1, 1, 1))
 save_figure(p, OUT, width_mm = 183, aspect = 1.15, device = cairo_pdf)
 copy_to_manuscript(OUT, "imgs")
