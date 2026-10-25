@@ -54,7 +54,7 @@ dir.create(OUT, showWarnings = FALSE)
 SYSTEM <- "dadras"; EQ <- 1; SNR <- 49
 K_FLAG <- 0.7; K_RECORD <- 0.5
 BLOCK <- 100L          # block length for the block-maximum k-hat series
-FULL_SERIES <- 1L      # keep the full k-hat vector for this many trials per n (trial 1, used by the figure)
+FULL_SERIES <- 1L      # keep the full k-hat vector for this many trials per n (trial 1; the figure draws the block-maximum series of trial 6)
 CHUNK <- 4000L         # observations per log-likelihood chunk (4000 draws x 4000 obs x 8 B = 128 MB)
 
 # The benchmark's pool: set.seed(100); 100 draws of runif(3, -4, 4), one per trial.

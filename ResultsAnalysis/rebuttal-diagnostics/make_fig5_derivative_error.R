@@ -14,10 +14,11 @@
 #                         fitted value at 61 dB and at infinity (results/exp2_
 #                         examples.csv, example trial), one scale, binned mean
 #                         +- 2 sd in 12 equal-count bins, dotted zero line
-#   row 3 (diagnostic) e, f  Dadras x1-dot Pareto k-hat against time (trial 1,
-#                         n = 10^4 and 10^5, one vertical scale, results/dadras_
-#                         loo_khat_series.csv), flagged points k-hat > 0.7 as red
-#                         triangles, dashed 0.7 line
+#   row 3 (diagnostic) e, f  Dadras x1-dot Pareto k-hat against time as the block
+#                         maximum over 100 observations (trial 6, n = 10^4 and
+#                         10^5, one vertical scale, results/dadras_loo_khat_
+#                         series.csv), blocks with a flagged point k-hat > 0.7 as
+#                         red triangles, dashed 0.7 line
 #   row 4              g  the flagged observations of all 20 trials at n = 10^5
 #                         on the x1-x3 projection of the attractor (clean
 #                         trajectory of trial 1 in grey, simulated through
@@ -76,18 +77,23 @@ key_2 <- key_panel(data.frame(label = c("residual", "binned mean \u00b1 2 sd\n(1
                               shape = c(16, NA, NA), band = c(FALSE, TRUE, FALSE)), point_size = 2, slots = 8)
 
 # ---------------------------------------------- row 3: Dadras k-hat vs time
-ser <- read.csv(file.path(RES, "dadras_loo_khat_series.csv")) %>% dplyr::filter(kind == "full", trial == 1, log10n %in% c(4, 5))
+# Block maximum of k-hat over 100 consecutive observations, stored for every trial
+# of the PSIS-LOO run, for a trial with flagged observations at both n. The full
+# per-observation series is stored for trial 1 only, which has none at n = 10^4.
+SERIES_TRIAL <- 6L
+ser <- read.csv(file.path(RES, "dadras_loo_khat_series.csv")) %>% dplyr::filter(kind == "block_max", trial == SERIES_TRIAL, log10n %in% c(4, 5))
 k_lim <- c(min(ser$k) - 0.05, max(ser$k) * 1.05)
 khat_panel <- function(l10, tag) {
   s <- ser %>% dplyr::filter(log10n == l10) %>% mutate(flag = k > K_FLAG)
   tmax <- if (l10 == 4) 100 else 1000
+  cat(sprintf("k-hat panel: trial %d, n = 1e%g, %d blocks, %d with a flagged observation\n", SERIES_TRIAL, l10, nrow(s), sum(s$flag)))
   ggplot(s, aes(t, k)) +
-    geom_point(data = dplyr::filter(s, !flag), colour = HOUSE_PRIMARY, size = 0.6, alpha = 0.5) +
+    geom_point(data = dplyr::filter(s, !flag), colour = HOUSE_PRIMARY, size = 1, alpha = 0.6) +
     geom_point(data = dplyr::filter(s, flag), colour = HOUSE_HIGHLIGHT, shape = 17, size = 3) +
     geom_hline(yintercept = K_FLAG, linetype = 2, colour = HOUSE_HIGHLIGHT, linewidth = 0.6) +
     scale_y_continuous(limits = k_lim, breaks = seq(-1, 8, 1), expand = expansion(mult = 0.02)) +
     scale_x_continuous(breaks = pretty_breaks(5), limits = c(0, tmax), expand = expansion(mult = 0.02)) +
-    labs(x = "time", y = expression("Pareto " * hat(italic(k))[italic(i)]), tag = tag,
+    labs(x = "time", y = expression("Pareto " * hat(italic(k))[italic(i)] * " (block max.)"), tag = tag,
          title = as.expression(substitute("Dadras " * dot(italic(x))[1] * ", " * paste(italic(n) == 10^L, " (", italic(t) <= T, ")"), list(L = l10, T = tmax)))) +
     house_theme()
 }
