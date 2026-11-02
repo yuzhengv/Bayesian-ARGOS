@@ -39,10 +39,18 @@ sweep_panel <- function(d, sweep, quantity, ymax, title = NULL, ylab = NULL, xla
     d$method <- factor(d$method, levels = METHODS)
     if (sweep == "snr") { d <- d[d$x >= SNR_XMIN, ]; d$xx <- snr_x(d$x) } else d$xx <- d$x
     d <- d[order(d$method, d$xx), ]
+    # The line and the ribbon stop at the last finite SNR: there are no data
+    # between 61 dB and the noiseless case, so nothing joins the two (Yuzheng,
+    # 2026-11-02). At SNR = Inf the ribbon's range is a vertical bar, as in
+    # Fig. 4f and Supplementary Fig. S11.
+    fin <- if (sweep == "snr") d[is.finite(d$x), ] else d
     p <- ggplot(d, aes(x = xx, y = y, colour = method, fill = method, shape = method, group = method))
-    if (ribbon) p <- p + geom_ribbon(aes(ymin = ymin, ymax = ymax), alpha = 0.15, colour = NA, show.legend = FALSE)
-    p <- p + geom_line(linewidth = HOUSE_LINE) + geom_point(size = marker) +
-        method_scales() + house_theme() +
+    if (ribbon) p <- p + geom_ribbon(data = fin, aes(ymin = ymin, ymax = ymax), alpha = 0.15, colour = NA, show.legend = FALSE)
+    p <- p + geom_line(data = fin, linewidth = HOUSE_LINE) + geom_point(size = marker)
+    if (ribbon && sweep == "snr")
+        p <- p + geom_linerange(data = d[is.infinite(d$x), ], aes(ymin = ymin, ymax = ymax),
+                                linewidth = 0.6, alpha = 0.6, show.legend = FALSE)
+    p <- p + method_scales() + house_theme() +
         scale_y_quantity(quantity, ymax, name = ylab) +
         labs(title = title, tag = tag) +
         theme(plot.title = element_text(size = HOUSE_PT$text, hjust = 0.5))

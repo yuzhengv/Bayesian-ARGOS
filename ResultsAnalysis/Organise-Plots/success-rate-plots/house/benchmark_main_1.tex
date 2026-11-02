@@ -10,12 +10,14 @@
 \newcommand\TagFont{\fontsize{8}{9}\selectfont\bfseries}
 \newcommand\LabelFont{\fontsize{8}{9}\selectfont\bfseries}
 \newcommand\TextFont{\fontsize{7}{8}\selectfont}
+\newcommand\TickFont{\fontsize{6.5}{7.5}\selectfont}
 \tikzset{
   img/.style={anchor=north west, inner sep=0pt, outer sep=0pt},
   tag/.style={anchor=west, inner sep=0pt, font=\TagFont},
   syslabel/.style={inner sep=0pt, font=\LabelFont},
   eqnbox/.style={anchor=south, inner sep=2.5pt, fill=gray!5, draw=gray!55, rounded corners=1.2pt, font=\TextFont},
-  txt/.style={inner sep=0pt, font=\TextFont}
+  txt/.style={inner sep=0pt, font=\TextFont},
+  tick/.style={inner sep=0pt, font=\TickFont}
 }
 \begin{document}
 \begin{tikzpicture}[x=1mm, y=1mm]
@@ -45,7 +47,12 @@
   \node[syslabel] at (22.0,0 |- eqd.center) {Dadras};
   \coordinate (foot) at ($(rowd.south -| 0,0) + (0,-3)$);
   \node[img, anchor=north] (leg) at ($(foot -| 114.0,0) + (14,0)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/legend_methods.pdf}};
-  \node[img, anchor=west] (cbar) at ($(4,0 |- leg.center) + (0,-1.2)$) {\includegraphics[width=57mm, trim=0 0 0 42pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \node[img, anchor=center] (cbar) at (22.0,0 |- leg.center) {\includegraphics[width=38mm, height=1.8mm, trim=15 35 27 51, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \draw[line width=0.4pt] (cbar.south west) rectangle (cbar.north east);
+  \foreach \fr/\lab in {0/0, 0.25/{}, 0.5/$5 \times 10^{4}$, 0.75/{}, 1/$10^{5}$} {
+    \draw[line width=0.4pt] ($(cbar.south west)!\fr!(cbar.south east)$) -- ++(0,-0.6);
+    \node[tick, anchor=north] at ($(cbar.south west)!\fr!(cbar.south east) + (0,-0.6-0.3)$) {\lab};
+  }
   \node[txt, anchor=south] at ($(cbar.north) + (0,0.6)$) {Time steps};
 \end{tikzpicture}
 \end{document}

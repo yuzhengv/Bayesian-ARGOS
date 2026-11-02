@@ -102,6 +102,9 @@ there only.
   Bayesian-ARGOS stay between 0 and 2; the other two quantities use linear
   axes from 0. SNR panels follow the house axis (10 to 60 dB, ∞ beyond the
   break; the axis starts at 6 dB, so the 1 to 5 dB points are not drawn).
+  Since 2026-11-02 the line and the ribbon stop at 61 dB and the noiseless
+  value is a marker at ∞ with a vertical bar for the ribbon's range (Yuzheng:
+  no solid line across the break, there are no data between 61 dB and ∞).
 - **Fig. 6**: block a, 2 x 3 panels, rows = sweep (SNR = 49 dB; n = 5000),
   columns = spurious terms per equation, true terms missed per equation, mean
   selection frequency of the spurious terms; curve = mean over the seven
@@ -125,11 +128,11 @@ there only.
 | `common.R` | paths, the four loader modules in separate environments, systems with their true terms in both naming schemes, methods, ring values, the per-trial loader | (sourced) |
 | `spurious_terms_table.R` | reads the 42 system x method x sweep result sets; writes `results/term_frequencies.csv`, `results/spurious_summary.csv`, `results/success_rate_check.csv` | 24 s |
 | `circular_plot_house.R` | the house copy of the circular plot and `draw_circular_pdf()` | (sourced) |
-| `panel_helpers.R` | the sweep panels (house style, pseudo-log axis, SNR axis) | (sourced) |
+| `panel_helpers.R` | the sweep panels (house style, pseudo-log axis, SNR axis; since 2026-11-02 the line and the ribbon stop at 61 dB and the noiseless value is a marker at ∞ with a vertical bar for the ribbon's range, since no data lie between 61 dB and ∞) | (sourced) |
 | `tex_compose.R` | writes and compiles the standalone TikZ composites (helvet; tags 8 pt bold, labels 7 pt) | (sourced) |
-| `make_fig6.R` | `figures/fig6_block_a.pdf` (18 x 10.8 in canvas; legend row 9 pt), `figures/circ_lorenz_n_{ba,argos,sindy}.pdf` (12 x 12 in), `figures/shrinkage_spurious_terms.tex/.pdf` (block-b title 9 pt above the 7 pt method names, legend line 9 pt with 3 mm squares, 2026-11-01); copies the PDF to `imgs/` and `reply-to-reviewers/Figures/`; `results/spurious_summary_aggregate.csv`, `results/fig6_circular_label_stats.csv` | 3 s |
+| `make_fig6.R` | `figures/fig6_block_a.pdf` (18 x 10.8 in canvas; legend row 9 pt), `figures/circ_lorenz_n_{ba,argos,sindy}.pdf` (12 x 12 in), `figures/shrinkage_spurious_terms.tex/.pdf` (block-b title 9 pt above the 7 pt method names, legend line 9 pt with 3 mm squares, 2026-11-01; no line or ribbon across the axis break to ∞, 2026-11-02); copies the PDF to `imgs/` and `reply-to-reviewers/Figures/`; `results/spurious_summary_aggregate.csv`, `results/fig6_circular_label_stats.csv` | 3 s |
 | `make_si_term_selection.R` | 42 circular plots `figures/circ_<system>_<sweep>_<method>.pdf` and `figures/term_selection_<system>.tex/.pdf` (legend line 9 pt, centred, 2026-11-01); copies to `si-plots/` and `reply-to-reviewers/Figures/`; `results/si_circular_label_stats.csv` | 18 s |
-| `make_si_spurious_by_system.R` | `figures/spurious_terms_by_system.pdf` (18 x 23.4 in canvas; legend row 9 pt, SNR-axis separators spanning 10 % of the pseudo-logarithmic axis, 2026-11-01); copies to `si-plots/` and `reply-to-reviewers/Figures/` | 2 s |
+| `make_si_spurious_by_system.R` | `figures/spurious_terms_by_system.pdf` (18 x 23.4 in canvas; legend row 9 pt, SNR-axis separators spanning 10 % of the pseudo-logarithmic axis, 2026-11-01; no line across the axis break to ∞, 2026-11-02); copies to `si-plots/` and `reply-to-reviewers/Figures/` | 2 s |
 | `run_all.sh` | runs the four scripts in order | 50 s |
 
 ```bash

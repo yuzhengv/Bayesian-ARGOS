@@ -18,8 +18,10 @@
 # \fontsize{8}{9}\bfseries, system labels of the benchmark figures
 # \fontsize{8}{9}\bfseries, equation boxes \fontsize{7}{8}; sfmath sets the
 # equations in the sans-serif face as well. The legend line of the benchmark
-# figures (2026-11-01): "Time steps" above the colour bar, the bar and the
-# 9 pt method legend centred on one level.
+# figures (2026-11-01, 2026-11-02): "Time steps" above the colour bar, the bar
+# and the 9 pt method legend centred on one level; the bar is the gradient of
+# trajectory_colorbar.pdf alone, 38 by 1.8 mm inside the attractor column, with
+# its ticks and 6.5 pt labels (0, 5 x 10^4, 10^5) typeset here.
 #
 # Inputs (relative to this directory):
 #   ../../success-rate-plots/imgs/house/<system>_success_rate_row.pdf
@@ -55,11 +57,11 @@ ROW_H=$(python3 -c "print(round($ROW_W * $ROW_ASPECT, 2))")
 ROW_GAP=2          # vertical gap between rows
 EQ_GAP=1           # gap between the equation box and the row
 LEG_GAP=3          # gap between the last row and the legend line
-CBAR_W=57          # width of the time-step colour bar (its 14 pt tick labels become 5.1 pt)
-CBAR_X=4           # left edge of the colour bar
-CBAR_DY=-1.2       # the bar node (bar and tick labels) sits this much below the legend's centre line, so that the block label + bar is centred on it
+CBAR_L=38          # length of the time-step colour bar, centred on the attractor column, inside its 44 mm (Yuzheng, 2026-11-02; 57 mm from x = 4 before)
+CBAR_T=1.8         # thickness of the bar (2.2 mm before 2026-11-02, "slimmer")
+CBAR_TRIM="15 35 27 51"   # trim (left bottom right top, pt) that leaves the gradient of trajectory_colorbar.pdf: the bar spans 13.9 to 416.4 by 34.1 to 51.4 pt of its 442 by 101.6 pt page, cut 1 pt inside its outline; the ticks, their labels and the title are typeset here
+CBAR_TICK=0.6      # tick length below the bar; 6.5 pt labels at 0, 5 x 10^4 and 10^5, unlabelled ticks at 2.5 and 7.5 x 10^4 (five labels do not fit 38 mm at 6.5 pt)
 SI_TAG_B_X=96      # x of the right-panel tag of the SI rows (the rows carry a 0.05-width label column at the left)
-CBAR_TRIM_TOP=42   # pt trimmed off the top of trajectory_colorbar.pdf (its 30 pt title, ink from 6.5 to 35.5 pt); a 7 pt label replaces it
 ATT_H=44           # attractor height (centred on the row; the row's own 1.5 mm margins absorb the overlap)
 ATT_C=$(python3 -c "print($ATT_W / 2)")
 ROW_C=$(python3 -c "print($ATT_W + $COL_GAP + $ROW_W / 2)")
@@ -90,12 +92,14 @@ cat <<TEX
 \\newcommand\\TagFont{\\fontsize{8}{9}\\selectfont\\bfseries}
 \\newcommand\\LabelFont{\\fontsize{8}{9}\\selectfont\\bfseries}
 \\newcommand\\TextFont{\\fontsize{7}{8}\\selectfont}
+\\newcommand\\TickFont{\\fontsize{6.5}{7.5}\\selectfont}
 \\tikzset{
   img/.style={anchor=north west, inner sep=0pt, outer sep=0pt},
   tag/.style={anchor=west, inner sep=0pt, font=\\TagFont},
   syslabel/.style={inner sep=0pt, font=\\LabelFont},
   eqnbox/.style={anchor=south, inner sep=2.5pt, fill=gray!5, draw=gray!55, rounded corners=1.2pt, font=\\TextFont},
-  txt/.style={inner sep=0pt, font=\\TextFont}
+  txt/.style={inner sep=0pt, font=\\TextFont},
+  tick/.style={inner sep=0pt, font=\\TickFont}
 }
 \\begin{document}
 \\begin{tikzpicture}[x=1mm, y=1mm]
@@ -120,14 +124,21 @@ TEX
 }
 
 # legend line of the benchmark figures: the method legend centred under the row
-# column; the time-step colour bar at the left on the same level, "Time steps"
-# above the bar (Yuzheng, 2026-11-01)
+# column; the time-step colour bar inside the attractor column on the same
+# level, "Time steps" above the bar (Yuzheng, 2026-11-01); the bar 38 by 1.8 mm
+# with its ticks and labels typeset here (Yuzheng, 2026-11-02: inside the
+# attractor column, slimmer)
 bench_foot() {
   local last=$1
 cat <<TEX
   \\coordinate (foot) at (\$(row$last.south -| 0,0) + (0,-$LEG_GAP)\$);
   \\node[img, anchor=north] (leg) at (\$(foot -| $ROW_C,0) + (14,0)\$) {\\includegraphics[scale=0.4]{$ROWS/legend_methods.pdf}};
-  \\node[img, anchor=west] (cbar) at (\$($CBAR_X,0 |- leg.center) + (0,$CBAR_DY)\$) {\\includegraphics[width=${CBAR_W}mm, trim=0 0 0 ${CBAR_TRIM_TOP}pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \\node[img, anchor=center] (cbar) at ($ATT_C,0 |- leg.center) {\\includegraphics[width=${CBAR_L}mm, height=${CBAR_T}mm, trim=$CBAR_TRIM, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \\draw[line width=0.4pt] (cbar.south west) rectangle (cbar.north east);
+  \\foreach \\fr/\\lab in {0/0, 0.25/{}, 0.5/\$5 \\times 10^{4}\$, 0.75/{}, 1/\$10^{5}\$} {
+    \\draw[line width=0.4pt] (\$(cbar.south west)!\\fr!(cbar.south east)\$) -- ++(0,-$CBAR_TICK);
+    \\node[tick, anchor=north] at (\$(cbar.south west)!\\fr!(cbar.south east) + (0,-$CBAR_TICK-0.3)\$) {\\lab};
+  }
   \\node[txt, anchor=south] at (\$(cbar.north) + (0,0.6)\$) {Time steps};
 TEX
 }
