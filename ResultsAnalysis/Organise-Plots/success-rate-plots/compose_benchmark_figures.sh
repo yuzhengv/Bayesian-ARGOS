@@ -12,9 +12,14 @@
 # its final size and is included here at scale 0.4, so its text is 7 pt final
 # (tags 8 pt bold, tick labels 6.5 pt). Benchmark rows are 138 mm wide
 # (canvas 13.58 in) beside a 44 mm attractor column and a 1 mm gap; the SI rows
-# are 183 mm wide (canvas 18 in). TeX text: tags \fontsize{8}{9}\bfseries,
-# system labels \fontsize{8}{9}\bfseries, equation boxes \fontsize{7}{8}; sfmath
-# sets the equations in the sans-serif face as well.
+# are 183 mm wide (canvas 18 in) and carry their system label inside the row
+# (a rotated 7 pt label at the left, drawn by the notebooks as the Supplementary
+# spurious-terms figure does; Yuzheng, 2026-11-01). TeX text: tags
+# \fontsize{8}{9}\bfseries, system labels of the benchmark figures
+# \fontsize{8}{9}\bfseries, equation boxes \fontsize{7}{8}; sfmath sets the
+# equations in the sans-serif face as well. The legend line of the benchmark
+# figures (2026-11-01): "Time steps" above the colour bar, the bar and the
+# 9 pt method legend centred on one level.
 #
 # Inputs (relative to this directory):
 #   ../../success-rate-plots/imgs/house/<system>_success_rate_row.pdf
@@ -51,6 +56,9 @@ ROW_GAP=2          # vertical gap between rows
 EQ_GAP=1           # gap between the equation box and the row
 LEG_GAP=3          # gap between the last row and the legend line
 CBAR_W=57          # width of the time-step colour bar (its 14 pt tick labels become 5.1 pt)
+CBAR_X=4           # left edge of the colour bar
+CBAR_DY=-1.2       # the bar node (bar and tick labels) sits this much below the legend's centre line, so that the block label + bar is centred on it
+SI_TAG_B_X=96      # x of the right-panel tag of the SI rows (the rows carry a 0.05-width label column at the left)
 CBAR_TRIM_TOP=42   # pt trimmed off the top of trajectory_colorbar.pdf (its 30 pt title, ink from 6.5 to 35.5 pt); a 7 pt label replaces it
 ATT_H=44           # attractor height (centred on the row; the row's own 1.5 mm margins absorb the overlap)
 ATT_C=$(python3 -c "print($ATT_W / 2)")
@@ -111,20 +119,23 @@ cat <<TEX
 TEX
 }
 
-# legend line of the benchmark figures: colour bar at the left, method legend centred under the row column
+# legend line of the benchmark figures: the method legend centred under the row
+# column; the time-step colour bar at the left on the same level, "Time steps"
+# above the bar (Yuzheng, 2026-11-01)
 bench_foot() {
   local last=$1
 cat <<TEX
   \\coordinate (foot) at (\$(row$last.south -| 0,0) + (0,-$LEG_GAP)\$);
-  \\node[txt, anchor=north west] (cbarlab) at (foot) {Time steps};
-  \\node[img] (cbar) at (\$(cbarlab.north east) + (1.5,0)\$) {\\includegraphics[width=${CBAR_W}mm, trim=0 0 0 ${CBAR_TRIM_TOP}pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
-  \\node[img, anchor=north] at (\$(foot -| $ROW_C,0) + (14,0)\$) {\\includegraphics[scale=0.4]{$ROWS/legend_methods.pdf}};
+  \\node[img, anchor=north] (leg) at (\$(foot -| $ROW_C,0) + (14,0)\$) {\\includegraphics[scale=0.4]{$ROWS/legend_methods.pdf}};
+  \\node[img, anchor=west] (cbar) at (\$($CBAR_X,0 |- leg.center) + (0,$CBAR_DY)\$) {\\includegraphics[width=${CBAR_W}mm, trim=0 0 0 ${CBAR_TRIM_TOP}pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \\node[txt, anchor=south] at (\$(cbar.north) + (0,0.6)\$) {Time steps};
 TEX
 }
 
-# SI row: $1 tag of the left panel, $2 tag of the right panel, $3 row file stem, $4 label, $5 previous left tag or "top"
+# SI row: $1 tag of the left panel, $2 tag of the right panel, $3 row file stem, $4 previous left tag or "top"
+# (the system label is inside the row, drawn by the notebook)
 si_row() {
-  local ta=$1 tb=$2 stem=$3 label=$4 prev=$5
+  local ta=$1 tb=$2 stem=$3 prev=$4
   if [ "$prev" = top ]; then
     echo "  \\coordinate (hd$ta) at (0, 0);"
   else
@@ -132,8 +143,7 @@ si_row() {
   fi
 cat <<TEX
   \\node[tag, anchor=north west] (tag$ta) at (hd$ta) {$ta};
-  \\node[syslabel, anchor=north west] at (\$(tag$ta.north east) + (2,0)\$) {$label};
-  \\node[tag, anchor=north west] at (\$(hd$ta) + ($FIG_C,0)\$) {$tb};
+  \\node[tag, anchor=north west] at (\$(hd$ta) + ($SI_TAG_B_X,0)\$) {$tb};
   \\node[img] (row$ta) at (\$(tag$ta.south west) + (0,-0.5)\$) {\\includegraphics[scale=0.4]{$ROWS/$stem.pdf}};
 TEX
 }
@@ -179,9 +189,9 @@ HalvorsenEqns='$\dot{x}_1=-1.89 x_1 - 4 x_2 - 4 x_3 - x_2^{2},\; \dot{x}_2=-1.89
 # ---- ablation_success_rate: Lorenz, Rossler, Thomas (six screening variants) ----
 {
   preamble
-  si_row a b lorenz_ablation_success_rate_row          "Lorenz"      top
-  si_row c d rossler_ablation_success_rate_row_notitle "R\\\"ossler" a
-  si_row e f thomas_ablation_success_rate_row_notitle  "Thomas"      c
+  si_row a b lorenz_ablation_success_rate_row          top
+  si_row c d rossler_ablation_success_rate_row_notitle a
+  si_row e f thomas_ablation_success_rate_row_notitle  c
   si_foot e legend_ablation
   closing
 } > "$OUT/ablation_success_rate.tex"
@@ -189,9 +199,9 @@ HalvorsenEqns='$\dot{x}_1=-1.89 x_1 - 4 x_2 - 4 x_3 - x_2^{2},\; \dot{x}_2=-1.89
 # ---- second_order_success_rate: Duffing, forced Duffing, van der Pol -----------
 {
   preamble
-  si_row a b duffing_success_rate_row                "Duffing"        top
-  si_row c d forced-duffing_success_rate_row_notitle "Forced Duffing" a
-  si_row e f vdp_success_rate_row_notitle            "Van der Pol"    c
+  si_row a b duffing_success_rate_row                top
+  si_row c d forced-duffing_success_rate_row_notitle a
+  si_row e f vdp_success_rate_row_notitle            c
   si_foot e legend_methods
   closing
 } > "$OUT/second_order_success_rate.tex"

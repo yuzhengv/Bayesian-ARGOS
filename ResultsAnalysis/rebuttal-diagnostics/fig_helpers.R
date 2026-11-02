@@ -38,22 +38,23 @@ eq_title <- function(system, eq, condition = NULL) {
 }
 snr_cond <- function(snr) if (is.infinite(snr)) quote("SNR = " * infinity) else substitute("SNR = " * S * " dB", list(S = snr))
 
-# snr_axis() for a log y axis with limits lim: the separators keep the size
-# they have on a 0-1 axis (house_style.R, sep_y_scale).
-snr_axis_log <- function(p, lim, ...) {
-  R <- log10(lim[2] / lim[1])
-  snr_axis(p, y_break = lim[1], extra_y = 0.05 * R, ylog = TRUE, sep_y_scale = R, ...)
-}
+# snr_axis() for a log y axis with limits lim: the separators span 10 % of the
+# axis height, centred on the spine, as on every other axis (house_style.R).
+snr_axis_log <- function(p, lim, ...) snr_axis(p, y_break = lim[1], ylog = TRUE, y_range = lim, ...)
 
 # A vertical key drawn as its own panel (standard 4.7.2: once per row, at the
 # left of the row, no background, no frame, text 7 pt final).  One entry per
 # row of `entries`: label (a plotmath string when parse is TRUE), colour, type
 # ("line", "point", "line+point", "fill", "dashed", "dotted"), optional shape,
 # linetype and band (TRUE draws the interquartile ribbon behind the line).  The
-# entries are centred vertically on a grid of `slots` rows so that the line
-# spacing is the same whatever the number of entries.
+# entries are centred vertically on a grid of `slots` rows, so that the line
+# spacing is the panel height over `slots` (fewer slots, wider gaps: Yuzheng,
+# 2026-11-01); the symbols keep the size of the 13-slot design.  An optional
+# `group` column (Fig. 5, row 4: the entries of panels g and h) separates the
+# groups by `group_gap` rows and heads each with its name in the tag face, so
+# that the reader sees which panel each group belongs to.
 key_panel <- function(entries, title = NULL, title_parse = FALSE, slots = 13, x_sym = c(0.02, 0.20), x_text = 0.27,
-                      text_pt = HOUSE_PT$text, point_size = HOUSE_MARKER, lineheight = 0.9) {
+                      text_pt = HOUSE_PT$text, point_size = HOUSE_MARKER, lineheight = 0.9, group_gap = 0.6) {
   stopifnot(is.data.frame(entries))
   n <- nrow(entries)
   if (is.null(entries$parse)) entries$parse <- FALSE
@@ -61,15 +62,28 @@ key_panel <- function(entries, title = NULL, title_parse = FALSE, slots = 13, x_
   if (is.null(entries$band)) entries$band <- FALSE
   if (is.null(entries$alpha)) entries$alpha <- 0.2
   n_title <- if (is.null(title)) 0 else 1
-  top <- slots / 2 + (n + n_title) / 2
-  entries$y <- top - n_title - seq_len(n) + 0.5
-  xm <- mean(x_sym)
+  heads <- NULL
+  if (is.null(entries$group)) {
+    rows <- seq_len(n) - 1
+  } else {                                   # a heading row before every group, a gap between groups
+    grp <- as.character(entries$group); rows <- numeric(n); pos <- 0; heads <- data.frame(label = character(0), row = numeric(0))
+    for (i in seq_len(n)) {
+      if (i == 1 || grp[i] != grp[i - 1]) {
+        if (i > 1) pos <- pos + group_gap
+        heads <- rbind(heads, data.frame(label = grp[i], row = pos)); pos <- pos + 1
+      }
+      rows[i] <- pos; pos <- pos + 1
+    }
+  }
+  top <- slots / 2 + (n_title + max(rows) + 1) / 2
+  entries$y <- top - n_title - rows - 0.5
+  xm <- mean(x_sym); sym <- slots / 13        # symbol heights (in slot units) as in the 13-slot design
   p <- ggplot() + theme_void() + theme(text = element_text(family = HOUSE_FONT), plot.margin = margin(0, 0, 0, 0)) +
     coord_cartesian(xlim = c(0, 1), ylim = c(0, slots), expand = FALSE, clip = "off")
   rb <- entries[entries$band, ]
-  if (nrow(rb)) p <- p + geom_rect(data = rb, aes(xmin = x_sym[1], xmax = x_sym[2], ymin = y - 0.3, ymax = y + 0.3), fill = alpha(rb$colour, rb$alpha))
+  if (nrow(rb)) p <- p + geom_rect(data = rb, aes(xmin = x_sym[1], xmax = x_sym[2], ymin = y - 0.3 * sym, ymax = y + 0.3 * sym), fill = alpha(rb$colour, rb$alpha))
   fl <- entries[entries$type == "fill", ]
-  if (nrow(fl)) p <- p + geom_rect(data = fl, aes(xmin = x_sym[1] + 0.03, xmax = x_sym[2] - 0.03, ymin = y - 0.32, ymax = y + 0.32), fill = fl$colour)
+  if (nrow(fl)) p <- p + geom_rect(data = fl, aes(xmin = x_sym[1] + 0.03, xmax = x_sym[2] - 0.03, ymin = y - 0.32 * sym, ymax = y + 0.32 * sym), fill = fl$colour)
   ln <- entries[entries$type %in% c("line", "line+point", "dashed", "dotted"), ]
   if (nrow(ln)) p <- p + geom_segment(data = ln, aes(x = x_sym[1], xend = x_sym[2], y = y, yend = y), colour = ln$colour,
                                        linetype = ifelse(ln$type == "dashed", "dashed", ifelse(ln$type == "dotted", "dotted", "solid")),
@@ -82,6 +96,9 @@ key_panel <- function(entries, title = NULL, title_parse = FALSE, slots = 13, x_
   if (nrow(tp)) p <- p + geom_text(data = tp, aes(x = x_text, y = y, label = label), hjust = 0, vjust = 0.5, size = text_pt / .pt, family = HOUSE_FONT, parse = TRUE)
   if (!is.null(title)) p <- p + annotate("text", x = x_sym[1], y = top - 0.5, label = title, hjust = 0, vjust = 0.5, size = text_pt / .pt,
                                          family = HOUSE_FONT, fontface = "bold", parse = title_parse)
+  if (!is.null(heads)) { heads$y <- top - n_title - heads$row - 0.5
+    p <- p + geom_text(data = heads, aes(x = x_sym[1], y = y, label = label), hjust = 0, vjust = 0.5, size = HOUSE_PT$tag / .pt,
+                       family = HOUSE_FONT, fontface = "bold") }
   p
 }
 

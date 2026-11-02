@@ -127,9 +127,9 @@ there only.
 | `circular_plot_house.R` | the house copy of the circular plot and `draw_circular_pdf()` | (sourced) |
 | `panel_helpers.R` | the sweep panels (house style, pseudo-log axis, SNR axis) | (sourced) |
 | `tex_compose.R` | writes and compiles the standalone TikZ composites (helvet; tags 8 pt bold, labels 7 pt) | (sourced) |
-| `make_fig6.R` | `figures/fig6_block_a.pdf` (18 x 10.8 in canvas), `figures/circ_lorenz_n_{ba,argos,sindy}.pdf` (12 x 12 in), `figures/shrinkage_spurious_terms.tex/.pdf`; copies the PDF to `imgs/` and `reply-to-reviewers/Figures/`; `results/spurious_summary_aggregate.csv`, `results/fig6_circular_label_stats.csv` | 3 s |
-| `make_si_term_selection.R` | 42 circular plots `figures/circ_<system>_<sweep>_<method>.pdf` and `figures/term_selection_<system>.tex/.pdf`; copies to `si-plots/` and `reply-to-reviewers/Figures/`; `results/si_circular_label_stats.csv` | 18 s |
-| `make_si_spurious_by_system.R` | `figures/spurious_terms_by_system.pdf` (18 x 23.4 in canvas); copies to `si-plots/` and `reply-to-reviewers/Figures/` | 2 s |
+| `make_fig6.R` | `figures/fig6_block_a.pdf` (18 x 10.8 in canvas; legend row 9 pt), `figures/circ_lorenz_n_{ba,argos,sindy}.pdf` (12 x 12 in), `figures/shrinkage_spurious_terms.tex/.pdf` (block-b title 9 pt above the 7 pt method names, legend line 9 pt with 3 mm squares, 2026-11-01); copies the PDF to `imgs/` and `reply-to-reviewers/Figures/`; `results/spurious_summary_aggregate.csv`, `results/fig6_circular_label_stats.csv` | 3 s |
+| `make_si_term_selection.R` | 42 circular plots `figures/circ_<system>_<sweep>_<method>.pdf` and `figures/term_selection_<system>.tex/.pdf` (legend line 9 pt, centred, 2026-11-01); copies to `si-plots/` and `reply-to-reviewers/Figures/`; `results/si_circular_label_stats.csv` | 18 s |
+| `make_si_spurious_by_system.R` | `figures/spurious_terms_by_system.pdf` (18 x 23.4 in canvas; legend row 9 pt, SNR-axis separators spanning 10 % of the pseudo-logarithmic axis, 2026-11-01); copies to `si-plots/` and `reply-to-reviewers/Figures/` | 2 s |
 | `run_all.sh` | runs the four scripts in order | 50 s |
 
 ```bash

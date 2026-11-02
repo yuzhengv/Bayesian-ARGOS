@@ -18,6 +18,8 @@ TEX_PREAMBLE <- c(
     "\\definecolor{sindy}{HTML}{8EB63D}",
     "\\newcommand{\\Tag}[1]{{\\fontsize{8}{9}\\selectfont\\bfseries #1}}",
     "\\newcommand{\\Lab}[1]{{\\fontsize{7}{8}\\selectfont #1}}",
+    "\\newcommand{\\Title}[1]{{\\fontsize{9}{10}\\selectfont #1}}",   # figure-level title, above the panel titles (2026-11-01)
+    "\\newcommand{\\Leg}[1]{{\\fontsize{9}{10}\\selectfont #1}}",     # legend line, as the shared legend rows of the R figures
     "\\begin{document}",
     "\\begin{tikzpicture}[x=1mm,y=-1mm]"
 )
@@ -30,20 +32,18 @@ tex_text <- function(x, y, text, anchor = "north west", style = "Lab") {
 tex_swatch <- function(x, y, colour, size = 2) {
     sprintf("\\fill[%s] (%.3f,%.3f) rectangle ++(%.3f,%.3f);", colour, x, y, size, size)
 }
-# One legend line: three dark squares (true terms), three light squares
-# (spurious terms), then the reading of the bar height.
-tex_fill_legend <- function(x, y, text_after = "bar height: selection frequency over 100 trials") {
+# One legend line, centred on cx with its top edge at y: three dark squares
+# (true terms), three light squares (spurious terms), then the reading of the
+# bar height; 9 pt text and 3 mm squares (Yuzheng, 2026-11-01: "legend larger").
+# The squares are \\rule boxes inside the one text node, so the line is one
+# node that TikZ centres (no nested pictures).
+tex_fill_legend <- function(cx, y, text_after = "bar height: selection frequency over 100 trials", swatch_mm = 3) {
+    sq <- function(col) sprintf("{\\color{%s}\\rule[-0.7mm]{%gmm}{%gmm}}", col, swatch_mm, swatch_mm)
     cols <- c("ba", "argos", "sindy")
-    out <- c()
-    cx <- x
-    for (co in cols) { out <- c(out, tex_swatch(cx, y, co)); cx <- cx + 2.4 }
-    out <- c(out, tex_text(cx + 0.8, y + 1, "true terms", anchor = "west"))
-    cx <- cx + 0.8 + 14
-    for (co in cols) { out <- c(out, tex_swatch(cx, y, paste0(co, "!40"))); cx <- cx + 2.4 }
-    out <- c(out, tex_text(cx + 0.8, y + 1, "spurious terms", anchor = "west"))
-    cx <- cx + 0.8 + 21
-    out <- c(out, tex_text(cx, y + 1, text_after, anchor = "west"))
-    out
+    dark <- paste(sapply(cols, sq), collapse = "\\,")
+    light <- paste(sapply(paste0(cols, "!40"), sq), collapse = "\\,")
+    text <- sprintf("%s\\ true terms\\qquad %s\\ spurious terms\\qquad %s", dark, light, text_after)
+    tex_text(cx, y, text, anchor = "north", style = "Leg")
 }
 # Writes tex_file (in the directory that holds the panel PDFs, referenced by
 # relative paths) and compiles it there; returns the PDF path.

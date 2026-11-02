@@ -29,7 +29,8 @@
 #                         range, the count of such trials printed above) against
 #                         the 90 % half-width 1.645 sigma / sqrt(n) (results/
 #                         dadras_stored_intercept_vs_n.csv)
-# One vertical key per row at the left of the two panels (standard 4.7.2).
+# One vertical key per row at the left of the two panels (standard 4.7.2; key
+# spacing widened 2026-11-01, the row-4 key split into the groups of g and h).
 # Canvas 18 x 20.7 in at k = 2.5 (final width 183 mm, aspect 1.15), cairo_pdf.
 # Writes figures/diagnostics_derivative_error.pdf and copies it to
 # <manuscript>/imgs and <manuscript>/reply-to-reviewers/Figures.
@@ -61,7 +62,7 @@ pa2 <- skyline_panel(fr, ROS_TRUTH, blue(ROS_TRUTH), label_terms = unique(fr$ter
                      cond_labels = c('paste("SNR = 61 dB")', 'paste("SNR = ", infinity)'), order_by = Inf,
                      intercept_col = HOUSE_HIGHLIGHT, intercept_first = FALSE, bar_width = 0.6, label_angle = 0) +
   labs(title = eq_title("Rössler", 1, quote(italic(n) == 5000)), tag = "a")
-key_1 <- key_panel(data.frame(label = c("true term", "spurious intercept"), colour = c(HOUSE_PRIMARY, HOUSE_HIGHLIGHT), type = "fill"))
+key_1 <- key_panel(data.frame(label = c("true term", "spurious intercept"), colour = c(HOUSE_PRIMARY, HOUSE_HIGHLIGHT), type = "fill"), slots = 8)
 
 # ------------------------------------------- row 2: Rossler residuals (exp2)
 ex <- read.csv(file.path(RES, "exp2_examples.csv"), stringsAsFactors = FALSE)
@@ -74,7 +75,7 @@ pb1 <- resid_panel(arr("rossler", "61", "residuals"), arr("rossler", "61", "fitt
 pb2 <- resid_panel(arr("rossler", "inf", "residuals"), arr("rossler", "inf", "fitted"), eq_title("Rössler", 1, snr_cond(Inf)), "d")
 key_2 <- key_panel(data.frame(label = c("residual", "binned mean \u00b1 2 sd\n(12 bins)", "zero line"),
                               colour = c(HOUSE_PRIMARY, HOUSE_HIGHLIGHT, "black"), type = c("point", "line", "dotted"),
-                              shape = c(16, NA, NA), band = c(FALSE, TRUE, FALSE)), point_size = 2, slots = 8)
+                              shape = c(16, NA, NA), band = c(FALSE, TRUE, FALSE)), point_size = 2, slots = 7)
 
 # ---------------------------------------------- row 3: Dadras k-hat vs time
 # Block maximum of k-hat over 100 consecutive observations, stored for every trial
@@ -100,7 +101,7 @@ khat_panel <- function(l10, tag) {
 pc1 <- khat_panel(4, "e"); pc2 <- khat_panel(5, "f")
 key_3 <- key_panel(data.frame(label = c('paste(hat(italic(k))[italic(i)] <= 0.7)', 'paste(hat(italic(k))[italic(i)] > 0.7, " (flagged)")', 'paste("threshold ", hat(italic(k))[italic(i)] == 0.7)'),
                               colour = c(HOUSE_PRIMARY, HOUSE_HIGHLIGHT, HOUSE_HIGHLIGHT), type = c("point", "point", "dashed"),
-                              shape = c(16, 17, NA), parse = TRUE), point_size = 3)
+                              shape = c(16, 17, NA), parse = TRUE), point_size = 3, slots = 8)
 
 # ------------------------------- row 4: flagged points on the attractor, intercept vs n
 fl <- read.csv(file.path(RES, "dadras_loo_flagged.csv")) %>% dplyr::filter(k > K_FLAG, log10n == 5)
@@ -129,7 +130,8 @@ key_4 <- key_panel(data.frame(label = c("clean trajectory\n(trial 1)", 'paste("f
                                         "admitted intercept\n(median and range)", 'paste(1.645, " ", italic(sigma) / sqrt(italic(n)))'),
                               colour = c(HOUSE_GREY, HOUSE_HIGHLIGHT, HOUSE_HIGHLIGHT, HOUSE_PRIMARY),
                               type = c("line", "point", "line+point", "dashed"), shape = c(NA, 17, 16, NA),
-                              band = c(FALSE, FALSE, TRUE, FALSE), parse = c(FALSE, TRUE, FALSE, TRUE)), point_size = 3, slots = 7)
+                              band = c(FALSE, FALSE, TRUE, FALSE), parse = c(FALSE, TRUE, FALSE, TRUE),
+                              group = c("g", "g", "h", "h")), point_size = 3, slots = 8)   # two headed groups: the entries of g and of h (Yuzheng, 2026-11-01)
 
 # ------------------------------------------------------------------ assemble
 p <- key_1 + pa2 + pa1 + key_2 + pb1 + pb2 + key_3 + pc1 + pc2 + key_4 + pd1 + pd2 +

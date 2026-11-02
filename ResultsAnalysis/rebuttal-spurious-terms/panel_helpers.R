@@ -24,10 +24,9 @@ scale_y_quantity <- function(quantity, ymax, name = NULL) {
         scale_y_continuous(name = name, limits = c(0, ymax), expand = expansion(mult = c(0, 0.04)), oob = oob_keep)
     }
 }
-# half-height of the SNR-axis separators: 2.5 % of the axis in transformed units
-separator_extra_y <- function(quantity, ymax) {
-    if (quantity == "spurious_per_eq") SPUR_TRANS$inverse(0.025 * SPUR_TRANS$transform(ymax)) else 0.025 * ymax
-}
+# the transformation of the y axis, for the SNR-axis separators (snr_axis(), y_range):
+# each separator spans 10 % of the axis height on the pseudo-logarithmic axis as on the linear ones
+y_transform <- function(quantity) if (quantity == "spurious_per_eq") SPUR_TRANS else NULL
 QUANTITY_TITLE <- c(spurious_per_eq = "Spurious terms per equation",
                     missed_per_eq = "True terms missed per equation",
                     mean_freq_spurious = "Mean selection frequency of spurious terms")
@@ -50,11 +49,9 @@ sweep_panel <- function(d, sweep, quantity, ymax, title = NULL, ylab = NULL, xla
     if (sweep == "n") {
         p <- p + scale_x_log_n(name = if (xlab) expression(italic("n")) else NULL, limits = c(2, 5), expand = expansion(mult = 0.02))
     } else {
-        p <- snr_axis(p, y_break = 0, extra_y = separator_extra_y(quantity, ymax), name = if (xlab) "SNR (dB)" else NULL)
+        p <- snr_axis(p, y_break = 0, ytrans = y_transform(quantity), y_range = c(0, ymax), name = if (xlab) "SNR (dB)" else NULL)
     }
     if (!is.null(ylab)) p <- p + theme(axis.title.y = element_text(size = HOUSE_PT$text, angle = 90, margin = margin(r = 6)))
     p
 }
-row_label <- function(text, rot = 90) {
-    patchwork::wrap_elements(full = grid::textGrob(text, rot = rot, gp = grid::gpar(fontsize = HOUSE_PT$text, fontfamily = HOUSE_FONT)))
-}
+# row_label() comes from house_style.R (shared with the Supplementary success-rate rows since 2026-11-01)

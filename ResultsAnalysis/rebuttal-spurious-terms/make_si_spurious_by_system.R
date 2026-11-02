@@ -4,7 +4,8 @@
 #   figures/spurious_terms_by_system.pdf  (copied to si-plots/ and reply-to-reviewers/Figures/)
 # Canvas 18 x 23.4 in (k = 2.5 route), final width 183 mm, aspect 1.3; 7 rows
 # (systems) x 2 columns (sweeps), tags a to n, system name per row, column
-# titles once, one legend row below. All 14 panels share the y axis.
+# titles once, one legend row below (9 pt). All 14 panels share the y axis; the
+# SNR-axis separators span 10 % of the pseudo-logarithmic axis (2026-11-01).
 # Usage: Rscript make_si_spurious_by_system.R
 
 source(file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "common.R"))
@@ -31,8 +32,7 @@ rows <- lapply(seq_along(SYSTEMS), function(i) {
     row_label(SYSTEM_LABEL[[SYSTEMS[i]]]) + panels[[2 * i - 1]] + panels[[2 * i]] + plot_layout(widths = c(0.05, 1, 1))
 })
 fig <- Reduce(`/`, rows) + plot_layout(guides = "collect") &
-    theme(legend.position = "bottom", legend.direction = "horizontal", legend.title = element_blank(),
-          legend.text = element_text(size = HOUSE_PT$text), legend.key.width = unit(0.6, "in"))
+    house_legend_theme() & house_legend_guides(nrow = 1, point_size = 5)     # legend row 9 pt final (2026-11-01)
 out <- file.path(here, "figures", "spurious_terms_by_system.pdf")
 save_figure(fig, out, width_mm = 183, aspect = 1.3)
 for (dest in c(file.path(manuscript_root, "si-plots"), file.path(manuscript_root, "reply-to-reviewers", "Figures"))) {

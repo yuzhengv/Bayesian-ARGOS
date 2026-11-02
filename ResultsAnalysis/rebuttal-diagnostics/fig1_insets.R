@@ -24,8 +24,13 @@
 #   carries them).  34 mm is the width the box of the drawing gives the inset
 #   at the final figure width of 183 mm (compose_fig1_schematic.sh scales the
 #   inset to 186 pt of the 1025 pt page), so that the inset text is 7 pt and
-#   the tick labels 6.5 pt in the composed figure.
+#   the tick labels 6.5 pt in the composed figure.  The three insets are
+#   aligned with cowplot::align_plots (panel edges on one level, equal panel
+#   sizes; Yuzheng, 2026-11-01), so that the three boxes of the drawing show
+#   the same plot area at the same height.
 # Usage: Rscript fig1_insets.R [snr=57] [n=5000]     (one try is about 1 min)
+#        Rscript fig1_insets.R plot-only            (redraws the insets from the
+#        stored results/fig1_insets_*.csv without refitting; seconds)
 
 source(file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "common.R"))
 suppressPackageStartupMessages(library(loo))
@@ -33,6 +38,7 @@ here <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), 
 source(file.path(here, "..", "plot-style", "house_style.R"))
 source(file.path(here, "fig_helpers.R"))
 args <- commandArgs(trailingOnly = TRUE)
+PLOT_ONLY <- "plot-only" %in% args; args <- setdiff(args, "plot-only")
 SNR <- if (length(args) >= 1) as.numeric(args[1]) else 57
 N <- if (length(args) >= 2) as.integer(args[2]) else 5000L
 MAX_TRIES <- 20L; EQ <- 3L; SYSTEM <- "aizawa"
@@ -74,8 +80,16 @@ fit_equation <- function(dm, eq) {
   list(eq = eq, ok = ok, scr = scr, bs = bs, y = y, Xs = Xs, kept = c(if (bs$kept_intercept) "(Intercept)", bs$kept_terms))
 }
 
+t0 <- Sys.time()
+if (PLOT_ONLY) {
+  rr <- read.csv(file.path(RES, "fig1_insets_residuals.csv")); kk <- read.csv(file.path(RES, "fig1_insets_khat.csv"))
+  vif_df <- read.csv(file.path(RES, "fig1_insets_vif.csv"), stringsAsFactors = FALSE)
+  e <- rr$residual; f <- rr$fitted; z <- rr$standardised; tt <- kk$t; k <- kk$k
+  v <- setNames(vif_df$vif, vif_df$term); truth3 <- SYSTEMS[[SYSTEM]]$truth[[as.character(EQ)]]$terms
+  cat(sprintf("plot-only: %d residuals, %d k-hat values, %d VIF terms read from %s\n", length(e), length(k), length(v), RES))
+} else {
 RNGkind("L'Ecuyer-CMRG"); set.seed(1)        # reproducible Stan seeds in the forked workers
-t0 <- Sys.time(); chosen <- NULL; log_rows <- list()
+chosen <- NULL; log_rows <- list()
 for (row in seq_len(MAX_TRIES)) {
   seed <- 20000 + 100 * (row - 1) + SNR
   s <- simulate(SYSTEM, N, SNR, ICS[row, ], seed)
@@ -105,6 +119,7 @@ write.csv(vif_df, file.path(RES, "fig1_insets_vif.csv"), row.names = FALSE)
 cat(sprintf("chosen pool row %d (seed %d); x3-dot: pass-2 support %d terms, trimmed design %d terms, max k-hat %.3f, %d points with k-hat > 0.7, largest VIF of a true term %.1f (%s), largest VIF overall %.3g\n",
             chosen$row, chosen$seed, length(scr$selected_terms), length(v), max(k), sum(k > 0.7),
             max(v[truth3]), names(which.max(v[truth3])), max(v)))
+}
 
 # ------------------------------------------------------------------ insets
 inset_theme <- house_theme() + theme(plot.margin = margin(t = 0.08, r = 0.12, b = 0.05, l = 0.05, unit = "in"))
@@ -119,9 +134,8 @@ p_res <- ggplot() +
   geom_line(data = b, aes(f, m), colour = HOUSE_HIGHLIGHT, linewidth = HOUSE_LINE) +
   geom_hline(yintercept = 0, linetype = 3, linewidth = 0.44) +
   scale_y_continuous(limits = c(-6, 6), breaks = seq(-6, 6, 3)) +
-  labs(x = "fitted value (posterior mean)", y = "standardised residual") + inset_theme +
-  theme(axis.title.x = element_text(size = HOUSE_PT$tick))
-save_figure(p_res, file.path(FIG, "fig1_inset_residuals.pdf"), width_mm = INSET_W, aspect = INSET_ASPECT, device = cairo_pdf)
+  labs(x = "fitted value\n(posterior mean)", y = "standardised residual") + inset_theme +     # two lines: the aligned panel leaves no room for one
+  theme(axis.title.x = element_text(size = HOUSE_PT$tick, lineheight = 0.9))
 
 # (ii) Pareto k-hat against time, dashed 0.7 line
 kd <- data.frame(t = tt, k = k, flag = k > 0.7)
@@ -132,7 +146,6 @@ p_k <- ggplot(kd, aes(t, k)) +
   scale_y_continuous(limits = c(min(k) - 0.02, max(0.8, max(k) * 1.05)), breaks = seq(-1, 3, 0.25)) +
   scale_x_continuous(breaks = pretty_breaks(4)) +
   labs(x = "time", y = expression("Pareto " * hat(italic(k))[italic(i)])) + inset_theme
-save_figure(p_k, file.path(FIG, "fig1_inset_khat.pdf"), width_mm = INSET_W, aspect = INSET_ASPECT, device = cairo_pdf)
 
 # (iii) VIF of every candidate term of the design entering pass 2; true terms coloured and
 # labelled (ggrepel leaders), others grey
@@ -150,5 +163,9 @@ p_v <- ggplot(vif_df, aes(index, vif)) +
   scale_x_continuous(breaks = NULL, expand = expansion(add = 0.8)) +
   scale_y_log10_powers("VIF", limits = c(1, 10^(ceiling(log10(max(v))) + 1)), step = 1) +
   labs(x = "candidate term") + inset_theme
-save_figure(p_v, file.path(FIG, "fig1_inset_vif.pdf"), width_mm = INSET_W, aspect = INSET_ASPECT, device = cairo_pdf)
+
+# the three insets with their panel edges aligned (equal plot areas, x axes on one level)
+aligned <- cowplot::align_plots(p_res, p_k, p_v, align = "hv", axis = "tblr")
+files <- c("fig1_inset_residuals.pdf", "fig1_inset_khat.pdf", "fig1_inset_vif.pdf")
+for (i in 1:3) save_figure(cowplot::ggdraw(aligned[[i]]), file.path(FIG, files[i]), width_mm = INSET_W, aspect = INSET_ASPECT, device = cairo_pdf)
 cat("insets ->", FIG, "; total", round(as.numeric(Sys.time() - t0, units = "secs")), "s\n")

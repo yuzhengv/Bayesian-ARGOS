@@ -6,7 +6,7 @@
 # fig_sg_vs_weak.pdf: theme, palette, n axis with 10^k labels, SNR axis with
 # the broken infinity position, the 0.8 line and band (standard 4.4, 4.6):
 # Savitzky-Golay arm solid line and filled circle, weak-form arm dashed line
-# and open circle, both in the Bayesian-ARGOS blue; one legend row below.  The
+# and open circle, both in the Bayesian-ARGOS blue; one legend row below (9 pt).  The
 # SINDy arms stay internal (make_figures_2x2.R).  Canvas 18 x 11.7 in at
 # k = 2.5 (final width 183 mm, aspect 0.65), cairo_pdf.  Writes
 # figures/sg_vs_integration.pdf and copies it to <manuscript>/si-plots and
@@ -48,8 +48,7 @@ panel_snr <- function(sys, tag) {
 p <- (panel_n("aizawa", "a") + panel_n("dadras", "b") + panel_n("rossler", "c")) /
      (panel_snr("aizawa", "d") + panel_snr("dadras", "e") + panel_snr("rossler", "f")) +
      plot_layout(guides = "collect") &
-     theme(legend.position = "bottom", legend.direction = "horizontal", legend.key.width = unit(0.6, "in"),
-           legend.text = element_text(size = HOUSE_PT$text), legend.spacing.x = unit(0.3, "in"))
+     house_legend_theme() & house_legend_guides(nrow = 1)     # legend row 9 pt final (2026-11-01)
 save_figure(p, OUT, width_mm = 183, aspect = 0.65, device = cairo_pdf)
 mr <- Sys.getenv("ARGOS_MANUSCRIPT_DIR", normalizePath(file.path(here, "..", "..", "..", "..")))
 for (d in c(file.path(mr, "si-plots"), file.path(mr, "reply-to-reviewers", "Figures")))

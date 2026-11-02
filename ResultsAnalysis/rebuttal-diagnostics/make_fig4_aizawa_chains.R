@@ -9,7 +9,8 @@
 #                      shown condition; the eight true terms in their colours
 #                      (intercept black), every other term grey; the chain
 #                      neighbour x2^2 x3^2 annotated; the key at the left names
-#                      the true terms in the order of the bars (no tick labels)
+#                      the true terms in the order of the bars, intercept first
+#                      (no tick labels)
 #   row b (diagnostic) median VIF (20 trials) of every term of the design entering
 #                      the second adaptive-lasso pass against n and against SNR
 #                      (results/exp1_vif_long.csv), true terms coloured, others
@@ -17,7 +18,8 @@
 #   row c (mechanism)  condition number of the four nested designs, median and
 #                      interquartile range (results/exp1_kappa.csv), one log scale
 # One vertical key per row at the left of the two compared panels (standard
-# 4.7.2).  Canvas 18 x 19.8 in at k = 2.5 (final width 183 mm, aspect 1.1),
+# 4.7.2; key spacing widened 2026-11-01: 12, 10 and 6 slots per row).  Canvas
+# 18 x 19.8 in at k = 2.5 (final width 183 mm, aspect 1.1),
 # cairo_pdf.  Writes figures/diagnostics_aizawa_chains.pdf and copies it to
 # <manuscript>/imgs and <manuscript>/reply-to-reviewers/Figures.
 # Usage: Rscript make_fig4_aizawa_chains.R        (seconds)
@@ -48,10 +50,10 @@ pa1 <- skyline_panel(fn, AIZAWA_TRUTH, AIZAWA_TRUTH_COL, label_terms,
 pa2 <- skyline_panel(fs, AIZAWA_TRUTH, AIZAWA_TRUTH_COL, label_terms,
                      cond_labels = c('paste("SNR = 50 dB")', 'paste("SNR = 55 dB")', 'paste("SNR = 61 dB")', 'paste("SNR = ", infinity)'),
                      order_by = Inf, annotate_df = ann_s) + labs(title = TITLE_SNR, tag = "b")
-key_a <- key_panel(data.frame(label = c(term_label(AIZAWA_TRUTH), "intercept", "other candidate term"),
-                              colour = c(unname(AIZAWA_TRUTH_COL), "black", HOUSE_GREY), type = "fill",
-                              parse = c(rep(TRUE, 7), FALSE, FALSE)),
-                   title = 'paste("Aizawa ", dot(italic(x))[3])', title_parse = TRUE)
+key_a <- key_panel(data.frame(label = c("intercept", term_label(AIZAWA_TRUTH), "other candidate term"),   # the order of the bars: intercept first (Yuzheng, 2026-11-01)
+                              colour = c("black", unname(AIZAWA_TRUTH_COL), HOUSE_GREY), type = "fill",
+                              parse = c(FALSE, rep(TRUE, 7), FALSE)),
+                   title = 'paste("Aizawa ", dot(italic(x))[3])', title_parse = TRUE, slots = 12)
 
 # ---------------------------------------------------------- row b: diagnostic
 vif <- read.csv(file.path(RES, "exp1_vif_long.csv"), stringsAsFactors = FALSE)
@@ -81,7 +83,9 @@ pb1 <- vif_panel("n") + labs(title = TITLE_N, tag = "c")
 pb2 <- vif_panel("snr") + labs(title = TITLE_SNR, tag = "d")
 key_b <- key_panel(data.frame(label = c(term_label(AIZAWA_TRUTH), "other candidate term"),
                               colour = c(unname(AIZAWA_TRUTH_COL), HOUSE_GREY), type = c(rep("line+point", 7), "line"),
-                              shape = c(unname(AIZAWA_TRUTH_SHAPE), 16), parse = c(rep(TRUE, 7), FALSE)))
+                              shape = c(unname(AIZAWA_TRUTH_SHAPE), 16), parse = c(rep(TRUE, 7), FALSE)), slots = 10)
+# The intercept has no VIF: vif() regresses each centred column of the design on
+# the others, and the constant column is not part of that design (common.R).
 
 # ----------------------------------------------------------- row c: mechanism
 kappa <- read.csv(file.path(RES, "exp1_kappa.csv"), stringsAsFactors = FALSE)
@@ -109,7 +113,7 @@ kappa_panel <- function(sw) {
 }
 pc1 <- kappa_panel("n") + labs(title = TITLE_N, tag = "e")
 pc2 <- kappa_panel("snr") + labs(title = TITLE_SNR, tag = "f")
-key_c <- key_panel(data.frame(label = unname(DES), colour = unname(DES_COL), type = "line+point", shape = unname(DES_SHAPE), band = TRUE), slots = 9)
+key_c <- key_panel(data.frame(label = unname(DES), colour = unname(DES_COL), type = "line+point", shape = unname(DES_SHAPE), band = TRUE), slots = 6)
 
 # ------------------------------------------------------------------ assemble
 p <- key_a + pa1 + pa2 + key_b + pb1 + pb2 + key_c + pc1 + pc2 +

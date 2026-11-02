@@ -10,7 +10,7 @@
 # submitted SI figures used them, the noiseless ring labelled with the infinity
 # symbol); rings run from the hardest condition outside (smallest n, lowest
 # SNR) to the easiest inside; tags a to f row-major, method as row title,
-# sweep as column title, one legend line. Three stacked square plots give an
+# sweep as column title, one legend line (9 pt, 2026-11-01). Three stacked square plots give an
 # aspect near 1.5, so with PLOT_MM = 76 the figure is 161 x 243 mm, inside the
 # standard's 247 mm page depth; 88 mm plots would make it 280 mm tall.
 # Usage: Rscript make_si_term_selection.R
@@ -57,7 +57,7 @@ for (sys in SYSTEMS) {
     }
     y_leg <- y0 + 3 * PLOT_MM + 2 * ROW_GAP_MM + 1.5
     width <- ROW_TITLE_MM + 2 * PLOT_MM + GUTTER_MM
-    body <- c(body, tex_fill_legend(ROW_TITLE_MM + (2 * PLOT_MM + GUTTER_MM - 121) / 2, y_leg))
+    body <- c(body, tex_fill_legend(ROW_TITLE_MM + (2 * PLOT_MM + GUTTER_MM) / 2, y_leg))
     out <- compose_tex(file.path(figdir, sprintf("term_selection_%s.tex", sys)), body)
     for (dest in c(file.path(manuscript_root, "si-plots"), file.path(manuscript_root, "reply-to-reviewers", "Figures"))) {
         if (dir.exists(dest)) file.copy(out, file.path(dest, basename(out)), overwrite = TRUE)

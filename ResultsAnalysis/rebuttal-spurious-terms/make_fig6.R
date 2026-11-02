@@ -9,7 +9,8 @@
 # terms per equation, true terms missed per equation, mean selection frequency
 # of the spurious terms; each curve is the mean over the seven systems, the
 # ribbon the minimum to maximum over the systems; tags a to f, one legend row.
-# Block b: rings 10^5 (inner) to 10^2.8 (outer); tags g to i.
+# Block b: rings 10^5 (inner) to 10^2.8 (outer); tags g to i; its title 9 pt
+# above the 7 pt method names, the legend line 9 pt (Yuzheng, 2026-11-01).
 # Usage: Rscript make_fig6.R
 
 source(file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "common.R"))
@@ -45,8 +46,7 @@ for (sw in c("n", "snr")) {
 row1 <- row_label("SNR = 49 dB") + panels[[1]] + panels[[2]] + panels[[3]] + plot_layout(widths = c(0.05, 1, 1, 1))
 row2 <- row_label("n = 5000") + panels[[4]] + panels[[5]] + panels[[6]] + plot_layout(widths = c(0.05, 1, 1, 1))
 fig_a <- (row1 / row2) + plot_layout(guides = "collect") &
-    theme(legend.position = "bottom", legend.direction = "horizontal", legend.title = element_blank(),
-          legend.text = element_text(size = HOUSE_PT$text), legend.key.width = unit(0.6, "in"))
+    house_legend_theme() & house_legend_guides(nrow = 1, point_size = 5)     # legend row 9 pt final (2026-11-01)
 block_a <- file.path(figdir, "fig6_block_a.pdf")
 save_figure(fig_a, block_a, width_mm = 183, aspect = 0.60)
 
@@ -72,16 +72,16 @@ write.csv(label_stats, file.path(here, "results", "fig6_circular_label_stats.csv
 sz <- pdf_size_mm(block_a); h_a <- 183 * sz[2] / sz[1]
 gap <- (183 - 3 * circ_width) / 2
 xs <- c(0, circ_width + gap, 2 * (circ_width + gap))
-y_head <- h_a + 1.5; y_title <- y_head + 4.5; y_img <- y_title + 3.6; y_leg <- y_img + circ_width + 2
+y_head <- h_a + 1.5; y_title <- y_head + 5; y_img <- y_title + 3.6; y_leg <- y_img + circ_width + 2
 body <- c(
     tex_image(0, 0, 183, basename(block_a)),
-    tex_text(91.5, y_head, "Lorenz, SNR = 49 dB, 100 trials per ring", anchor = "north"),
+    tex_text(91.5, y_head, "Lorenz, SNR = 49 dB, 100 trials per ring", anchor = "north", style = "Title"),   # 9 pt, above the 7 pt method names (2026-11-01)
     unlist(lapply(seq_along(METHODS), function(i) c(
         tex_text(xs[i], y_title - 0.4, letters[6 + i], anchor = "north west", style = "Tag"),
         tex_text(xs[i] + circ_width / 2, y_title, METHODS[i], anchor = "north"),
         tex_image(xs[i], y_img, circ_width, circ_files[[METHODS[i]]])
     ))),
-    tex_fill_legend(31, y_leg)
+    tex_fill_legend(91.5, y_leg)
 )
 out <- compose_tex(file.path(figdir, "shrinkage_spurious_terms.tex"), body)
 for (dest in c(file.path(manuscript_root, "imgs"), file.path(manuscript_root, "reply-to-reviewers", "Figures"))) {

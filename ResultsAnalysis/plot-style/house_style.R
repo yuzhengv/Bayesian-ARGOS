@@ -16,6 +16,8 @@
 #   scale_x_log_n()          n axis, 10^2 ... 10^5, labels 10^k
 #   snr_axis(p, y_break, ...)  SNR axis 10 ... 60 dB plus infinity beyond a break (spine drawn as two segments)
 #   snr_x(s)                 position of an SNR value (Inf -> INF_X)
+#   house_legend_theme(), house_legend_guides(nrow)   the shared legend row, 9 pt final (2026-11-01)
+#   row_label(text)          a rotated row label as a narrow patchwork element
 #   success_rate_layers()    the dashed 0.8 line and the band above it
 #   scale_y_success()        y axis 0 ... 1
 #   scale_y_log10_powers()   y axis with 10^k labels
@@ -74,34 +76,45 @@ scale_x_log_n <- function(name = expression(italic("n")), limits = NULL, breaks 
 # beyond a break drawn as two slanted separators on an otherwise empty spine.
 INF_X <- 73
 SNR_BREAK <- c(65.5, 69.5)
+SEP_ANGLE <- 75           # slant of the separators
+SEP_HALF <- 0.05          # half-height of a separator as a fraction of the (transformed) y range
+SEP_ADD_Y <- 0.1 * sin(SEP_ANGLE * pi / 180) / 2   # the half-height the old asymmetric strokes added (compatibility)
 snr_x <- function(s) ifelse(is.infinite(s), INF_X, s)
 
-create_separators <- function(x, extra_x, y, extra_y, angle = 75, scale = 1, length = .1, y_scale = scale) {
-  add_y <- length * sin(angle * pi / 180) / 2; add_x <- length * cos(angle * pi / 180)
-  list(x = x - add_x * scale, xend = x + add_x * scale + extra_x,
-       y = rep(y - add_y * y_scale - extra_y, length(x)), yend = rep(y + add_y * y_scale - extra_y / 2, length(x)))
+# Two slanted strokes centred on the spine (Yuzheng, 2026-11-01: the spine
+# meets each separator at mid-height): from (x - dx, y - half) to
+# (x + dx + extra_x, y + half), y and half in the transformed y units.
+create_separators <- function(x, extra_x, y, half, angle = SEP_ANGLE, length = .1) {
+  add_x <- length * cos(angle * pi / 180)
+  list(x = x - add_x, xend = x + add_x + extra_x, y = rep(y - half, length(x)), yend = rep(y + half, length(x)))
 }
 
 # p: a ggplot whose x is snr_x(SNR); y_break: the y value at which the spine is
 # drawn (the lower limit of the y scale: 0 for a 0-1 axis, 1 for a log axis
-# starting at 10^0, ...); extra_y: the half-height of the separators in y units
-# (0.05 for a 0-1 axis; for a log axis pass a value in log10 units and set
-# ylog = TRUE). The x spine of the theme is switched off and drawn as two
-# segments, so that the spine is empty between the two separators whatever the
-# ggplot2 version (ggh4x's guide_axis_truncated is deprecated). The separators
-# are sized for a y axis spanning one unit; for a y axis spanning R units (R
-# decades when ylog = TRUE) pass extra_y = 0.05 * R and sep_y_scale = R so that
-# they keep the size they have on a 0-1 axis (added 2026-10-14, F2).
-snr_axis <- function(p, y_break = 0, extra_y = 0.05, ticks = seq(10, 60, 10), xmin = 6, name = "SNR (dB)", ylog = FALSE, sep_y_scale = 1) {
-  seg <- create_separators(SNR_BREAK, extra_x = 1, y = if (ylog) log10(y_break) else y_break, extra_y = extra_y, angle = 75, y_scale = sep_y_scale)
-  f <- if (ylog) function(v) 10^v else identity
+# starting at 10^0, ...). The x spine of the theme is switched off and drawn as
+# two segments, so that the spine is empty between the two separators whatever
+# the ggplot2 version (ggh4x's guide_axis_truncated is deprecated).
+# Separator size (2026-11-01): pass the y limits as y_range (and the scale's
+# transformation as ytrans, or ylog = TRUE for log10) and each separator spans
+# 2 * SEP_HALF = 10 % of the axis height, centred on the spine, whatever the
+# quantity and its scale. Without y_range the former arguments apply: extra_y
+# and sep_y_scale give the half-height (SEP_ADD_Y * sep_y_scale + extra_y) / 2,
+# which is 0.049 for the 0-1 success-rate axis (extra_y = 0.05) and 0.049 R
+# for a log axis of R decades (extra_y = 0.05 R, sep_y_scale = R).
+snr_axis <- function(p, y_break = 0, extra_y = 0.05, ticks = seq(10, 60, 10), xmin = 6, name = "SNR (dB)",
+                     ylog = FALSE, sep_y_scale = 1, ytrans = NULL, y_range = NULL) {
+  if (ylog && is.null(ytrans)) ytrans <- scales::transform_log10()
+  tf <- if (is.null(ytrans)) identity else ytrans$transform
+  inv <- if (is.null(ytrans)) identity else ytrans$inverse
+  half <- if (!is.null(y_range)) SEP_HALF * abs(diff(tf(y_range))) else (SEP_ADD_Y * sep_y_scale + extra_y) / 2
+  seg <- create_separators(SNR_BREAK, extra_x = 1, y = tf(y_break), half = half)
   xr <- c(xmin, INF_X + 1)
   p + scale_x_continuous(name = name, limits = xr, breaks = c(ticks, INF_X),
                          labels = c(ticks, TeX("$\\infty$")), expand = expansion(mult = 0), oob = oob_keep) +
     theme(axis.line.x = element_blank()) +
     annotate("segment", x = c(xr[1], SNR_BREAK[2] + 0.5), xend = c(SNR_BREAK[1] + 0.5, xr[2]),
              y = y_break, yend = y_break, linewidth = 0.44, colour = "black") +
-    annotate("segment", x = seg$x, xend = seg$xend, y = f(seg$y), yend = f(seg$yend), linewidth = 0.44, colour = "black") +
+    annotate("segment", x = seg$x, xend = seg$xend, y = inv(seg$y), yend = inv(seg$yend), linewidth = 0.44, colour = "black") +
     coord_cartesian(clip = "off")
 }
 
@@ -128,6 +141,34 @@ method_scales <- function(methods = names(HOUSE_COLOURS), labels = methods, name
 }
 # point size for 100-trial success-rate sweeps (standard 4.6.1) and summary curves (4.6.2)
 HOUSE_POINT <- 3; HOUSE_MARKER <- 4; HOUSE_LINE <- 1.4; HOUSE_CONTEXT_LINE <- 0.7
+
+# ------------------------------------------------------------------- legends
+# The shared legend row of a figure (standard 4.7.1) is set larger than the
+# panel text (Yuzheng, 2026-11-01: "make this legend larger in all the plots
+# using it"): text 9 pt final, keys enlarged to match. house_legend_theme()
+# gives the theme elements (position, text, key size, spacing);
+# house_legend_guides(nrow) the guides with enlarged point keys for the colour,
+# fill and shape mappings of the method and variant legends.
+HOUSE_PT$legend <- 9 * HOUSE_K
+HOUSE_LEGEND_POINT <- 4.5
+house_legend_theme <- function(position = "bottom", key_width = 0.6, key_height = 0.3) {
+  theme(legend.position = position, legend.direction = "horizontal", legend.title = element_blank(),
+        legend.text = element_text(size = HOUSE_PT$legend),
+        legend.key.width = unit(key_width, "in"), legend.key.height = unit(key_height, "in"),
+        legend.key.spacing.x = unit(0.25, "in"), legend.margin = margin(2, 2, 2, 2))
+}
+house_legend_guides <- function(nrow = 1, point_size = HOUSE_LEGEND_POINT, linewidth = NULL) {
+  oa <- list(size = point_size); if (!is.null(linewidth)) oa$linewidth <- linewidth
+  g <- guide_legend(nrow = nrow, override.aes = oa)
+  guides(colour = g, fill = g, shape = g)
+}
+
+# A rotated row label (the system of a row, standard 4.8.2) as a narrow
+# patchwork element placed at the left of the row with plot_layout(widths =
+# c(0.05, 1, 1)), as the Supplementary spurious-terms figure draws it; 7 pt final.
+row_label <- function(text, rot = 90, size = HOUSE_PT$text, face = "plain") {
+  patchwork::wrap_elements(full = grid::textGrob(text, rot = rot, gp = grid::gpar(fontsize = size, fontfamily = HOUSE_FONT, fontface = face)))
+}
 
 # ----------------------------------------------------------------------- save
 # width_mm: the final width (183 or 89); aspect = height / width of the figure.

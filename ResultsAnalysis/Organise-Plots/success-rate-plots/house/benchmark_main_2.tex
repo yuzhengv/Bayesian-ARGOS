@@ -38,8 +38,8 @@
   \node[tag] at (0,0 |- eqc.center) {c};
   \node[syslabel] at (22.0,0 |- eqc.center) {Halvorsen};
   \coordinate (foot) at ($(rowc.south -| 0,0) + (0,-3)$);
-  \node[txt, anchor=north west] (cbarlab) at (foot) {Time steps};
-  \node[img] (cbar) at ($(cbarlab.north east) + (1.5,0)$) {\includegraphics[width=57mm, trim=0 0 0 42pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
-  \node[img, anchor=north] at ($(foot -| 114.0,0) + (14,0)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/legend_methods.pdf}};
+  \node[img, anchor=north] (leg) at ($(foot -| 114.0,0) + (14,0)$) {\includegraphics[scale=0.4]{../../success-rate-plots/imgs/house/legend_methods.pdf}};
+  \node[img, anchor=west] (cbar) at ($(4,0 |- leg.center) + (0,-1.2)$) {\includegraphics[width=57mm, trim=0 0 0 42pt, clip]{simulation-plots/trajectory_colorbar.pdf}};
+  \node[txt, anchor=south] at ($(cbar.north) + (0,0.6)$) {Time steps};
 \end{tikzpicture}
 \end{document}

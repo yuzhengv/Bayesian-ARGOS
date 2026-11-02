@@ -9,6 +9,8 @@
 \definecolor{sindy}{HTML}{8EB63D}
 \newcommand{\Tag}[1]{{\fontsize{8}{9}\selectfont\bfseries #1}}
 \newcommand{\Lab}[1]{{\fontsize{7}{8}\selectfont #1}}
+\newcommand{\Title}[1]{{\fontsize{9}{10}\selectfont #1}}
+\newcommand{\Leg}[1]{{\fontsize{9}{10}\selectfont #1}}
 \begin{document}
 \begin{tikzpicture}[x=1mm,y=-1mm]
 \node[anchor=north, inner sep=0pt] at (43.000,0.000) {\Lab{Against \textit{n} at SNR = 49 dB}};
@@ -28,14 +30,6 @@
 \node[anchor=north west, inner sep=0pt] at (5.000,162.500) {\includegraphics[width=76.000mm]{circ_lorenz_n_sindy.pdf}};
 \node[anchor=north west, inner sep=0pt] at (83.500,162.000) {\Tag{f}};
 \node[anchor=north west, inner sep=0pt] at (85.000,162.500) {\includegraphics[width=76.000mm]{circ_lorenz_snr_sindy.pdf}};
-\fill[ba] (22.500,240.000) rectangle ++(2.000,2.000);
-\fill[argos] (24.900,240.000) rectangle ++(2.000,2.000);
-\fill[sindy] (27.300,240.000) rectangle ++(2.000,2.000);
-\node[anchor=west, inner sep=0pt] at (30.500,241.000) {\Lab{true terms}};
-\fill[ba!40] (44.500,240.000) rectangle ++(2.000,2.000);
-\fill[argos!40] (46.900,240.000) rectangle ++(2.000,2.000);
-\fill[sindy!40] (49.300,240.000) rectangle ++(2.000,2.000);
-\node[anchor=west, inner sep=0pt] at (52.500,241.000) {\Lab{spurious terms}};
-\node[anchor=west, inner sep=0pt] at (73.500,241.000) {\Lab{bar height: selection frequency over 100 trials}};
+\node[anchor=north, inner sep=0pt] at (83.000,240.000) {\Leg{{\color{ba}\rule[-0.7mm]{3mm}{3mm}}\,{\color{argos}\rule[-0.7mm]{3mm}{3mm}}\,{\color{sindy}\rule[-0.7mm]{3mm}{3mm}}\ true terms\qquad {\color{ba!40}\rule[-0.7mm]{3mm}{3mm}}\,{\color{argos!40}\rule[-0.7mm]{3mm}{3mm}}\,{\color{sindy!40}\rule[-0.7mm]{3mm}{3mm}}\ spurious terms\qquad bar height: selection frequency over 100 trials}};
 \end{tikzpicture}
 \end{document}
