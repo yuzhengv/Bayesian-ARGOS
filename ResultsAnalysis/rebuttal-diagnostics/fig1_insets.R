@@ -27,7 +27,9 @@
 #   the tick labels 6.5 pt in the composed figure.  The three insets are
 #   aligned with cowplot::align_plots (panel edges on one level, equal panel
 #   sizes; Yuzheng, 2026-11-01), so that the three boxes of the drawing show
-#   the same plot area at the same height.
+#   the same plot area at the same height.  The seven true terms of the VIF
+#   inset carry the colours of the lasso-path plots of Fig. 1b
+#   (AIZAWA_TRUTH_COL_FIG1 in fig_helpers.R; Yuzheng, 2026-11-02).
 # Usage: Rscript fig1_insets.R [snr=57] [n=5000]     (one try is about 1 min)
 #        Rscript fig1_insets.R plot-only            (redraws the insets from the
 #        stored results/fig1_insets_*.csv without refitting; seconds)
@@ -147,10 +149,10 @@ p_k <- ggplot(kd, aes(t, k)) +
   scale_x_continuous(breaks = pretty_breaks(4)) +
   labs(x = "time", y = expression("Pareto " * hat(italic(k))[italic(i)])) + inset_theme
 
-# (iii) VIF of every candidate term of the design entering pass 2; true terms coloured and
-# labelled (ggrepel leaders), others grey
+# (iii) VIF of every candidate term of the design entering pass 2; true terms in their
+# Fig. 1b colours (AIZAWA_TRUTH_COL_FIG1) and labelled (ggrepel leaders), others grey
 suppressPackageStartupMessages(library(ggrepel))
-vif_df$colour <- ifelse(vif_df$is_truth, AIZAWA_TRUTH_COL[vif_df$term], HOUSE_GREY)
+vif_df$colour <- ifelse(vif_df$is_truth, AIZAWA_TRUTH_COL_FIG1[vif_df$term], HOUSE_GREY)
 vt <- vif_df[vif_df$is_truth, ]; vt$label <- term_label(vt$term)
 p_v <- ggplot(vif_df, aes(index, vif)) +
   geom_col(data = vif_df[!vif_df$is_truth, ], fill = HOUSE_GREY, width = 0.8) +
@@ -159,7 +161,7 @@ p_v <- ggplot(vif_df, aes(index, vif)) +
   geom_text_repel(data = vt, aes(index, vif, label = label), colour = vt$colour, parse = TRUE, size = HOUSE_PT$tick / .pt,
                   family = HOUSE_FONT, nudge_y = 0.8, direction = "both", min.segment.length = 0, segment.size = 0.3,
                   segment.colour = "grey50", box.padding = 0.5, point.padding = 0.2, max.overlaps = Inf, seed = 3, force = 4, force_pull = 0.3) +
-  scale_fill_manual(values = AIZAWA_TRUTH_COL, guide = "none") +
+  scale_fill_manual(values = AIZAWA_TRUTH_COL_FIG1, guide = "none") +
   scale_x_continuous(breaks = NULL, expand = expansion(add = 0.8)) +
   scale_y_log10_powers("VIF", limits = c(1, 10^(ceiling(log10(max(v))) + 1)), step = 1) +
   labs(x = "candidate term") + inset_theme

@@ -30,6 +30,18 @@ AIZAWA_TRUTH <- c("x3", "x1^2", "x2^2", "x1^2x3", "x2^2x3", "x1^3x3", "x3^3")
 AIZAWA_TRUTH_COL <- setNames(HOUSE_SERIES[seq_along(AIZAWA_TRUTH)], AIZAWA_TRUTH)
 AIZAWA_TRUTH_SHAPE <- setNames(c(16, 15, 17, 18, 1, 0, 2), AIZAWA_TRUTH)
 
+# The colours of the same seven terms in the lasso-path plots of Fig. 1b, used by
+# the VIF inset of Fig. 1e (Yuzheng, 2026-11-02: the highlighted terms of the
+# inset match their colours in panel b).  plot_betas_vs_log_lambda() in
+# pyargos/results-diagnostics/analysis_bayesian_argos.py colours the term at
+# 0-based position i of its degree-5 library order (x1, x2, x3, x1^2, x1x2, ...)
+# with matplotlib's tab20 sampled at 55 points, i.e. tab20[floor(20 i / 54)]:
+# x3 (i = 2) blue, x1^2 (3) light blue, x2^2 (6) orange, x1^2x3 (11) green,
+# x2^2x3 (16) light green, x1^3x3 (21) light red, x3^3 (18) red.  Fig. 4 keeps
+# the house series above.
+AIZAWA_TRUTH_COL_FIG1 <- c("x3" = "#1f77b4", "x1^2" = "#aec7e8", "x2^2" = "#ff7f0e", "x1^2x3" = "#2ca02c",
+                           "x2^2x3" = "#98df8a", "x1^3x3" = "#ff9896", "x3^3" = "#d62728")
+
 # panel titles: system, equation and condition (standard 4.8.2)
 eq_title <- function(system, eq, condition = NULL) {
   base <- substitute(S * " " * dot(italic(x))[E], list(S = system, E = eq))
