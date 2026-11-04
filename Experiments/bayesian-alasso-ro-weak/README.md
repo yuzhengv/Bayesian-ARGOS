@@ -22,7 +22,7 @@
 | | Savitzky–Golay derivative (SG) | weak form (Integration) |
 |---|---|---|
 | **Bayesian-ARGOS** | `Experiments/bayesian-alasso-ro/<system>/results` (stored benchmark, Figs 2–3) | **this folder**: `Experiments/bayesian-alasso-ro-weak/<system>/results` |
-| **SINDy** | `Pysindy/exp/<system>/results` (stored benchmark, STLSQ 0.005) | `Pysindy/weak/exp/<system>/results` |
+| **SINDy** | `Pysindy/exp/<system>/results` (stored benchmark, PySINDy's default STLSQ threshold 0.1; see the correction below) | `Pysindy/weak/exp/<system>/results` |
 
 Response construction (differentiate vs integrate) and selection stage
 (STLSQ vs adaptive-lasso screening + Stan) are separate factors, so the
@@ -52,8 +52,13 @@ the same seed in both arms, so both arms use the same subdomains.
 * **SINDy (Integration)** (`Pysindy/weak/weak_n.R`, `weak_snr.R`): `ps.SINDy(
   optimizer = STLSQ(threshold = 0.005), feature_library = WeakPDELibrary(...))`
   fitted on the raw noisy samples (the weak library computes its own response).
-  Same threshold as the SG baseline (`STLSQ_THRESHOLD` overrides). Results have
-  the same structure and file names as `Pysindy/exp/<system>/results`.
+  The threshold 0.005 was read from `Pysindy/exp/aizawa/system_n.R`, which still
+  carries the setting of a superseded variant (`Pysindy/exp/aizawa/results-0005/`);
+  the stored benchmark in `Pysindy/exp/<system>/results/` was produced with
+  PySINDy's default threshold 0.1 for every system (Yuzheng, 2026-11-04), so the
+  two SINDy arms differ in the threshold as well as in the response
+  (`STLSQ_THRESHOLD` overrides). Results have the same structure and file names
+  as `Pysindy/exp/<system>/results`.
 
 Data, initial conditions (seed 100, same `runif` sequences as the original
 drivers), grids (n = 10² … 10⁵ at 49 dB; SNR 1 … 61 dB and ∞ at n = 5000),
@@ -69,8 +74,10 @@ drivers), grids (n = 10² … 10⁵ at 49 dB; SNR 1 … 61 dB and ∞ at n = 500
 * A degree-5 library on raw noisy samples carries a small even-power bias at
   low SNR (E[x²] = x² + σ²); this is the standard weak-form design and is left
   as is.
-* The STLSQ threshold (0.005) was chosen for the SG response; it is kept fixed
-  for comparability (the coefficient scale is unchanged by the weak form).
+* The STLSQ threshold 0.005 was taken from the Aizawa driver file, not from the
+  stored SG benchmark, which uses the default 0.1 (correction of 2026-11-04, see
+  above); the SINDy pair is therefore not matched on the threshold. The
+  coefficient scale is unchanged by the weak form.
 * Noise realisations are seeded (the stored SG runs were not), so the two arms
   do not share noise draws with the stored results.
 
@@ -147,8 +154,9 @@ of a particular setting, contribute to the losses and were diagnosed with `Resul
    (weak). Integrating monomials against a wide test function is a low-pass
    filter that makes the chain terms (x₁²x₃, x₁²x₃², …) more alike, so the
    chain-substitution failure of Point 6 becomes more frequent.
-3. **SINDy (Integration) keeps the baseline's STLSQ settings, so within the
-   SINDy pair the weak form is the only difference.** With the baseline's
+3. **SINDy (Integration) ran at STLSQ threshold 0.005, not at the stored
+   baseline's default 0.1 (correction of 2026-11-04), so within the SINDy pair
+   the threshold differs as well as the response.** At
    threshold 0.005 (and PySINDy's default ridge penalty) the weak features give
    dense models on Aizawa (50+ terms, 0 % exact at every SNR) and sparse ones on
    Dadras and Rössler. A coarser fixed threshold does not change the Aizawa
