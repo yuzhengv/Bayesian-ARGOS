@@ -27,6 +27,7 @@ while the figures are drawn here by `make_figures.R`.
 |---|---|
 | `common.R` | systems in the `ode_auto.py` format; data generation through the benchmark code path (`DataGeneration/ode_auto.py`, scipy odeint via reticulate, NumPy seeded before the noisy call); `build_design_matrix`; the two `alasso` passes; the Bayesian stage of `bayesian_alasso_ro` (`rstanarm::stan_glm`, 90 % posterior-interval rule) as `bayes_stage()`; VIF, Belsley diagnostics, residual statistics |
 | `exp1_collinearity.R` | per-term VIF and condition number on the full / degree-trimmed / pass-2-selected / ground-truth designs over the Fig. 3b grids, 20 trials on each sweep; same monomials on one trajectory, a uniform box, 50 short transients; clean trajectory vs n; Belsley near-dependency groups |
+| `table_s1_nested_vif_49db.R` | Supplementary Table S1 at the benchmark convention: VIFs of the seven true terms and condition number on the four nested designs at n = 5000, SNR = 49 dB for the same 20 trajectories as exp1 (exp1's `one_condition()` and `designs_for()` reused by evaluating only the function definitions of `exp1_collinearity.R`); writes `results/table_s1_{vif,kappa,meta}_49db.csv` and `tables/table_s1_49db.md` (LaTeX rows, support sizes); 13 s on 16 cores |
 | `exp2_heteroscedasticity.R` | Breusch–Pagan, White-type, decile variance ratio, lag-1 autocorrelation, Durbin–Watson vs SNR for the ground-truth support and for the support the screening selects, both fitted with the pipeline's Stan stage (residuals about the posterior mean); final model after the posterior-interval rule and per-trial success; residual decomposition into derivative-estimation (incl. SG truncation), smoothing and coefficient error |
 | `aizawa_screening_vs_hmc.R` | re-reads the stored 100-trial Aizawa results: pass-2 support size, survival of spurious candidates through the 90 % credible-interval rule, success rate; exports per-trial supports (`aizawa_eq3_supports.csv`) |
 | `exp6_lambda_rule.R` | tests whether tuning the adaptive lasso by `lambda.1se` instead of `lambda.min` (pass 2, or both passes) removes the large-n decline; the Bayesian stage is the pipeline's own (`stan_glm`, posterior-interval rule), so the reported success is the pipeline's |
@@ -58,8 +59,9 @@ true-term designs reproduce exactly between runs. The two `alasso` passes call
 `cv.glmnet` without a fold seed (`R/argos_files.R`, package code, unchanged), so
 between the 2026-09-09 and 2026-10-24 runs the degree trim differed in about
 3 % of the conditions and the screened support in about 20 %. The medians drawn
-in the figures and every column of Supplementary Table S1 (n = 5000, 50 dB)
-were unchanged.
+in the figures and every column of the then Supplementary Table S1 (n = 5000, 50 dB)
+were unchanged. Since 2026-11-06 Table S1 is drawn from `table_s1_nested_vif_49db.R`
+at 49 dB, the SNR of the benchmark's n sweep, instead of the 50 dB point of exp1's grid.
 
 Figure scripts for the revised manuscript (2026-10-14), in order:
 

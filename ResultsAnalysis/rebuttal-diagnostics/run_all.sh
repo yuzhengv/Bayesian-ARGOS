@@ -8,6 +8,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 Rscript exp1_collinearity.R 20 20
+Rscript table_s1_nested_vif_49db.R 20      # Supplementary Table S1 (n = 5000, 49 dB)
 Rscript exp2_heteroscedasticity.R 20
 Rscript aizawa_screening_vs_hmc.R
 Rscript aizawa_success_vs_snr_all_methods.R
