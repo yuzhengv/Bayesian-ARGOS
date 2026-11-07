@@ -19,18 +19,26 @@
 #
 # Systems: Aizawa x3-dot (Fig. 3d), Rossler x1-dot (Fig. 4c).  Stan runs with
 # cores = 1 inside each mclapply worker (4 chains sequentially).
+# SNR grids: Aizawa 10, 20, 30, 40, 45, 50, 55, 57, 60 dB and Inf; Rossler the
+# same grid plus 58 and 61 dB (the 61 dB example trial feeds Fig. 5c).  The
+# Rossler points 10, 45, 57 and 60 dB were added 2026-11-07 so that the SI
+# figure plots both systems over the same range.  Mode `missing` runs only the
+# (system, trial, snr) conditions absent from results/exp2_stats.csv and appends
+# them; the stored rows and exp2_examples.csv are left untouched.
 # Outputs: results/exp2_stats.csv, results/exp2_examples.csv (long format).
-# Usage: Rscript exp2_heteroscedasticity.R [trials=20]
+# Usage: Rscript exp2_heteroscedasticity.R [trials=20] [mode=all|missing]
 
 source(file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "common.R"))
 args <- commandArgs(trailingOnly = TRUE)
 TRIALS <- if (length(args) >= 1) as.integer(args[1]) else 20L
+MODE <- if (length(args) >= 2) args[2] else "all"
+stopifnot(MODE %in% c("all", "missing"))
 OUT <- file.path(dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1]))), "results")
 dir.create(OUT, showWarnings = FALSE)
 
 N_FIXED <- 5000
 CASES <- list(aizawa = list(eq = 3, snrs = c(10, 20, 30, 40, 45, 50, 55, 57, 60, Inf)),
-              rossler = list(eq = 1, snrs = c(20, 30, 40, 50, 55, 58, 61, Inf)))
+              rossler = list(eq = 1, snrs = c(10, 20, 30, 40, 45, 50, 55, 57, 58, 60, 61, Inf)))
 EXAMPLE_TRIAL <- 0
 EXAMPLE_SNRS <- list(aizawa = c(50, 60, Inf), rossler = c(61, Inf))
 
@@ -100,11 +108,21 @@ one <- function(system, trial, snr) {
 tasks <- list()
 for (system in names(CASES)) for (trial in seq_len(TRIALS) - 1) for (snr in CASES[[system]]$snrs)
   tasks[[length(tasks) + 1]] <- list(system, trial, snr)
+if (MODE == "missing") {
+  old_stats <- read.csv(file.path(OUT, "exp2_stats.csv"), stringsAsFactors = FALSE)
+  done <- paste(old_stats$system, old_stats$trial, old_stats$snr)
+  tasks <- Filter(function(t) !(paste(t[[1]], t[[2]], t[[3]]) %in% done), tasks)
+}
 cat(length(tasks), "conditions on", NCORES, "cores\n")
 t0 <- Sys.time()
 res <- mclapply(tasks, function(t) one(t[[1]], t[[2]], t[[3]]), mc.cores = NCORES)
 ok <- !sapply(res, inherits, "try-error")
-write.csv(do.call(rbind, lapply(res[ok], `[[`, "row")), file.path(OUT, "exp2_stats.csv"), row.names = FALSE)
+stats_out <- do.call(rbind, lapply(res[ok], `[[`, "row"))
 ex <- do.call(rbind, Filter(Negate(is.null), lapply(res[ok], `[[`, "example")))
-write.csv(ex, file.path(OUT, "exp2_examples.csv"), row.names = FALSE)
+if (MODE == "missing") {
+  stats_out <- rbind(old_stats, stats_out)
+  if (!is.null(ex)) ex <- rbind(read.csv(file.path(OUT, "exp2_examples.csv"), stringsAsFactors = FALSE), ex)
+}
+write.csv(stats_out, file.path(OUT, "exp2_stats.csv"), row.names = FALSE)
+if (!is.null(ex)) write.csv(ex, file.path(OUT, "exp2_examples.csv"), row.names = FALSE)
 cat("done in", round(as.numeric(Sys.time() - t0, units = "secs")), "s;", sum(!ok), "failures\n")

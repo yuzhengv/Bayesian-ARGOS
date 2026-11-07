@@ -2,15 +2,23 @@
 # and the Aizawa residual panels, the panels a to e of make_figures.R's
 # fig_heteroscedasticity restyled with ../plot-style/house_style.R (the old
 # panel f, Rossler at infinity, is in Fig. 5 of the manuscript).
-#   a  lag-1 residual autocorrelation against SNR (medians, interquartile
+#   a  Breusch-Pagan R^2 of the residuals against SNR (medians, interquartile
 #      ribbons; Aizawa x3-dot true support, Aizawa x3-dot screened support,
-#      Rossler x1-dot true support; results/exp2_stats.csv)
+#      Rossler x1-dot true support; results/exp2_stats.csv), log axis
 #   b  max / min residual variance over deciles of the fitted value against SNR
-#   c  share of the residual variance explained by derivative estimation, state
-#      smoothing and coefficient error (Aizawa x3-dot, true support)
-#   d  Aizawa x3-dot standardised residuals against the fitted value at 60 dB
-#   e  the same at infinity (results/exp2_examples.csv, example trial)
-# In-panel legends in the same corner (top left) of a, b and c.  Canvas
+#   c  lag-1 residual autocorrelation against SNR
+#   d  share of the residual variance explained by derivative estimation, the
+#      truncation error of the SG derivative (dashed, hollow markers; added
+#      2026-11-07), state smoothing and coefficient error (Aizawa x3-dot, true
+#      support)
+#   e  Aizawa x3-dot standardised residuals against the fitted value at 60 dB
+#   f  the same at infinity (results/exp2_examples.csv, example trial)
+# Panel a added 2026-11-07 (Yuzheng: the test the Note names first should be
+# plotted); the former a-e became c, b, d, e, f.  Both systems are plotted on
+# the Aizawa SNR grid SNR_PLOT (10 to 60 dB and Inf; Yuzheng, 2026-11-07: the
+# same range for Rossler); the Rossler rows at 58 and 61 dB, kept in
+# exp2_stats.csv for Fig. 5, are not drawn here.
+# In-panel legends in the same corner (top left) of a, b, c and d.  Canvas
 # 18 x 12.6 in at k = 2.5 (final width 183 mm, aspect 0.7), cairo_pdf.  Writes
 # figures/residual_statistics.pdf and copies it to <manuscript>/si-plots and
 # <manuscript>/reply-to-reviewers/Figures.
@@ -25,17 +33,20 @@ OUT <- file.path(FIG, "residual_statistics.pdf")
 
 stats <- read.csv(file.path(RES, "exp2_stats.csv"), stringsAsFactors = FALSE)
 ex <- read.csv(file.path(RES, "exp2_examples.csv"), stringsAsFactors = FALSE)
+SNR_PLOT <- c(10, 20, 30, 40, 45, 50, 55, 57, 60, Inf)   # the Aizawa grid of exp2, used for both systems
+stats <- stats %>% filter(snr %in% SNR_PLOT)
+stopifnot(all(table(stats$system, stats$snr) == 20))      # every plotted point is a median over the same 20 trials
 SER <- c(aizawa_true = 'paste("Aizawa ", dot(italic(x))[3], ", true support")',
          aizawa_sel = 'paste("Aizawa ", dot(italic(x))[3], ", screened support")',
          rossler_true = 'paste("Rössler ", dot(italic(x))[1], ", true support")')
 SER_COL <- c(aizawa_true = HOUSE_PRIMARY, aizawa_sel = HOUSE_EXTRA[1], rossler_true = HOUSE_HIGHLIGHT)
 SER_SHAPE <- c(aizawa_true = 16, aizawa_sel = 17, rossler_true = 15)
 long <- bind_rows(
-  stats %>% transmute(series = paste0(system, "_true"), snr, rho1, var_ratio),
-  stats %>% filter(system == "aizawa") %>% transmute(series = "aizawa_sel", snr, rho1 = sel_rho1, var_ratio = sel_var_ratio)) %>%
+  stats %>% transmute(series = paste0(system, "_true"), snr, bp_r2, rho1, var_ratio),
+  stats %>% filter(system == "aizawa") %>% transmute(series = "aizawa_sel", snr, bp_r2 = sel_bp_r2, rho1 = sel_rho1, var_ratio = sel_var_ratio)) %>%
   group_by(series, snr) %>%
-  summarise(across(c(rho1, var_ratio), list(m = median, lo = ~quantile(.x, .25), hi = ~quantile(.x, .75))), .groups = "drop") %>%
-  filter(snr >= 6) %>% mutate(x = snr_x(snr), series = factor(series, levels = names(SER)))
+  summarise(across(c(bp_r2, rho1, var_ratio), list(m = median, lo = ~quantile(.x, .25), hi = ~quantile(.x, .75))), .groups = "drop") %>%
+  mutate(x = snr_x(snr), series = factor(series, levels = names(SER)))
 inside_legend <- theme(legend.position = "inside", legend.position.inside = c(0.02, 0.98), legend.justification = c(0, 1),
                        legend.key.width = unit(0.5, "in"), legend.key.height = unit(0.28, "in"), legend.text = element_text(size = HOUSE_PT$text))
 stat_panel <- function(ycol, ylab, ylog = FALSE, y_break = 0, ylim = NULL) {
@@ -52,20 +63,25 @@ stat_panel <- function(ycol, ylab, ylog = FALSE, y_break = 0, ylim = NULL) {
     p + scale_y_continuous(name = ylab, limits = c(0, 1), breaks = seq(0, 1, 0.25), expand = expansion(mult = c(0, 0.02)), oob = oob_keep)
   if (ylog) snr_axis_log(p, ylim) else snr_axis(p, y_break = y_break, extra_y = 0.05)
 }
-pa <- stat_panel("rho1", expression("lag-1 residual autocorrelation " * italic(rho)[1]), FALSE, y_break = 0) + labs(tag = "a")
+BP_LIM <- c(1e-6, 1)
+pa <- stat_panel("bp_r2", expression("Breusch-Pagan " * italic(R)^2), TRUE, y_break = BP_LIM[1], ylim = BP_LIM) + labs(tag = "a")
 pb <- stat_panel("var_ratio", "residual variance ratio (deciles)", TRUE, y_break = 1, ylim = c(1, 1e6)) + labs(tag = "b")
+pc_rho <- stat_panel("rho1", expression("lag-1 residual autocorrelation " * italic(rho)[1]), FALSE, y_break = 0) + labs(tag = "c")
 
-comp <- stats %>% filter(system == "aizawa", snr >= 6) %>% transmute(snr, d = var_d / var_e, g = var_g / var_e, h = var_h / var_e) %>%
+comp <- stats %>% filter(system == "aizawa") %>%
+  transmute(snr, d = var_d / var_e, t = var_dtrunc / var_e, g = var_g / var_e, h = var_h / var_e) %>%
   pivot_longer(-snr, names_to = "part") %>% group_by(snr, part) %>% summarise(m = median(value), .groups = "drop") %>%
-  mutate(x = snr_x(snr), part = factor(part, levels = c("d", "g", "h")))
-PART <- c(d = "derivative estimation", g = "state smoothing", h = "coefficient error")
-PART_COL <- c(d = HOUSE_COLOURS[["SINDy"]], g = HOUSE_EXTRA[2], h = HOUSE_EXTRA[4]); PART_SHAPE <- c(d = 16, g = 17, h = 15)
-C_LIM <- c(1e-5, 1e2)
-pc <- snr_axis_log(ggplot(comp, aes(x, m, colour = part, shape = part)) +
+  mutate(x = snr_x(snr), part = factor(part, levels = c("d", "t", "g", "h")))
+PART <- c(d = "derivative estimation", t = "truncation error", g = "state smoothing", h = "coefficient error")
+PART_COL <- c(d = HOUSE_COLOURS[["SINDy"]], t = HOUSE_COLOURS[["SINDy"]], g = HOUSE_EXTRA[2], h = HOUSE_EXTRA[4])
+PART_SHAPE <- c(d = 16, t = 1, g = 17, h = 15); PART_LTY <- c(d = "solid", t = "dashed", g = "solid", h = "solid")
+C_LIM <- c(1e-12, 1e6)   # headroom so the top-left legend clears the derivative-estimation line at 10^0
+pc <- snr_axis_log(ggplot(comp, aes(x, m, colour = part, shape = part, linetype = part)) +
   geom_line(data = comp %>% filter(is.finite(snr)), linewidth = HOUSE_LINE) + geom_point(size = HOUSE_MARKER) +
   scale_colour_manual(values = PART_COL, labels = PART, name = NULL) + scale_shape_manual(values = PART_SHAPE, labels = PART, name = NULL) +
-  scale_y_log10_powers("share of residual variance", limits = C_LIM) +
-  labs(tag = "c", title = eq_title("Aizawa", 3, quote("true support, " * italic(n) == 5000))) + house_theme("inside") + inside_legend,
+  scale_linetype_manual(values = PART_LTY, labels = PART, name = NULL) +
+  scale_y_log10_powers("share of residual variance", limits = C_LIM, step = 2, lo = -12) +
+  labs(tag = "d", title = eq_title("Aizawa", 3, quote("true support, " * italic(n) == 5000))) + house_theme("inside") + inside_legend,
   C_LIM)
 
 arr <- function(system, snr, key) {                       # snr: a number or "inf" (read.csv parses "inf" as Inf)
@@ -73,10 +89,10 @@ arr <- function(system, snr, key) {                       # snr: a number or "in
   v <- ex[ex$system == system & ex$snr == s_num & ex$key == key, ]
   as.numeric(v$value[order(v$index)])
 }
-pd <- resid_panel(arr("aizawa", "60", "residuals"), arr("aizawa", "60", "fitted"), eq_title("Aizawa", 3, snr_cond(60)), "d")
-pe <- resid_panel(arr("aizawa", "inf", "residuals"), arr("aizawa", "inf", "fitted"), eq_title("Aizawa", 3, snr_cond(Inf)), "e")
+pe <- resid_panel(arr("aizawa", "60", "residuals"), arr("aizawa", "60", "fitted"), eq_title("Aizawa", 3, snr_cond(60)), "e")
+pf <- resid_panel(arr("aizawa", "inf", "residuals"), arr("aizawa", "inf", "fitted"), eq_title("Aizawa", 3, snr_cond(Inf)), "f")
 
-p <- pa + pb + pc + pd + pe + plot_layout(design = "AABBCC\nDDDEEE", heights = c(1, 1))
+p <- pa + pb + pc_rho + pc + pe + pf + plot_layout(design = "AABBCC\nDDEEFF", heights = c(1, 1))
 save_figure(p, OUT, width_mm = 183, aspect = 0.7, device = cairo_pdf)
 copy_to_manuscript(OUT, "si-plots")
 cat("wrote", OUT, "\n")
