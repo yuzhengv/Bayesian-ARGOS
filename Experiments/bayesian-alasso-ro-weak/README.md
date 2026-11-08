@@ -148,12 +148,19 @@ of a particular setting, contribute to the losses and were diagnosed with `Resul
    rows starve the screening instead (0.40 → 0.20 → 0.10 for K = n/4, n/25,
    n/50): at n = 5000 the record holds only ≈ 100 independent windows for a
    55-column library.
-2. **The weak transform worsens the conditioning of the polynomial library
-   (both arms).** Aizawa, 49 dB, degree-≤4 library: Belsley κ 38 (SG) vs
-   104–109 (weak); median VIF of the true x₃-dot terms 87 (SG) vs 93–242
-   (weak). Integrating monomials against a wide test function is a low-pass
-   filter that makes the chain terms (x₁²x₃, x₁²x₃², …) more alike, so the
-   chain-substitution failure of Point 6 becomes more frequent.
+2. **The weak transform does not worsen the conditioning of the candidate
+   library (checked 2026-11-08 at the paper's convention).** Aizawa, n = 5000,
+   49 dB, the 20 trajectories and noise seeds of Supplementary Table S1, full
+   degree-5 library, Belsley κ with the intercept column: κ 1170 [618, 2070]
+   (SG, reproducing Table S1 trial by trial) vs 1190 [581, 2290] (weak, K = n/4);
+   κ of the true x₃-dot terms 9.9 vs 9.95; median VIF of the true terms 580 vs
+   699 (`ResultsAnalysis/rebuttal-weak-form/diag_conditioning.R`, rewritten).
+   The earlier figures from its 5-trial, degree-≤4 version (κ 38 vs 104–109,
+   on differently generated data) are withdrawn. The Aizawa x₃-dot failures the
+   weak form adds are mostly spurious-only fits, the pattern of effect 1, not
+   chain substitutions (`aizawa_failure_patterns_by_arm.R`: spurious-only
+   9 → 29 of 100 at n = 10⁴ and 7 → 36 at 61 dB, substitutions 27 → 37 and
+   22 → 24).
 3. **SINDy (Integration) ran at STLSQ threshold 0.005, not at the stored
    baseline's default 0.1 (correction of 2026-11-04), so within the SINDy pair
    the threshold differs as well as the response.** At

@@ -1,5 +1,5 @@
 # Supplementary figure S-E (plotting standard): Bayesian-ARGOS with the
-# Savitzky-Golay derivative against Bayesian-ARGOS with the weak-form design,
+# Savitzky-Golay derivative against Bayesian-ARGOS with the integral (weak-form) formulation,
 # success rate against n (49 dB, top row) and against SNR (n = 5000, bottom
 # row) for Aizawa, Dadras and Rossler, from results/success_2x2_{n,snr}.csv
 # (success_2x2.R).  The house-style counterpart of make_figures_2x2.R's
@@ -20,7 +20,7 @@ RES <- file.path(here, "results"); FIG <- file.path(here, "figures"); dir.create
 OUT <- file.path(FIG, "sg_vs_integration.pdf")
 
 ARMS <- c("Bayesian-ARGOS (SG)", "Bayesian-ARGOS (Integration)")
-LABELS <- c("Bayesian-ARGOS, Savitzky-Golay derivative", "Bayesian-ARGOS, weak-form design")
+LABELS <- c("Bayesian-ARGOS, Savitzky-Golay derivative", "Bayesian-ARGOS, integral formulation")   # legend term aligned with the SI (2026-11-08)
 COL <- setNames(rep(HOUSE_COLOURS[["Bayesian-ARGOS"]], 2), ARMS)
 LTY <- setNames(c("solid", "dashed"), ARMS); SHP <- setNames(c(16, 1), ARMS)
 CASE <- c(aizawa = "Aizawa", dadras = "Dadras", rossler = "Rössler")

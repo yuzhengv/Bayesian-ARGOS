@@ -86,6 +86,9 @@ show where the SG failure rate is heading.
 | `weak_form_check.R [trials=20] [cases]` | all arms for all cases; writes `results/weak_form_trials.csv` (one row per case × trial × arm), `results/weak_form_summary.csv`, `results/weak_form_settings.csv` | see status line |
 | `make_figures_weak_form.R [primary arm]` | `figures/fig_weak_form_check.pdf` (house style) | seconds |
 | `make_figures_sg_vs_weak_house.R` | SI figure S-E of the plotting standard: Bayesian-ARGOS with the Savitzky-Golay derivative against the weak-form design, success rate against n (49 dB) and against SNR (n = 5000) for Aizawa, Dadras and Rossler, from `results/success_2x2_{n,snr}.csv`, drawn with `../plot-style/house_style.R` (n axis 10^k, broken infinity axis, 0.8 line and band, one legend row below, 9 pt since 2026-11-01); `figures/sg_vs_integration.pdf` -> `si-plots/sg_vs_integration.pdf` and `reply-to-reviewers/Figures/` (183 mm, aspect 0.65) | seconds |
+| `dadras_intercepts_by_equation.R` | per-equation exact recovery and spurious-intercept counts for the Dadras n sweep at 49 dB, SG arm (stored benchmark) and weak-form arm, 100 trials per n; `results/dadras_intercepts_by_equation.csv`. Added 2026-11-08 for Supplementary Note 4: the weak form holds the x1-dot intercept at 1 to 6 of 100 trials at every n from 10^4 to 10^5 (SG: 30 at n = 10^5; below 10^3.4 both equations fail in many trials, 99 of 100 at n = 10^2), and the twelve system-level failures of the weak form at 10^5 are spurious intercepts, ten in the x3-dot equation and two in the x1-dot equation, with no rise over n (x3-dot: 10 to 23 of 100 from 10^4 to 10^5, 23 to 34 from 10^3 to 10^4). The shared end points of the three n-range files were run twice with different seeds and differ (n = 10^4: 68 against 85 system-level); the table keeps the lower-range file's copy, which matches `results/success_2x2_n.csv` (68 % at n = 10^4) | seconds |
+| `diag_conditioning.R` | conditioning of the full degree-5 candidate library under the weak transform at the paper's convention (Aizawa, n = 5000, 49 dB, the 20 Table S1 trajectories and noise seeds, Belsley κ with intercept): SG κ reproduces Table S1 trial by trial; `results/diag_conditioning.csv`. Rewritten 2026-11-08 (was 5 trials, degree ≤ 4) | about a minute |
+| `aizawa_failure_patterns_by_arm.R` | failure classes of the Aizawa x3-dot fits (substitution, missing only, spurious only) for the SG and weak arms at n = 10^4 (49 dB) and 61 dB (n = 5000), nonzero-coefficient criterion of the evaluation code; `results/aizawa_failure_patterns_by_arm.csv`. Added 2026-11-08 | about a minute |
 | `run_all.sh` | both, in order | |
 
 ```bash
@@ -174,6 +177,6 @@ Integration arms in `Experiments/bayesian-alasso-ro-weak/` and `Pysindy/weak/`
 (`results/success_2x2_{n,snr}.csv`; `make_figures_2x2.R` →
 `figures/fig_sg_vs_weak.pdf`, the Bayesian-ARGOS pair used in the SI, and
 `figures/fig_success_2x2_internal.pdf`, all four arms, internal reference only). `diag_overlap.R` and `diag_conditioning.R`
-diagnose the two configuration effects found in the first evaluation (window
-overlap; library conditioning). Findings and status are in
+diagnose the two configuration effects suspected after the first evaluation (window
+overlap, confirmed; library conditioning, found unchanged at the paper's convention when `diag_conditioning.R` was rewritten on 2026-11-08 with the 20 Table S1 trials and the degree-5 library). Findings and status are in
 `Experiments/bayesian-alasso-ro-weak/README.md`.
