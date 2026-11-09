@@ -34,6 +34,11 @@ OUT <- file.path(FIG, "residual_statistics.pdf")
 stats <- read.csv(file.path(RES, "exp2_stats.csv"), stringsAsFactors = FALSE)
 ex <- read.csv(file.path(RES, "exp2_examples.csv"), stringsAsFactors = FALSE)
 SNR_PLOT <- c(10, 20, 30, 40, 45, 50, 55, 57, 60, Inf)   # the Aizawa grid of exp2, used for both systems
+# This figure's SNR axis starts at 10 dB, the first SNR of the exp2 grid, instead of the house
+# default of 1 dB (Yuzheng, 2026-11-09: "give that figure its own start from 10").
+S10_XMIN <- 10
+snr_axis_s10 <- function(p, ...) snr_axis(p, xmin = S10_XMIN, ...)
+snr_axis_log_s10 <- function(p, lim, ...) snr_axis_log(p, lim, xmin = S10_XMIN, ...)
 stats <- stats %>% filter(snr %in% SNR_PLOT)
 stopifnot(all(table(stats$system, stats$snr) == 20))      # every plotted point is a median over the same 20 trials
 SER <- c(aizawa_true = 'paste("Aizawa ", dot(italic(x))[3], ", true support")',
@@ -61,7 +66,7 @@ stat_panel <- function(ycol, ylab, ylog = FALSE, y_break = 0, ylim = NULL) {
     labs(title = expression(italic(n) == 5000)) + house_theme("inside") + inside_legend
   p <- if (ylog) p + scale_y_log10_powers(ylab, limits = ylim) else
     p + scale_y_continuous(name = ylab, limits = c(0, 1), breaks = seq(0, 1, 0.25), expand = expansion(mult = c(0, 0.02)), oob = oob_keep)
-  if (ylog) snr_axis_log(p, ylim) else snr_axis(p, y_break = y_break, extra_y = 0.05)
+  if (ylog) snr_axis_log_s10(p, ylim) else snr_axis_s10(p, y_break = y_break, extra_y = 0.05)
 }
 BP_LIM <- c(1e-6, 1)
 pa <- stat_panel("bp_r2", expression("Breusch-Pagan " * italic(R)^2), TRUE, y_break = BP_LIM[1], ylim = BP_LIM) + labs(tag = "a")
@@ -76,7 +81,7 @@ PART <- c(d = "derivative estimation", t = "truncation error", g = "state smooth
 PART_COL <- c(d = HOUSE_COLOURS[["SINDy"]], t = HOUSE_COLOURS[["SINDy"]], g = HOUSE_EXTRA[2], h = HOUSE_EXTRA[4])
 PART_SHAPE <- c(d = 16, t = 1, g = 17, h = 15); PART_LTY <- c(d = "solid", t = "dashed", g = "solid", h = "solid")
 C_LIM <- c(1e-12, 1e6)   # headroom so the top-left legend clears the derivative-estimation line at 10^0
-pc <- snr_axis_log(ggplot(comp, aes(x, m, colour = part, shape = part, linetype = part)) +
+pc <- snr_axis_log_s10(ggplot(comp, aes(x, m, colour = part, shape = part, linetype = part)) +
   geom_line(data = comp %>% filter(is.finite(snr)), linewidth = HOUSE_LINE) + geom_point(size = HOUSE_MARKER) +
   scale_colour_manual(values = PART_COL, labels = PART, name = NULL) + scale_shape_manual(values = PART_SHAPE, labels = PART, name = NULL) +
   scale_linetype_manual(values = PART_LTY, labels = PART, name = NULL) +

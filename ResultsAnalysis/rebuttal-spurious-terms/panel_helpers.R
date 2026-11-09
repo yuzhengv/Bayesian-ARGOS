@@ -14,7 +14,7 @@ source(file.path(root_path, "ResultsAnalysis", "plot-style", "house_style.R"))
 
 SPUR_BREAKS <- c(0, 1, 2, 5, 10, 20, 50)
 SPUR_TRANS <- scales::transform_pseudo_log(sigma = 0.5, base = 10)
-SNR_XMIN <- 6   # the house SNR axis starts at 6 dB (standard 4.4)
+SNR_XMIN <- 1   # the house SNR axis starts at 1 dB, the first SNR of the sweep (standard 4.4; Yuzheng, 2026-11-09; it was 6 dB before)
 
 scale_y_quantity <- function(quantity, ymax, name = NULL) {
     if (quantity == "spurious_per_eq") {

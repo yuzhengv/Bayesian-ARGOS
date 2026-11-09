@@ -73,6 +73,7 @@ scale_x_log_n <- function(name = expression(italic("n")), limits = NULL, breaks 
 }
 
 # SNR axis (standard 4.4): finite ticks 10 ... 60 dB; the noiseless case at INF_X
+# (the axis starts at 1 dB, the first SNR of the sweep: Yuzheng, 2026-11-09; it started at 6 dB before)
 # beyond a break drawn as two slanted separators on an otherwise empty spine.
 INF_X <- 73
 SNR_BREAK <- c(65.5, 69.5)
@@ -101,7 +102,7 @@ create_separators <- function(x, extra_x, y, half, angle = SEP_ANGLE, length = .
 # and sep_y_scale give the half-height (SEP_ADD_Y * sep_y_scale + extra_y) / 2,
 # which is 0.049 for the 0-1 success-rate axis (extra_y = 0.05) and 0.049 R
 # for a log axis of R decades (extra_y = 0.05 R, sep_y_scale = R).
-snr_axis <- function(p, y_break = 0, extra_y = 0.05, ticks = seq(10, 60, 10), xmin = 6, name = "SNR (dB)",
+snr_axis <- function(p, y_break = 0, extra_y = 0.05, ticks = seq(10, 60, 10), xmin = 1, name = "SNR (dB)",
                      ylog = FALSE, sep_y_scale = 1, ytrans = NULL, y_range = NULL) {
   if (ylog && is.null(ytrans)) ytrans <- scales::transform_log10()
   tf <- if (is.null(ytrans)) identity else ytrans$transform

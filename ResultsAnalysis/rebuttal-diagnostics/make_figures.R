@@ -52,7 +52,7 @@ snr_x <- function(s) ifelse(is.infinite(s), INF_X, s)
 snr_axis <- function(p, y_break, ticks = seq(10, 60, 10), extra_y = 0.1) {
   xstart <- 65.5; xend <- 69.5; extra_x <- 1
   seg <- create_separators(c(xstart, xend), extra_x = extra_x, y = y_break, extra_y = extra_y, angle = 75)
-  p + scale_x_continuous(limits = c(min(ticks) - 4, INF_X + 1), breaks = c(ticks, INF_X),
+  p + scale_x_continuous(limits = c(1, INF_X + 1), breaks = c(ticks, INF_X),   # the axis starts at 1 dB (Yuzheng, 2026-11-09), as the house snr_axis()
                          labels = c(ticks, TeX("$\\infty$"))) +
     guides(x = guide_axis_truncated(trunc_lower = c(-Inf, xend + extra_x / 2), trunc_upper = c(xstart + extra_x / 2, Inf))) +
     annotate("segment", x = seg$x, xend = seg$xend, y = seg$y, yend = seg$yend) +

@@ -28,7 +28,7 @@ CASE <- c(aizawa = "Aizawa", dadras = "Dadras", rossler = "Rössler")
 dn <- read.csv(file.path(RES, "success_2x2_n.csv"), stringsAsFactors = FALSE) %>% filter(method %in% ARMS) %>%
   mutate(x = as.numeric(x), method = factor(method, ARMS))
 ds <- read.csv(file.path(RES, "success_2x2_snr.csv"), stringsAsFactors = FALSE) %>% filter(method %in% ARMS) %>%
-  mutate(snr = suppressWarnings(as.numeric(x)), method = factor(method, ARMS)) %>% filter(snr >= 6) %>% mutate(xpos = snr_x(snr))
+  mutate(snr = suppressWarnings(as.numeric(x)), method = factor(method, ARMS)) %>% mutate(xpos = snr_x(snr))
 
 arm_scales <- list(scale_colour_manual(values = COL, labels = LABELS, name = NULL),
                    scale_linetype_manual(values = LTY, labels = LABELS, name = NULL),

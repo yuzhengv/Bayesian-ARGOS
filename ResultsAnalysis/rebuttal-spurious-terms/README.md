@@ -101,7 +101,7 @@ there only.
   spurious terms per equation at low SNR or small n while ARGOS and
   Bayesian-ARGOS stay between 0 and 2; the other two quantities use linear
   axes from 0. SNR panels follow the house axis (10 to 60 dB, ∞ beyond the
-  break; the axis starts at 6 dB, so the 1 to 5 dB points are not drawn).
+  break; since 2026-11-09 the axis starts at 1 dB, the first SNR of the sweep, so every point is drawn; it started at 6 dB before).
   Since 2026-11-02 the line and the ribbon stop at 61 dB and the noiseless
   value is a marker at ∞ with a vertical bar for the ribbon's range (Yuzheng:
   no solid line across the break, there are no data between 61 dB and ∞).

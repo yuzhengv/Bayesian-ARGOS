@@ -66,7 +66,6 @@ med <- vif %>% filter(design == "trimmed") %>% group_by(sweep, term, log10n, snr
 VIF_LIM <- c(1, 1e16)
 vif_panel <- function(sw) {
   d <- med %>% filter(sweep == sw) %>% mutate(x = if (sw == "snr") snr_x(snr) else log10n)
-  if (sw == "snr") d <- d %>% filter(snr >= 6)                     # the axis starts at 6 dB
   fin <- if (sw == "snr") d %>% filter(is.finite(snr)) else d
   others <- fin %>% filter(!is_truth); truth <- d %>% filter(is_truth) %>% mutate(term = factor(term, levels = AIZAWA_TRUTH))
   p <- ggplot() +
@@ -101,7 +100,6 @@ ks <- kappa %>% group_by(sweep, design, log10n, snr) %>%
 KAPPA_LIM <- c(1, 1e13)
 kappa_panel <- function(sw) {
   d <- ks %>% filter(sweep == sw) %>% mutate(x = if (sw == "snr") snr_x(snr) else log10n)
-  if (sw == "snr") d <- d %>% filter(snr >= 6)
   fin <- d %>% filter(x < INF_X)
   p <- ggplot(d, aes(x, m, colour = design, fill = design, shape = design)) +
     geom_ribbon(data = fin, aes(ymin = lo, ymax = hi), alpha = 0.15, colour = NA) +
