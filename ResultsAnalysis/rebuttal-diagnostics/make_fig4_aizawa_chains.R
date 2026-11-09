@@ -19,7 +19,9 @@
 #                      interquartile range (results/exp1_kappa.csv), one log scale
 # One vertical key per row at the left of the two compared panels (standard
 # 4.7.2; key spacing widened 2026-11-01: 12, 10 and 6 slots per row).  Canvas
-# 18 x 19.8 in at k = 2.5 (final width 183 mm, aspect 1.1),
+# 18 x 15.3 in at k = 2.5 (final width 183 mm, aspect 0.85, the panel margins
+# tightened to 0.3 in above and 0.15 in below so that the figure and its legend
+# share one manuscript page, 2026-11-09),
 # cairo_pdf.  Writes figures/diagnostics_aizawa_chains.pdf and copies it to
 # <manuscript>/imgs and <manuscript>/reply-to-reviewers/Figures.
 # Usage: Rscript make_fig4_aizawa_chains.R        (seconds)
@@ -28,6 +30,7 @@ suppressPackageStartupMessages({ library(dplyr); library(tidyr); library(patchwo
 here <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1])))
 source(file.path(here, "..", "plot-style", "house_style.R"))
 source(file.path(here, "fig_helpers.R"))
+TIGHT <- theme(plot.margin = margin(t = 0.3, r = 0.2, b = 0.15, l = 0.15, unit = "in"))   # row gaps reduced (one page with the legend, 2026-11-09)
 RES <- file.path(here, "results"); FIG <- file.path(here, "figures"); dir.create(FIG, showWarnings = FALSE)
 OUT <- file.path(FIG, "diagnostics_aizawa_chains.pdf")
 TITLE_N <- "SNR = 49 dB"; TITLE_SNR <- expression(italic(n) == 5000)
@@ -116,8 +119,8 @@ pc2 <- kappa_panel("snr") + labs(title = TITLE_SNR, tag = "f")
 key_c <- key_panel(data.frame(label = unname(DES), colour = unname(DES_COL), type = "line+point", shape = unname(DES_SHAPE), band = TRUE), slots = 6)
 
 # ------------------------------------------------------------------ assemble
-p <- key_a + pa1 + pa2 + key_b + pb1 + pb2 + key_c + pc1 + pc2 +
+p <- key_a + (pa1 + TIGHT) + (pa2 + TIGHT) + key_b + (pb1 + TIGHT) + (pb2 + TIGHT) + key_c + (pc1 + TIGHT) + (pc2 + TIGHT) +
   plot_layout(design = "ABC\nDEF\nGHI", widths = c(0.48, 1, 1), heights = c(1.35, 1, 1))
-save_figure(p, OUT, width_mm = 183, aspect = 1.1, device = cairo_pdf)
+save_figure(p, OUT, width_mm = 183, aspect = 0.85, device = cairo_pdf)
 copy_to_manuscript(OUT, "imgs")
 cat("wrote", OUT, "\n")

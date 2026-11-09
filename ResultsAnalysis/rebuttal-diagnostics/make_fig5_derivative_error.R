@@ -31,7 +31,10 @@
 #                         dadras_stored_intercept_vs_n.csv)
 # One vertical key per row at the left of the two panels (standard 4.7.2; key
 # spacing widened 2026-11-01, the row-4 key split into the groups of g and h).
-# Canvas 18 x 20.7 in at k = 2.5 (final width 183 mm, aspect 1.15), cairo_pdf.
+# Canvas 18 x 15.3 in at k = 2.5 (final width 183 mm, aspect 0.85, the panel
+# margins tightened to 0.22 in above and 0.1 in below, the keys of rows 2
+# and 4 on 5 and 7 slots and the row-4 key labels on one line, so that the
+# figure and its legend share one manuscript page, 2026-11-09), cairo_pdf.
 # Writes figures/diagnostics_derivative_error.pdf and copies it to
 # <manuscript>/imgs and <manuscript>/reply-to-reviewers/Figures.
 # Usage: Rscript make_fig5_derivative_error.R      (about 20 s; simulates one
@@ -42,6 +45,7 @@ suppressPackageStartupMessages({ library(patchwork) })
 here <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(), value = TRUE)[1])))
 source(file.path(here, "..", "plot-style", "house_style.R"))
 source(file.path(here, "fig_helpers.R"))
+TIGHT <- theme(plot.margin = margin(t = 0.22, r = 0.2, b = 0.1, l = 0.15, unit = "in"))   # row gaps reduced (one page with the legend, 2026-11-09)
 RES <- file.path(here, "results"); FIG <- file.path(here, "figures"); dir.create(FIG, showWarnings = FALSE)
 OUT <- file.path(FIG, "diagnostics_derivative_error.pdf")
 K_FLAG <- 0.7
@@ -75,7 +79,7 @@ pb1 <- resid_panel(arr("rossler", "61", "residuals"), arr("rossler", "61", "fitt
 pb2 <- resid_panel(arr("rossler", "inf", "residuals"), arr("rossler", "inf", "fitted"), eq_title("Rössler", 1, snr_cond(Inf)), "d")
 key_2 <- key_panel(data.frame(label = c("residual", "binned mean \u00b1 2 sd\n(12 bins)", "zero line"),
                               colour = c(HOUSE_PRIMARY, HOUSE_HIGHLIGHT, "black"), type = c("point", "line", "dotted"),
-                              shape = c(16, NA, NA), band = c(FALSE, TRUE, FALSE)), point_size = 2, slots = 7)
+                              shape = c(16, NA, NA), band = c(FALSE, TRUE, FALSE)), point_size = 2, slots = 5)
 
 # ---------------------------------------------- row 3: Dadras k-hat vs time
 # Block maximum of k-hat over 100 consecutive observations, stored for every trial
@@ -126,16 +130,16 @@ pd2 <- ggplot(st, aes(log10n)) +
   scale_x_continuous(breaks = seq(4.6, 5, 0.1), labels = c(expression(10^4.6), expression(10^4.7), expression(10^4.8), expression(10^4.9), expression(10^5))) +
   scale_y_continuous(limits = c(0, 0.017), breaks = seq(0, 0.016, 0.004), expand = expansion(mult = c(0, 0.02))) +
   labs(x = expression(italic(n)), y = "intercept", tag = "h", title = eq_title("Dadras", 1, quote("SNR = 49 dB"))) + house_theme()
-key_4 <- key_panel(data.frame(label = c("clean trajectory\n(trial 1)", 'paste("flagged, ", hat(italic(k))[italic(i)] > 0.7)',
-                                        "admitted intercept\n(median and range)", 'paste(1.645, " ", italic(sigma) / sqrt(italic(n)))'),
+key_4 <- key_panel(data.frame(label = c("clean trajectory", 'paste("flagged, ", hat(italic(k))[italic(i)] > 0.7)',          # one-line labels: the legend states the trial and the median/range (2026-11-09)
+                                        "admitted intercept", 'paste(1.645, " ", italic(sigma) / sqrt(italic(n)))'),
                               colour = c(HOUSE_GREY, HOUSE_HIGHLIGHT, HOUSE_HIGHLIGHT, HOUSE_PRIMARY),
                               type = c("line", "point", "line+point", "dashed"), shape = c(NA, 17, 16, NA),
                               band = c(FALSE, FALSE, TRUE, FALSE), parse = c(FALSE, TRUE, FALSE, TRUE),
-                              group = c("g", "g", "h", "h")), point_size = 3, slots = 8)   # two headed groups: the entries of g and of h (Yuzheng, 2026-11-01)
+                              group = c("g", "g", "h", "h")), point_size = 3, slots = 7)   # two headed groups: the entries of g and of h (Yuzheng, 2026-11-01)
 
 # ------------------------------------------------------------------ assemble
-p <- key_1 + pa2 + pa1 + key_2 + pb1 + pb2 + key_3 + pc1 + pc2 + key_4 + pd1 + pd2 +
+p <- key_1 + (pa2 + TIGHT) + (pa1 + TIGHT) + key_2 + (pb1 + TIGHT) + (pb2 + TIGHT) + key_3 + (pc1 + TIGHT) + (pc2 + TIGHT) + key_4 + (pd1 + TIGHT) + (pd2 + TIGHT) +
   plot_layout(design = "ABC\nDEF\nGHI\nJKL", widths = c(0.48, 1, 1), heights = c(1.1, 1, 1, 1))
-save_figure(p, OUT, width_mm = 183, aspect = 1.15, device = cairo_pdf)
+save_figure(p, OUT, width_mm = 183, aspect = 0.85, device = cairo_pdf)
 copy_to_manuscript(OUT, "imgs")
 cat("wrote", OUT, "\n")

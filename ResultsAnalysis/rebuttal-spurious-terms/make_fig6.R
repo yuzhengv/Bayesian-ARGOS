@@ -1,6 +1,8 @@
 # Referee 1 Point 3 (R1.3): revised Fig. 6, shrinkage and spurious terms.
 #   figures/fig6_block_a.pdf        block a: 2 x 3 aggregate panels (ggplot2,
-#                                   canvas 18 x 10.8 in = k 2.5 of 183 x 110 mm)
+#                                   canvas 18 x 9 in = k 2.5 of 183 x 91.5 mm, aspect
+#                                   0.6 -> 0.5 on 2026-11-09 so that Fig. 6 and its
+#                                   legend share one manuscript page)
 #   figures/circ_lorenz_n_<m>.pdf   block b: Lorenz, n sweep, one circular plot
 #                                   per method (12 x 12 in canvas, shown at 59 mm)
 #   figures/shrinkage_spurious_terms.tex / .pdf   the composite, 183 mm wide,
@@ -48,7 +50,7 @@ row2 <- row_label("n = 5000") + panels[[4]] + panels[[5]] + panels[[6]] + plot_l
 fig_a <- (row1 / row2) + plot_layout(guides = "collect") &
     house_legend_theme() & house_legend_guides(nrow = 1, point_size = 5)     # legend row 9 pt final (2026-11-01)
 block_a <- file.path(figdir, "fig6_block_a.pdf")
-save_figure(fig_a, block_a, width_mm = 183, aspect = 0.60)
+save_figure(fig_a, block_a, width_mm = 183, aspect = 0.50)
 
 # ---- block b ------------------------------------------------------------------
 f <- read.csv(file.path(here, "results", "term_frequencies.csv"))
