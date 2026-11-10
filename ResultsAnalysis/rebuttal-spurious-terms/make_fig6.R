@@ -50,7 +50,7 @@ row2 <- row_label("n = 5000") + panels[[4]] + panels[[5]] + panels[[6]] + plot_l
 fig_a <- (row1 / row2) + plot_layout(guides = "collect") &
     house_legend_theme() & house_legend_guides(nrow = 1, point_size = 5)     # legend row 9 pt final (2026-11-01)
 block_a <- file.path(figdir, "fig6_block_a.pdf")
-save_figure(fig_a, block_a, width_mm = 183, aspect = 0.50)
+save_figure(fig_a, block_a, width_mm = 183, aspect = 0.54)
 
 # ---- block b ------------------------------------------------------------------
 f <- read.csv(file.path(here, "results", "term_frequencies.csv"))
