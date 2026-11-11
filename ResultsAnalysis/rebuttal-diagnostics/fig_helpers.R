@@ -169,7 +169,7 @@ resid_panel <- function(e, f, title, tag, ylim = c(-6, 6)) {
     geom_line(data = b, aes(f, m), colour = HOUSE_HIGHLIGHT, linewidth = HOUSE_LINE) +
     geom_hline(yintercept = 0, linetype = 3, linewidth = 0.44) +
     scale_y_continuous(limits = ylim, breaks = seq(ylim[1], ylim[2], length.out = 5), oob = oob_keep) +
-    labs(x = "fitted value (posterior mean)", y = "standardised residual", title = title, tag = tag) + house_theme()
+    labs(x = "fitted value (posterior mean)", y = "standardized residual", title = title, tag = tag) + house_theme()
 }
 
 # copy a figure file to the manuscript folders (imgs or si-plots, and the reply)

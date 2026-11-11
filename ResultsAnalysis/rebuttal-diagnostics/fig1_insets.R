@@ -136,7 +136,7 @@ p_res <- ggplot() +
   geom_line(data = b, aes(f, m), colour = HOUSE_HIGHLIGHT, linewidth = HOUSE_LINE) +
   geom_hline(yintercept = 0, linetype = 3, linewidth = 0.44) +
   scale_y_continuous(limits = c(-6, 6), breaks = seq(-6, 6, 3)) +
-  labs(x = "fitted value\n(posterior mean)", y = "standardised residual") + inset_theme +     # two lines: the aligned panel leaves no room for one
+  labs(x = "fitted value\n(posterior mean)", y = "standardized residual") + inset_theme +     # two lines: the aligned panel leaves no room for one
   theme(axis.title.x = element_text(size = HOUSE_PT$tick, lineheight = 0.9))
 
 # (ii) Pareto k-hat against time, dashed 0.7 line
